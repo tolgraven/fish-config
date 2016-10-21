@@ -1,0 +1,1 @@
+complete -xc contrast -a '(seq 0 50 100)\t"value"\n (contrast)\t"current value"\n'

@@ -1,0 +1,11 @@
+function psc --argument process extracommand
+	set cmd 'grc -es --colour=on ps axo pid,ppid,user,start,%mem,time,ucomm'
+    set header 'PID ' #'PPID USER'
+    if test -z "$process"
+        eval $cmd
+    else if not test -z $extracommand
+        eval $cmd,$extracommand | grep --color=always -e $header -e $process
+    else
+        eval $cmd | grep --color=always -e $header -e $process
+    end
+end

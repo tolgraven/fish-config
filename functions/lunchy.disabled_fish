@@ -1,0 +1,7 @@
+function lunchy
+	if command -s ccat > /dev/null
+        command lunchy $argv | ccat
+    else
+        command lunchy $argv
+    end
+end

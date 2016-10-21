@@ -1,0 +1,10 @@
+source ~/.local/share/fish/generated_completions/launchctl.fish
+
+function __complete_launchctl
+    set -g __launchctl_completions (launchctl help | grep --color=never "Subcommands:" --after-context 100 | grep -v "Subcommands:" | string trim)
+    for line in $__launchctl_completions
+        echo -ns (string trim (string split " " $line)[1]) \t
+        echo (string trim (string split " " $line)[2..-1])
+    end
+end
+complete -xc launchctl -n "__fish_use_subcommand" -a '(__complete_launchctl)'

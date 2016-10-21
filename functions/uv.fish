@@ -1,0 +1,3 @@
+function uv
+	updatevim
+end

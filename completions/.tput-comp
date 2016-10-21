@@ -1,0 +1,35 @@
+dl1	-	del Ln, better v el1_el or hmm
+ dl	-	del X Ln
+ el1	-	del to beginning of line
+ el	-	del to end of line
+ ed	-	Clear to end of display
+ hd	-	half Ln down
+ il	-	insert X Ln
+ ind	-	scroll text up
+ ri	-	scroll text down
+ rin	-	scroll back X Ln
+ indn	-	scroll forward X Ln
+ cuu	- up X Ln, worked or cuu1?
+ cud	- dowm X Ln
+ cuu1	- up 1
+ cud1	- down 1
+ civis	- hide cursor
+ cnorm	- shows cursor
+ vpa	- vert pos absolute
+ hpa	- horiz pos absolute
+ cup	- move to row, column
+ ll	- last Ln, first column
+ fsl	- return from stat Ln
+ rep	- repeat char X Y times
+ mc0	- print contents of screen
+ cuf	-	move right
+ cub	-	move left
+ bold	-	bold
+ blink	-	blink
+ csr	-	define scrolling region, exists or hmm
+ ssubm	-	subscript
+ ssupm	-	superscript
+ smcup	-	special alt scr mode
+ rmcup	-	return to normal scr
+ sc	-	saves cursor pos
+ rc	-	restore cursor pos

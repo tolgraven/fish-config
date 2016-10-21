@@ -1,0 +1,1 @@
+complete -xc __ -w ++

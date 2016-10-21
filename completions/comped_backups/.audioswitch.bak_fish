@@ -1,0 +1,7 @@
+complete -xc audioswitch -n "__fish_use_subcommand" -a "-a -c -t -n -s"
+complete -c audioswitch -s a -d "list devices"
+complete -c audioswitch -s c -d "show current"
+complete -c audioswitch -s t -d "set type" -a "input\n output\n system"
+complete -c audioswitch -s n -d "next device"
+complete -c audioswitch -s s -d "out" -a '(SwitchAudioSource -a | grep -v "(input)" | grep -v "Instant On" | string replace " (output)" "")' -f
+

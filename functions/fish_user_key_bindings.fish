@@ -1,0 +1,67 @@
+function fish_user_key_bindings
+	bind \ec __tol_copy_pipe # add pipe to pbcopy to end of cmdline
+    bind \eC __tol_copy_line # curr line as-is to system clipboard
+    bind \eI __tol_fish_indent # adds pipe to indent/color    
+    bind \cv __tol_clipboard_paste
+    bind \eV 'cliped; commandline -f repaint'
+    bind \eY 'killed; commandline -f repaint'
+    bind \ed __tol_dupl_line #"injected readline functions run after any commandline modifications" <-this is the...
+    bind \eo __tol_down_new_line #bind \eo down-line
+    bind \e8 __tol_insert_left_paran
+    bind \e9 __tol_insert_right_paran
+    bind \e7 backward-jump
+
+    bind \er repaint #force-repaint #difference?
+    bind \eR refish
+    bind \e0 'clear; commandline -f repaint' # clear scr
+    bind \ei 'commandline (commandline | fish_indent); commandline -f repaint' # indent and repaint
+    bind \et 'tolmenu tolmenu_get_actions eval'
+    bind \eD debug_commandline
+
+    bind -k sr '__tol_toggle_selecting; set -q __tol_fish_selecting; or begin; commandline -f backward-char; commandline -f forward-char; end' # arrow up 
+    bind -k sf swap-selection-start-stop # arrow down
+    bind -k shome '__tol_toggle_selecting on; commandline -f beginning-of-line'
+    bind -k send '__tol_toggle_selecting on; commandline -f end-of-line'
+    bind -k sleft '__tol_toggle_selecting on; commandline -f backward-bigword'
+    bind -k sright '__tol_toggle_selecting on; commandline -f forward-bigword'
+    bind \ck 'if set -q __tol_fish_selecting; commandline -f kill-selection; __tol_toggle_selecting off; else; commandline -f kill-line; end'
+    bind \ea beginning-of-buffer
+    bind \ee end-of-buffer
+    bind \ew backward-kill-word
+    bind \ek kill-word
+    bind \ef forward-word
+
+    bind \ea\ek 'commandline -r ""; commandline -f repaint' #erase all lines in buffer
+    #bind \es\ec __tol_set_anchor_pos; bind \er\ec __tol_restore_anchor_pos #bind \eQUE 'temp LINE-NUM func; wait for input sequence jump to char
+    bind \eM 'set -g __tol_mark_pos (commandline --cursor)'
+    bind \en 'set -q __tol_mark_pos; and commandline --cursor $__tol_mark_pos'
+    bind \ef __tol_desc_token #basic desc only for files, F for proper cat etc
+    bind \eF __tol_cat_token
+    bind \eg __tol_edit_token
+    bind \eG '__tol_edit_token force'
+
+    bind \eJ __tol_eval_job_and_sneak_peek
+    bind \ee\et 'commandline -t (eval (commandline -t))' # eval curr token
+    bind \ee\eb 'commandline (eval (commandline))' # eval curr cmdline
+    bind \ee\et 'set -l cmdline (commandline); set -l cmdpos (commandline -C); commandline $cmdline; commandline -C $cmdpos' #run entire, reinsert
+    bind \ee\ev 'commandline -t (vared (commandline -t))'
+    bind \em transpose-words
+    bind \e- __tol_toggle_comment_commandline #needs to learn whitespace 
+    #IDEA: eval curr code without leaving pos within it (inc failing) + divert all error msgs, either other part same term or prob tmux/fzf or dump to file tail in pane, then instead of error msgs about variables, just highlight
+    bind \e\' __tol_move_dir_up
+    bind \e. __tol_rerun_last_command
+    bind \e: history-token-search-backward
+    bind \e+ history-token-search-backward
+    bind \e, history-search-backward
+    bind \e\; history-search-forward
+    bind \eJ history-search-forward
+    bind \eK history-search-backward
+
+    bind \cr __tol_fzf_ctrl_r #tol version ctrl-r
+    bind ! __history_previous_command ### bang-bang ### 
+    bind '$' __history_previous_command_arguments
+    bind \ct '__fzf_ctrl_t' ### fzf ### 
+    bind \cx '__fzf_ctrl_x'
+    bind \ec '__fzf_alt_c'
+    #bind \e\[1\;5B end-of-buffer
+end

@@ -1,0 +1,3 @@
+function rsync
+	command rsync --human-readable --progress --recursive --times --perms --compress --links $argv
+end

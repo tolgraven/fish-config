@@ -1,0 +1,20 @@
+
+set -q fish_path; or set -U fish_path ~/.config/fish/fisherman
+set fisher_config ~/.config/fisherman
+
+if not contains $fish_function_path $fish_path/functions
+  set fish_function_path[1] $fish_path/functions
+  set fish_function_path ~/.config/fish/functions $fish_function_path
+end
+if not contains $fish_complete_path $fish_path/completions
+  set fish_complete_path[1] $fish_path/completions
+  set fish_complete_path ~/.config/fish/completions $fish_complete_path
+end
+for file in $fish_path/conf.d/*.fish
+source $file
+end
+
+set -q iterm_integration_off
+or test -e {$HOME}/.iterm2_shell_integration.fish; and source {$HOME}/.iterm2_shell_integration.fish
+
+#testy

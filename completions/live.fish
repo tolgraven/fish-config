@@ -1,0 +1,1 @@
+complete -c live -a "(ls /Applications/Ableton)" -f

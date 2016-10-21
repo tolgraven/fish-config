@@ -1,0 +1,24 @@
+#source /usr/local/Cellar/fish/HEAD/share/fish/completions/brew.fish
+source /usr/local/Cellar/fish/HEAD-ccd62ff/share/fish/completions/brew.fish
+
+function __fish_brew_formulae
+    set -l formuladir (brew --repository)/Library/Formula/
+    set -l formulas (ls $formuladir/*.rb | sed 's/.rb$//' | sed "s|^$formuladir||")
+
+    set -l search (commandline -t)
+    set -l results (echo -s -n $formulas\n | string match "$search*") #grep $search)
+    test (count $results) -lt 30
+    and begin
+
+        set output (brew desc $results)
+        for line in $output
+            set split (string split ":" $line)
+            echo -s $split[1] \t $split[2]
+        end
+    end
+    or echo -s -n $formulas\n
+    #ls $formuladir/*.rb | sed 's/.rb$//' | sed "s|^$formuladir||"
+end
+
+# install
+complete -c brew -n '__fish_brew_using_command install' -a '(__fish_brew_formulae)' -f
