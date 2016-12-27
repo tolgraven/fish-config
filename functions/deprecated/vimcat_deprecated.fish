@@ -1,5 +1,6 @@
-function vimcat
-	not test -z "$argv[1]"
+function vimcat_deprecated
+	#see issue https://github.com/fish-shell/fish-shell/issues/1396
+    not test -z "$argv[1]"
     and switch $argv[1]
         case '-c' '--cmd' '-u'
             debug "c switch"

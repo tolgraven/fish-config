@@ -1,3 +1,3 @@
 function zero
-	itermprofileswitch "sshwhenup zero.local pi" pajzero
+	itermprofileswitch "sshwhenup zero pi" pajzero $argv
 end

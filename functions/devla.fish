@@ -58,14 +58,12 @@ function devla --description 'List contents of directory, including hidden files
     and test (count $items) -eq (count $output)
     and for i in (seq 1 (count $items)) #below needs to strip colors from the item its checking, then np
         set output[$i] (string replace -- "$items[$i]" ( __tols_addicon "$dirname" "$items[$i]")"$items[$i]" "$output[$i]") #could actually run this earlier, so just one call/replace per filetype... then eval.
-        #echo (string replace $items[$i] (__tols_addicon $dirname $items[$i] $output[$i])$items[$i] $output[$i])
+
         set output[$i] (__tols_labelline "$dirname" "$items[$i]" "$output[$i]") #reformat to addlabel like above i guess bc gonna needa eval... or refactor again so get label as var in loop here so can pass it to both...
-        #echo -s $output[$i] #breakpoint #only helps w accessing vars.
-        #__tols_addicon #__tols_labelline
     end
     debug "Done getting labels and icons"
-    set output (string replace --all -- '.' (set_color black)'.'(set_color brblue) $output) # should add per filetype, same scheme as the labels... also should prob be done per line and from the left only changing the first last part. and/or again before symlink part if symlink.
-    set output (string replace -- '->' "  $emojis_nonshitty[6]" $output) #(set_color -o normal)'-'(set_color -o red)'>'(set_color grey) $output) # symlinks
+    set output (string replace --all -- '.' (set_color black)'.'(set_color brblue) $output) # should add per filetype, like w labels. also should prob be done per line and from the left only changing first last part. and/or again before symlink part
+    set output (string replace -- '->' \ \ \t"$emojis_nonshitty[6]" $output)
     set output (string replace -r -- '(20\d\d+)' (set_color black)'\$1'(set_color normal) $output) # years ie old get dimmed
 
     echo -n -s $output\n

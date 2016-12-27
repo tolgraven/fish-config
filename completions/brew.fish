@@ -10,18 +10,27 @@ function __fish_brew_formulae
     or set -g __fish_brew_formulas (brew search)
 
     set -l search (commandline -t)
-    test $search = "install"
-    and set search ""
+    #    test $search = "install"
+    #    string match -q -r -- 'install|search' $search
+    #    test -z "$search"
+    #    and set search ""
     set -l results (echo -sn $__fish_brew_formulas\n | string match -- "$search*")
-    test (count $results) -lt 40
-    and begin
+    if test (count $results) -lt 50
+        and not test -z "$results"
+        set installed (brew list)
         for line in (brew desc $results)
             set split (string split --max 1 -- ":" $line)
-            echo -s $split[1] \t $split[2]
+            #            brew info $split[1] | not string match -q -- "Not installed"
+            string match -q -- $split[1] $installed
+            and set -l tick 📗  #👌 #' ✔'
+            or set tick
+            echo -s $split[1] \t $split[2] $tick
         end
+    else
+        echo -sn $__fish_brew_formulas\n
     end
-    or echo -sn $__fish_brew_formulas\n
 end
 
 # install
 complete -c brew -n '__fish_brew_using_command install' -a '(__fish_brew_formulae)' -f
+complete -c brew -n '__fish_brew_using_command search' -a '(__fish_brew_formulae)' -f

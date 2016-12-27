@@ -5,8 +5,8 @@ function la --description 'List contents of directory, including hidden files in
         ls -lAhG $argv | for filter in $filters
             grep --color=always -v $filter
         end
-        return 0
-    end #TODO: size useless f dirs, count ditto f non-dirs, share column. MORE: special listing for /Volumes w drive icos and /Icon support, plus show capacity/used from df!!
+        return
+    end #TODO: size useless f dirs/count f nondirs so share col. +for /Volumes w drive icos /Icon support, plus size/used
     set dirname (pwd)
     or return $status
 
@@ -39,7 +39,7 @@ function la --description 'List contents of directory, including hidden files in
     set output (string replace -r -- "staff|admin|wheel|_unknown|501|502|503" "" $output) # groups, need better way
     set output (string replace -- '@' (set_color black)'@'(set_color normal) $output) # xattr
     set output (string replace -r -- '(20\d\d+)' (set_color black)'\$1'(set_color normal) $output) # years ie old get dimmed
-    set output (string replace --all -- '.' (set_color black)'.'(set_color brblue) $output) # should add per filetype, same scheme as labels... also should prob be done per line and from left only changing the first-last part. and again before symlink
+    set output (string replace --all -- '.' (set_color black)'.'(set_color brblue) $output) #fix per filetype, same scheme as labels... also should prob be done per line from left only changing the first-last part. +again pre-symlink
     switch $dirname
         case "*/Applications*"
             set output (string replace -- "/usr/local/Caskroom" (set_color black)"Cask"(set_color normal) $output)

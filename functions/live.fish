@@ -12,18 +12,19 @@ function live
     else
         for app in $appsforliverenice
             if pgrep $app >/dev/null
-                sudo -n renice -15 -p (pgrep $app)
+                sudo -n renice -18 -p (pgrep $app)
                 and echo (tint: red "aint nice   ") (tint: purple $app)
             end
         end
         for off in $appsforlivefuckoff
             if pgrep $off >/dev/null
-                sudo -n renice 7 -p (pgrep $off)
+                sudo -n renice 9 -p (pgrep $off)
                 #cpulimit $off 20
                 and echo (tint: green "  is nice   ") (tint: purple $off)
             end
         end
     end
+
     pkill Activity
 
     #await -

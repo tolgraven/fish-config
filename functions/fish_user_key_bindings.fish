@@ -58,10 +58,8 @@ function fish_user_key_bindings
     bind \eK history-search-backward
 
     bind \cr __tol_fzf_ctrl_r #tol version ctrl-r
+    fzf_key_bindings
     bind ! __history_previous_command ### bang-bang ### 
     bind '$' __history_previous_command_arguments
-    bind \ct '__fzf_ctrl_t' ### fzf ### 
-    bind \cx '__fzf_ctrl_x'
-    bind \ec '__fzf_alt_c'
     #bind \e\[1\;5B end-of-buffer
 end

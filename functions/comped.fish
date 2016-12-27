@@ -21,10 +21,10 @@ function comped --description 'Edit completions inline, based on funced'
         end
         set -e argv[1]
     end
-    if test (count $completename) -ne 1
-        echo "completed: You must specify something to complete"
-        return 1
-    end
+    test (count $completename) -ne 1
+    and echo "completed: You must specify something to complete"
+    and return 1 #bail
+
     set init
     set existingcompletions
     for i in (seq 1 (count $fish_complete_path))
@@ -33,7 +33,7 @@ function comped --description 'Edit completions inline, based on funced'
     end
     set -l IFS # Shadow IFS here to avoid array splitting in command substitution
     if type -q $completename
-        test -z $existingcompletions[1]
+        test -z "$existingcompletions[1]"
         and set init "complete -c $completename"
         or begin
             set init (command cat $existingcompletions[1] | fish_indent) # --no-indent) #messes up functions if no indent..
@@ -50,7 +50,8 @@ or youre probably fucking up as we speak), but saves to user dir, wont overwrite
     if read --prompt "$prompt" --right-prompt "$right_prompt" --command "$init" --shell --mode-name "comped" result
         set -l IFS # Shadow IFS _again_ to avoid array splitting in command substitution
         eval (echo -n $result | fish_indent)
-        or echo \n (set_color red) "UR SHIT\'s NOT PARSING!!!" \n (tput smso) "COMPLETION MAY BE BORKEN"
+        or echo \n (set_color red) "UR SHIT\'s NOT PARSING!!!" \n (tput smso) "COMPLETION MAY BE BORKEN" (tput rmso)
+
     end #end; tol_reload_key_bindings 
 
     if test "$init" = "$result"
@@ -60,8 +61,8 @@ or youre probably fucking up as we speak), but saves to user dir, wont overwrite
     set configdir ~/.config/fish
     set -q XDG_CONFIG_HOME
     and set configdir "$XDG_CONFIG_HOME/fish"
-    if test (count $existingcompletions) -ge 1
-        and test -e $existingcompletions[1]
+    if test (count $existingcompletions) -ge 1 -a -e $existingcompletions[1]
+        #and test -e $existingcompletions[1]
 
         set maincomp $existingcompletions[1]
         if string match -q "*$XDG_CONFIG_HOME*" "$maincomp" #if in home dir

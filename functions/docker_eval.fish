@@ -1,4 +1,4 @@
-function docker_eval --on-event DOCKER_MACHINE_UP --on-variable docker_started
+function docker_eval
 	set -q docker_started
     and if test $docker_started = "true"
         eval (docker-machine env default)

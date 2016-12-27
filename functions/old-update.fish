@@ -4,7 +4,8 @@ function old-update
     echo
     brew upgrade
     echo
-    brew cask update
+    #brew cask update
+    brew cask install iterm2-nightly --force
     echo
     brew cleanup
     echo
@@ -21,7 +22,7 @@ function old-update
     tldr --update
     fish_update_completions
     echo
-    softwareupdate -ia
+    softwareupdate -ia &
     echo
     type -q mas
     and mas upgrade

@@ -4,6 +4,6 @@ function docker_startit
     set -q docker_started
     and set -e docker_started
     set -U docker_started true
-    #docker_eval
+    docker_eval
     #eval (docker-machine env default)
 end

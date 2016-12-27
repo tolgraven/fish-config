@@ -1,8 +1,17 @@
 function vim
-	if type -q nvim
-        command nvim $argv
-        #itermprofileswitch "command nvim" vim $argv
+	if status --is-interactive
+        if type -q nvim
+            #command nvim $argv
+            switch (profile)
+                case 'vim*'
+                    command nvim $argv
+                case '*'
+                    itermprofileswitch "command nvim" vim $argv
+            end
+        else
+            itermprofileswitch "command vim" vim $argv
+        end
     else
-        itermprofileswitch "command vim" vim $argv
+        command vim $argv
     end
 end

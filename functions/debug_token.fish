@@ -1,5 +1,7 @@
-function debug_token
-	set -l token (commandline -t)
+function debug_token --description 'debug token under cursor, or passed as arg' --argument token
+	test -z "$token"
+    and set -l token (commandline -t)
+
     if not contains -- $token $fish_debug
         set -g fish_debug $token $fish_debug
         debug "added token %s. current contents of fish_debug: %s" $token $fish_debug

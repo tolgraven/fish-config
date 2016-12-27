@@ -1,17 +1,22 @@
 function lnav
-	if test -z $argv
-        and psc tmux >/dev/null
-        if tmux has -t lnav ^&-
-            debug "attached to tmux"
-            itermprofileswitch "tmux attach -t lnav ^&-" standard $argv
-        else
-            debug "creating new tmux lnav session.."
-            itermprofileswitch "tmux new -s lnav fish -c 'command lnav'" lnav $argv
-        end
+	if test -z "$argv"
+        ##and psc tmux >/dev/null
+        #if tmux has -t lnav ^&-
+        #debug "attaching to tmux"
+        #itermprofileswitch "tmux attach -t lnav ^&-" standard
+        #else
+        #debug "creating new tmux lnav session.."
+        #itermprofileswitch "tmux new -s lnav fish -c 'command lnav'" lnav
+        #end
+
+        #itermprofileswitch "tmux new -A -s 'lnav' -d fish -c 'command lnav'"  # -A = attach if already exists
+        profile lnav
+        itermprofileswitch "tmux new -A -s 'lnav'" lnav "-d fish -c 'profile lnav; command lnav -r'"
+        and tmux set -t "lnav" mouse off
+        and tmux attach -t lnav
+        profile reset
     else
         debug "vanilla lnav.."
         command lnav $argv
     end
-    #itermprofileswitch "byobu attach -t lnav ^&-" standard $argv
-    #or itermprofileswitch "byobu new -s lnav fish -c 'command lnav -r'" lnav $argv
 end

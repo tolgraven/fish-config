@@ -1,8 +1,9 @@
 function away
-	pauseall
-    sleep 1
-    #displayoff
-    ssh paj "tdtool --off screen"
-    pmset displaysleepnow
-    #tdtool lala turn off speakers et al. or well send cmd w ssh or mqtt
+	pmset displaysleepnow
+    pauseall
+    t speakers off
+    milight 7
+    t screen off
+    spotify pause
+    #fish -c 'cpulimit iTerm2 5' &
 end

@@ -1,14 +1,13 @@
 function files --description 'List (total) folder/file sizes, top level only' --argument adir
-	set -l directory .
+	set -l directory "."
 
-    test -z $adir
+    test -z "$adir"
     and echo -s (tint: red (du -shx)) (tint: blue (pwd)/)
     or if test -d $adir
         set directory (dirname $adir) #(test (string sub -s -1 $adir) = /; 
         #          and string sub -l (math (string length $adir) -1) $adir; 
         #         or echo $adir) #remove trailing slash if present
-        pushd (pwd)
-        cd $directory
+        pushd $directory
         echo -s (tint: red (du -shx (pwd)))
         popd
     end

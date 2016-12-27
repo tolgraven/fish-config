@@ -1,6 +1,6 @@
 function __tol_func_completion
     set -l token (commandline -t)
-    if test -z $token
+    if test -z "$token"
         functions -a
         and return 0
     end
