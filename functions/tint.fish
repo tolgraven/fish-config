@@ -3,7 +3,8 @@ function tint --description 'highlight word/phrase in text using color' --argume
     #test -z "$restorecolor"
     #and set restorecolor normal
     while read line
-        string replace --all -- "$thing" (set_color $color)"$thing"(set_color normal) #(not test -z "$restoredcolor"; and echo $restoredcolor; or echo "normal"))
+        string replace --all -- "$thing" (set_color (string split -- ' ' $color))"$thing" (set_color (not test -z "$restoredcolor"; and echo $restoredcolor; or echo "normal"))
+        #(set_color normal) $line 
     end
     #(test (count $argv) -gt 3; and echo -ns $argv[4..-1]\n)
 end

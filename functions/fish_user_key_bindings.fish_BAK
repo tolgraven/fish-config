@@ -37,7 +37,7 @@ function fish_user_key_bindings
     bind \en 'set -q __tol_mark_pos; and commandline --cursor $__tol_mark_pos'
     bind \ef __tol_desc_token #basic desc only for files, F for proper cat etc
     bind \eF __tol_cat_token
-    bind \eg __tol_edit_token #test whee
+    bind \eg __tol_edit_token
     bind \eG '__tol_edit_token force'
 
     bind \eJ __tol_eval_job_and_sneak_peek
@@ -61,5 +61,4 @@ function fish_user_key_bindings
     fzf_key_bindings
     bind ! __history_previous_command ### bang-bang ### 
     bind '$' __history_previous_command_arguments
-    bind \eM __fish_go-back
 end

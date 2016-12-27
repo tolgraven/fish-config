@@ -3,33 +3,41 @@ function binded --description 'add keybind interactively'
     echo (set_color brgreen)"Press keys - unused adds new binding - existing gets edited (ctrl-c doesnt work, )"
 
     fish_key_reader ^&- | read -l sample_bind
-    #first is always best (-k instead of massive escape seq)
-    set -l newkey (string escape -- (string split -- " " $sample_bind)[2])
+    set -l newkey (string escape -- (string split -- " " $sample_bind)[2]) #first is best (-k instead of escape seq)
+    #newkey has passed through string escape so dont need to do that again when using it later
+    debug "newkey: %s" $newkey
+    set -l bindcmd
+    set -l index
 
-    set -l binds (cat $bindings_file)
-    if set -l current (ack -- $newkey $bindings_file) #(string match -r -- "$newkey" $binds)
-        set index (command cat -n $bindings_file | ack $newkey | string split " ")[1]
+    set -l binds (cat "$bindings_file")
+    #if set -l current (ack -- $newkey "$bindings_file") 
+    if set -l current (string match -r -- "$newkey" $binds)
+        debug "found existing user binding %s" $current
+        set index (command grep -n $newkey "$bindings_file" | string split ':')[1]
         #(string split " " (string match -r --index -- "$current*" "$binds"))[1]
-        and set full_line $binds[$index]
-        debug "current match %s  at index %s" $current $index
-
-        set bindcmd $full_line #(not test -z $current; and echo $full_line)
-    else if set -l current (functions fish_default_key_bindings | ack -- $newkey)
+        test (count $index) -eq 1
+        and isint $index
+        and set bindcmd $binds[$index]
+        #or set bindcmd $binds[$index[1]]
+    else if set -l current (string match -r -- "$newkey" (functions fish_default_key_bindings | string replace '$argv' '')) #(functions fish_default_key_bindings | string replace '$argv ' '' | ack -- $newkey)
+        debug "found existing default binding %s" $current
         set bindcmd $current
     end
-    test -z $bindcmd
+    debug "bindcmd: %s   numbinds: %s   index: %s" $bindcmd (count $binds) $index
+    test -z "$bindcmd"
     and set bindcmd (echo $sample_bind | string replace -- "'do something'" '')
 
     set -l rightprompt (__tol_make_ed_right_prompt "binded" brpurple (string escape "$newkey") brred)
-    read --prompt '' --right-prompt "$rightprompt" --command $bindcmd --shell newbind
+    read --prompt '' --right-prompt "$rightprompt" --command "$bindcmd" --shell newbind
 
-    if not test -z $index
+    if not test -z "$index"
         set binds[$index] $newbind
-    else
+    else #add at end of file
         set binds[-1] $newbind
         set binds $binds end
     end
-    echo -ns $binds\n >>"$bindings_file"
+    cp "$bindings_file" "$bindings_file".BAK
+    echo -ns $binds\n >"$bindings_file"
     and source "$bindings_file"
     and fish_user_key_bindings
 end
