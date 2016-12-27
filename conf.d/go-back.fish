@@ -6,6 +6,7 @@ function go-back --description "Prints the visited directories"
         else
             cd (printf "%s\n" $argv[1] | sed -r 's/^[0-9]+://')
         end
+				tput cuu1 
         return
     end
 
@@ -20,10 +21,7 @@ function go-back --description "Prints the visited directories"
         end
     end
 end
-
-
 complete -c go-back -x -a "(go-back)"
-
 
 function __fish_go-back
     if commandline --search-mode
@@ -48,10 +46,9 @@ function __fish_go-back
         return
     end
 
-    printf "<directory history is empty>"
-    printf "\n%.0s" (fish_prompt)
-    commandline -f repaint
+    # printf "<directory history is empty>"
+    # printf "\n%.0s" (fish_prompt)
+    # commandline -f repaint
 end
-
 
 # bind \eh '__fish_go-back'

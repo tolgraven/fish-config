@@ -61,5 +61,5 @@ function fish_user_key_bindings
     fzf_key_bindings
     bind ! __history_previous_command ### bang-bang ### 
     bind '$' __history_previous_command_arguments
-    bind \eM __fish_go-back
+    bind \ep __fish_go-back
 end
