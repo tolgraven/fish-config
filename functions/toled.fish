@@ -1,12 +1,12 @@
-function toled --description 'Inline text editor built on fish funced' --argument file option
+function toled --description 'Inline text editor built on fish read' --argument file option
 	set -l filename
     set -l opt
     set -l new false
     while set -q file
         switch $file
-            case '-n' '--no-cat' '-B' '--no-backup'
+            case '-n' '--no-cat' '-B' '--no-backup' '--no-indent' '-*indent*' #don't cat orig state to cmdline before opening editor
                 set opt $file
-                set file $option #don't cat orig state to cmdline before opening editor
+                set file $option
             case '-*'
                 return 1
             case '*' '.*'
@@ -26,11 +26,6 @@ function toled --description 'Inline text editor built on fish funced' --argumen
                 set -e file
         end
     end
-    #function early_exit --on-job-exit %self --inherit-variable filename
-    #functions -e early_exit
-    #debug "toled exit handler running"
-    #tol_reload_key_bindings
-    #end
     if test (count $filename) -ne 1 #fallback test
         tint: red "Someone fucked up"
         return 1
@@ -55,6 +50,7 @@ function toled --description 'Inline text editor built on fish funced' --argumen
         set init (echo $text)
     end
     tol_reload_key_bindings
+
     if not test $toled_exit = "save"
         echo "Editing aborted."
         test $new = "true"
@@ -65,14 +61,16 @@ function toled --description 'Inline text editor built on fish funced' --argumen
     end
 
     tint: blue "INNA TMPFILE," (tint: green "backing up and replacing") (tint: brred (bold: $filename))
-    gcp --parents $filename ~/.cache/toled/backups(realpath $filename)
-    or cp $filename {$filename}_BAK #(dirname $filename)/.(basename $filename)_BAK
+    set -l backup_folder (dirname ~/.cache/toled/backups(realpath $filename))
+    mkdir -p $backup_folder
+    and cp $filename $backup_folder/$filename
+    or cp $filename {$filename}_BAK
 
     set -l output (echo -s -n $init\n | perl -pe 's/\e\[?.*?[\@-~]//g') # strip ansi color codes
     set -l prefix (string sub -l 6 -- $output[1])
     test "$prefix" = "echo '"
-    or echoerr "broken, prefix: " $prefix
-    if test (count $output) -gt 2 #BELOW REMOVING THE WRAPPER ADDED BY C-s binding in toled_bind_mode
+    or debug "broken, prefix: " $prefix
+    if test (count $output) -gt 2 #BELOW REMOVES THE WRAPPER ADDED BY C-s binding in toled_bind_mode
         echo -n -s (string sub -s 7 $output[1])\n $output[2..-2]\n (string trim -r -c \' $output[-1]) >"$filename"
     else if test (count $output) -gt 1
         echo -n -s (string sub -s 7 $output[1])\n (string trim -r -c \' $output[-1]) >"$filename"

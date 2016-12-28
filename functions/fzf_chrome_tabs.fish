@@ -1,5 +1,6 @@
 function fzf_chrome_tabs
-	#bash ~/.config/fish/functions/fzf-chrome-cli.bash $argv
+    #bash ~/.config/fish/functions/fzf-chrome-cli.bash $argv
+    #set -l browser_name "Google Chrome"
     set -l browser_name "Google Chrome"
     set -l browser_cli "chrome-cli"
     if not type -q $browser_cli
@@ -8,9 +9,11 @@ function fzf_chrome_tabs
     end
 
     #eval $browser_cli 
-    chrome-cli list tabs | fzf -1 --prompt="Tab name> " | grep -Eo '^.\d+.' | grep -Eo '\d+' #| read --array tab_ids
+    chrome-cli list tabs | string replace --all \' '' | highlight | fzf -1 --prompt="Tab name> " | string match -r '^.\d+.' | string match -r '\d+' | read --array tab_ids
+    #| command grep -Eo '^.\d+.' | command grep -Eo '\d+' #| read --array tab_ids
     echo $tab_ids
 
     #activate window
-    osascript -e "tell application '$browser_name' to activate"
+    chrome-cli activate -t $tab_ids
+    osascript -e "tell application \"$browser_name\" to activate"
 end

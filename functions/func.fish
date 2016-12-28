@@ -1,16 +1,10 @@
 function func --description 'edit and save function' --argument function force
-	contains $function $__tol_func_editing
+    contains $function $__tol_func_editing
     and test -z "$force"
     and functions -q $function
     and echoerr "Already editing $function somewhere" #ideally would tell where, and/or what differs, hehe
     and return 1
-    #function __exit --on-job-exit %self --on-signal SIGINT
-    #functions -e __exit #debug "cleaning up %s" $function
-    #while set -l index (contains -i $function $__tol_func_editing)
-    #set -e __tol_func_editing[$index]
-    #end
-    #tol_reload_key_bindings 
-    #end
+
     debug "editing function %s" $function
     set -l orig (mktemp)
     set -l new (mktemp)
@@ -20,8 +14,13 @@ function func --description 'edit and save function' --argument function force
     bind --erase "\$"
     set -U __tol_func_editing $__tol_func_editing $function
     set -U __tol_func_pid $__tol_func_pid %self
-    tolfunc $function ### the actual editing part ###
-    and functions $function >$new
+    # tolfunc $function #the actual editing part
+    # and functions $function >$new
+
+    # set -l newdef (tolfunc $function)
+    # and echo -ns $newdef\n >$new
+		tolfunc $function > $new
+
     while set -l index (contains -i $function $__tol_func_editing) #clears all instances for good measure, since we only got here if forced
         set -e __tol_func_editing[$index]
         set -e __tol_func_pid[$index]
@@ -30,22 +29,22 @@ function func --description 'edit and save function' --argument function force
 
     set -l longest (count (command cat $orig))
     test (count (command cat $new)) -gt $longest
-    and set longest (count (command cat $new)) #debug "rows: %s" $longest #echo "would you like to save?"
+    and set longest (count (command cat $new))
     if test -s "$orig" # -s = file non-zero, so existing function
-        and not test -z (diff --ignore-space-change -q $orig $new ^&-) #differs from orig (q = output if diffs, not quiet)
+        and not test -z (diff --ignore-space-change -q $orig $new ^&-) # q = output if diffs, not quiet
 
-        if test "$force" = "quiet"
-            #echo -n $function
-            funcsave $function
-        end #move_back_and_kill_lines $longest 0.5 #stop this part if curr func wasnt called from base level
         echo -s (set_color brgreen) "saving edited function" (set_color normal)
-        funcsave $function
+        # funcsave $function
+        cp $new ~/.config/fish/functions/$function.fish
+        and source ~/.config/fish/functions/$function.fish
         #set -l diff (colordiff --minimal --ignore-case --ignore-all-space $orig $new | ack -v -- "---")
-        #echo -n -s $diff\n; sleep 0.2; move_back_lines (count $diff); commandline -f repaint; echo | grep -Fxv (echo $new) # echo | sd $new #sd diff f stdin-out 'comm also works.but color
+        #echo -n -s $diff\n; sleep 0.2; move_back_lines (count $diff); commandline -f repaint; echo | grep -Fxv (echo $new) # echo | sd $new
     else if not test -s $orig #if orig is zero
-        and test (count (command cat $new | grep -v function | grep -v end | string trim)) -gt 0 #and shit aint empty
+        and test (count (command cat $new | strip_empty_lines | grep -v function | grep -v end | string trim)) -gt 0 #and shit aint empty
         echo "Saving new function" $function
-        funcsave $function
+        # funcsave $function	
+        cp $new ~/.config/fish/functions/$function.fish
+        and source ~/.config/fish/functions/$function.fish
     else #no change, supposedly. but somehow gets here when doing funcmv gah
         move_back_and_kill_lines $longest 1.5 #count $orig
         echo -n -s (set_color red) "   no change detected, not saving" (set_color normal) "."
@@ -53,9 +52,9 @@ function func --description 'edit and save function' --argument function force
         echo -n -s "."
         sleep 0.1
         echo -n -s "."
-        sleep 0.3 #commandline -f repaint
+        sleep 0.3
         if not test -s $orig
             functions -e $function
         end
-    end #functions -e exit_handler
+    end
 end

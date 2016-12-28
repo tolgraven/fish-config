@@ -8,7 +8,7 @@ function tol_reload_key_bindings --description 'Reload key bindings when binding
         eval $fish_key_bindings ^/dev/null
     end
     # Load user key bindings if they are defined
-    if functions --query fish_user_key_bindings >/dev/null
+    if type -q fish_user_key_bindings #functions --query fish_user_key_bindings >/dev/null
         fish_user_key_bindings
     end
 end

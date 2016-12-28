@@ -1,3 +1,5 @@
 function chrome-cli
-	command chrome-cli $argv | ccze -A #cat #| ccat
+    isatty 1
+    and command chrome-cli $argv | highlight #ccze -A #cat #| ccat
+    or command chrome-cli $argv
 end

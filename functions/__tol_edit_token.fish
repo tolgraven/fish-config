@@ -1,6 +1,6 @@
 function __tol_edit_token --description 'edit contents of current token interactively, funced, vared, etc' --argument force
 	set -l token (commandline -t)
-    test -z $token
+    test -z "$token"
     and return 1
     set -l cmdpos (commandline -C)
     set -l cmdline (commandline)
@@ -33,13 +33,13 @@ function __tol_edit_token --description 'edit contents of current token interact
     if not test -z $isarray
         set -l IFS #shadow before setting init so get sep lines in read later <- hmm ok but isnt it opposite?
         set init (echo -n $$token\n | fish_indent)
-        set -l prompt "" #"printf '%s %s%s%s>\n ' 'Editing array' (set_color green) $token (set_color normal)"
+        set -l prompt ""
         set -l clocky (fish_right_prompt)
         set -l right_prompt 'printf "%s%s%s %s %s%s%s "   (tput smso)(set_color brred) "tolarred" (set_color normal) "editing" \
 (set_color brgreen)(tput smso) "$token" (set_color normal) (tput smso)(string sub --start=-6 $clocky)(set_color normal)'
 
         set -e IFS #unshadow _before_ do read or splits every char
-        read --prompt "$prompt" --right-prompt $right_prompt --array --shell newarray --command "$init" #(echo -n -s $init\n)
+        read --prompt "$prompt" --right-prompt $right_prompt --array --shell newarray --command "$init"
         and set $token $newarray
 
         #echo $newarray >>~/.debug/__tol_edit_token-$token.log #commandline "arred $token "; and complete --do-complete

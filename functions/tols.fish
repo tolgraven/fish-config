@@ -1,4 +1,4 @@
-function tols
+function tols --description 'ls with icons'
 	set iconsize "16x16"
     set bitdepth 32
     set cachedir ~/.cache/tols/filetypes

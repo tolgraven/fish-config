@@ -1,9 +1,9 @@
 function vim
-	#if status --is-interactive
+    #if status --is-interactive
     if type -q nvim
         #command nvim $argv
         switch (profile)
-            case 'vim*'
+            case 'vim*' 'hotkey*'
                 debug "already vim profile %s, argv %s" (profile) $argv
                 command nvim $argv
             case '*'
