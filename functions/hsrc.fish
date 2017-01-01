@@ -1,3 +1,3 @@
 function hsrc
-	vim -S ~/.vim/sessions/hs.vim
+    itermprofileswitch 'vim -S ~/.vim/sessions/hs.vim' vim-hammerspoon $argv
 end

@@ -1,5 +1,5 @@
 function fish_user_key_bindings
-	bind \ec __tol_copy_pipe # add pipe to pbcopy to end of cmdline
+    bind \ec __tol_copy_pipe # add pipe to pbcopy to end of cmdline
     bind \eC __tol_copy_line # curr line as-is to system clipboard
     bind \eI __tol_fish_indent # adds pipe to indent/color    
     bind \cv __tol_clipboard_paste
@@ -32,7 +32,7 @@ function fish_user_key_bindings
     bind \ef forward-word
 
     bind \ea\ek 'commandline -r ""; commandline -f repaint' #erase all lines in buffer
-    #bind \es\ec __tol_set_anchor_pos; bind \er\ec __tol_restore_anchor_pos #bind \eQUE 'temp LINE-NUM func; wait for input sequence jump to char
+    bind \eq "ql (string escape -- (commandline --current-token))" #bind \es\ec __tol_set_anchor_pos; bind \er\ec __tol_restore_anchor_pos #bind \eQUE 'temp LINE-NUM func; wait for input sequence jump to char
     bind \eM 'set -g __tol_mark_pos (commandline --cursor)'
     bind \en 'set -q __tol_mark_pos; and commandline --cursor $__tol_mark_pos'
     bind \ef __tol_desc_token #basic desc only for files, F for proper cat etc
@@ -57,9 +57,12 @@ function fish_user_key_bindings
     bind \eJ history-search-forward
     bind \eK history-search-backward
 
-    bind \cr __tol_fzf_ctrl_r #tol version ctrl-r
     fzf_key_bindings
+    bind \cr __tol_fzf_ctrl_r #tol version ctrl-r
     bind ! __history_previous_command ### bang-bang ### 
     bind '$' __history_previous_command_arguments
     bind \ep __fish_go-back
+    bind \eT 'kill -TRAP %self'
+    bind \ej autojump_insert
+bind \ez fg
 end

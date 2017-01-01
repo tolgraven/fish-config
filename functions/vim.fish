@@ -15,4 +15,5 @@ function vim
     #else
     #command vim $argv
     #end
+    #cursor reset
 end

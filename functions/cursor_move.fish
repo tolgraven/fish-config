@@ -1,4 +1,4 @@
-function cursor --description 'move fish cursor' --argument pos
+function cursor_move --description 'move fish cursor' --argument pos
 	if test -z $argv
         commandline --cursor
     else if test $pos -ge 0

@@ -1,5 +1,5 @@
 function config
-	set -l config_path ~/.config/fish/conf.d/init_joen.config.fish
+    set -l config_path ~/.config/fish/conf.d/init_joen.config.fish
 
     if type -q vim
         vim $argv $config_path
@@ -9,5 +9,5 @@ function config
     else
         nano $argv $config_path
     end
-    and source $config_path
+    source $config_path
 end

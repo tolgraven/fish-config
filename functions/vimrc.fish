@@ -1,7 +1,7 @@
 function vimrc --description 'edit vimrc'
-	pushd (pwd)
+    pushd (pwd)
     cd ~/.vim
 
-    vim -S sessions/vimrcSession.vim
+    itermprofileswitch 'vim -S sessions/vimrcSession.vim' vim-vimrc $argv
     popd
 end
