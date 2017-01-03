@@ -1,5 +1,5 @@
 function deluge
-	test -z "$argv[1]"
+    test -z "$argv[1]"
     and set argv "info"
     set -l dir "/Applications/Deluge.app/Contents/MacOS"
     set -l deluge $dir/"deluge-console"
@@ -23,9 +23,9 @@ function deluge
             test (count $argv) -gt 1
             and deluge pause $argv[2..-1]
         case 'info' 'help'
-            set -l output (eval $deluge $argv | string trim | strip_empty_lines | grep -v "ID: " | string replace --all 'Name:' (set_color -o -b brwhite black)\t | strip_string 'State: ' 'Seeds: ' 'Size: ' 'Tracker status: ' 'Progress: ' ' Speed' ' time') #| ccze -A)
-            set output (echo -ns $output\n | string replace "Paused" (set_color -o -b brred black)"Paused " | string replace "Seeding Up:" (set_color -o -b green black)"Seeding " | string replace "Downloading Down:" (set_color -o -b bryellow black)"Downloading " | string replace "Speed:" (tput smso)"Speed"(tput rmso) | string replace 'Up:' \t\t'Up:' | string replace 'Peers:' \t\t'Peers:' | string replace 'Active:' \t\t'Active:' | string replace 'Ratio:' \t\t'Ratio:' | string replace 'Availability:' \t'Availability:' )
-            echo -ns $output\n | tint '#' brblue | tint 'Ratio' brpurple | tint 'Down:' bryellow | tint 'Up:' brgreen | tint 'GiB' green | tint 'MiB' red | tint 'KiB' brgrey | tint '/' brblue | tint '\[' blue | tint '\]' blue | tint '~' purple | tint 'Error:' red | tint '%' brpurple | tint 'Announce OK' brgreen | tint 'Peers:' brblue | tint 'Availability:' blue
+            set -l output (eval $deluge $argv | string trim | strip_empty_lines | grep -v "ID: " | string replace --all 'Name:' (set_color -o -b blue normal)\t | strip_string 'State: ' 'Seeds: ' 'Size: ' 'Tracker status: ' 'Progress: ' ' Speed' ' time') #| ccze -A)
+            set output (echo -ns $output\n | string replace "Paused" (set_color -o -b brred black)"Paused " | string replace "Seeding Up:" (set_color -o -b green black)"Seeding " | string replace "Downloading Down:" (set_color -o -b bryellow black)"Downloading " | string replace "Speed:" (tput smso)"Speed"(tput rmso) | string replace 'Up:' \t\t'Up:' | string replace 'Peers:' \t\t'Peers:' | string replace 'Active:' \t\t'Active:' | string replace 'Ratio:' \t\t'Ratio:' | string replace 'Availability:' \t'Avail:' | string replace 'Announce OK' \ \t\t'Announce OK' )
+            echo -ns $output\n | tint '#' brblue | tint 'Ratio' brpurple | tint 'Down:' bryellow | tint 'Up:' brgreen | tint 'GiB' green | tint 'MiB' red | tint 'KiB' brgrey | tint '/' brblue | tint '\[' blue | tint '\]' blue | tint '~' purple | tint 'Error:' red | tint '%' brpurple | tint 'Announce OK' brgreen | tint 'Peers:' brblue | tint 'Avail:' blue
         case 'help_complete'
             eval $deluge help
         case 'watch' 'w'

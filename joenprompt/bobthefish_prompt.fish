@@ -373,12 +373,13 @@ function __bobthefish_prompt_status -S -a last_status -d 'Display symbols for a 
   [ (jobs -l | wc -l) -gt 0 ]
     and set bg_jobs $__bobthefish_bg_job_glyph
 
-  if [ "$nonzero" -o "$superuser" -o "$bg_jobs" ]
-    __bobthefish_start_segment $__color_initial_segment_exit
+  # if [ "$nonzero" -o "$superuser" -o "$bg_jobs" ] #err for some reason if no space after symbol
+  if [ "$nonzero" ]; or [ "$superuser" ]; or [ "$bg_jobs" ]
+    # __bobthefish_start_segment $__color_initial_segment_exit
     if [ "$nonzero" ]
        set_color normal; set_color -b $__color_initial_segment_exit
       if [ "$theme_show_exit_status" = 'yes' ]
-      	echo -ns $last_status ' '
+      	echo -ns $last_status #' '
       else
       	echo -n $__bobthefish_nonzero_exit_glyph
       end
@@ -472,25 +473,6 @@ function __bobthefish_prompt_git -S -a current_dir -d 'Display the actual git st
     set flag_colors $__color_repo_staged
   end
 
-  __bobthefish_path_segment $current_dir
-
-  __bobthefish_start_segment $flag_colors
-  echo -ns (__bobthefish_git_branch) $flags ' '
-  set_color normal
-
-  if [ "$theme_git_worktree_support" != 'yes' ]
-    set -l project_pwd (__bobthefish_project_pwd $current_dir)
-    if [ "$project_pwd" ]
-      if [ -w "$PWD" ]
-        __bobthefish_start_segment $__color_path
-      else
-        __bobthefish_start_segment $__color_path_nowrite
-      end
-
-      echo -ns $project_pwd ' '
-    end
-    return
-  end
 
   set -l project_pwd (command git rev-parse --show-prefix ^/dev/null | sed -e 's#/$##')
   set -l work_dir (command git rev-parse --show-toplevel ^/dev/null)
@@ -504,7 +486,36 @@ function __bobthefish_prompt_git -S -a current_dir -d 'Display the actual git st
         set -e work_dir
     end
   end
+	
+	# if [ "$work_dir" ]
+		set -l levels (math (count (command git rev-parse --show-prefix ^/dev/null | string split '/')) - 1)
+		[ "$levels" -gt 0 ]
+		and for level in (seq 1 $levels)
+			echo -n '../'
+		end
+	# end
+	# return
+  # __bobthefish_path_segment $current_dir
 
+  __bobthefish_start_segment $flag_colors
+  echo -ns (__bobthefish_git_branch | string replace "master" "m") $flags #' '
+  set_color normal
+
+	return
+
+  if [ "$theme_git_worktree_support" != 'yes' ]
+    set -l project_pwd (__bobthefish_project_pwd $current_dir)
+    if [ "$project_pwd" ]
+      if [ -w "$PWD" ]
+        __bobthefish_start_segment $__color_path
+      else
+        __bobthefish_start_segment $__color_path_nowrite
+      end
+
+      echo -ns $project_pwd #' '
+    end
+    return
+  end
   if [ "$project_pwd" -o "$work_dir" ]
     set -l colors $__color_path
     if not [ -w "$PWD" ]
@@ -535,7 +546,7 @@ function __bobthefish_prompt_git -S -a current_dir -d 'Display the actual git st
         set colors $color_path_nowrite
       end
 
-      __bobthefish_start_segment $colors
+      # __bobthefish_start_segment $colors
 
       echo -ns $project_pwd ' '
     end
@@ -777,7 +788,7 @@ end
 # Apply theme
 # ===========================
 
-function fish_prompt -d 'bobthefish, a fish theme optimized for awesome'
+function bobthefish_prompt -d 'bobthefish, a fish theme optimized for awesome'
   # Save the last status for later (do this before the `set` calls below)
   set -l last_status $status
 
