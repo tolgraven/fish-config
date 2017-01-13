@@ -1,1 +1,0 @@
-complete -xc pip -a '(echo (pip)[6..16]\n | string trim --left | string replace -r "\s*\s*\s" "\t" )' #| echo (string split "  ")[1] )'

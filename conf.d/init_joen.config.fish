@@ -1,6 +1,12 @@
 set -q fish_escape_delay_ms; 			or set -U fish_escape_delay_ms 		100
 set -q fish_prompt_pwd_length; 		or set -U fish_prompt_pwd_length 	4
-contains $TERM_PROGRAM "iTerm.app"; and set fish_term24bit 					1
+if contains $TERM_PROGRAM "iTerm.app"
+	set -g fish_term24bit 						1
+	set -g theme_nerd_fonts 					yes 		#only enable nerdfonts on box, not mobile etc
+end
+set -g theme_color_scheme 					gruvbox #share these with bobthefish since reusing their entire git thing
+set -g theme_git_worktree_support 	yes
+set -g theme_show_exit_status 			yes
 
 set -q XDG_CONFIG_HOME;     or set -Ux XDG_CONFIG_HOME 		"$HOME/.config"
 set -q XDG_DATA_HOME;       or set -Ux XDG_DATA_HOME   		"$HOME/.local/share"

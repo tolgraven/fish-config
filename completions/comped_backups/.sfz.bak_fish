@@ -1,1 +1,0 @@
-complete -xc sfz -n "not __fish_use_subcommand" -a "(__fish_joen_complete_applications)" 

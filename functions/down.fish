@@ -1,3 +1,3 @@
 function down --description 'download url in clipboard to current folder'
-    wget (pbpaste) #\"(pbpaste)\"
+    wget -O (basename (pbpaste)) (pbpaste) #(string escape -- (pbpaste)) #\"(pbpaste)\"
 end

@@ -3,7 +3,7 @@ function colorpwd --description 'Transform fish prompt_pwd etc with label/tag co
     and type -q hfsdata #more auto more bettter
     or begin
         echo (prompt_pwd)
-        echoerr "brew install osxutils, or use other dircolors"
+        #echoerr "brew install osxutils, or use other dircolors"
         return 1
     end
 
@@ -45,6 +45,10 @@ function colorpwd --description 'Transform fish prompt_pwd etc with label/tag co
         and set pwd_full_split_each_proper_path[$j] (string split --right --max $i -- '/' $pwd_full)[1] #remember x splits means x+1 eventual parts, so is this right?
         set j (math "$j+1") # goes the opposite way. could subtract from count instead i guess?
     end
+		
+		set git_repo_dir (__bobthefish_git_project_dir)
+		and set git_repo_index (math (count (string split -- '/' $git_repo_dir)) - 1)
+		debug "git repo search result: index %s, dir %s" $git_repo_index $git_repo_dir
 
     set label_per_level
     set label_cmd_per_level
@@ -72,6 +76,7 @@ function colorpwd --description 'Transform fish prompt_pwd etc with label/tag co
             case 'Orange'
                 set label brred
         end
+				
         set label_per_level[$i] $label
         set label_cmd_per_level[$i] "(set_color $label_per_level[$i])"
     end
@@ -89,8 +94,18 @@ function colorpwd --description 'Transform fish prompt_pwd etc with label/tag co
             test $i -eq (count $pwd_short_split)
             and set postslash ""
 
-            set label_cmd_with_split_cmd[$i] (echo -n -s \
-			   $label_cmd_per_level[ (math $i + $offset) ]  $preslash "$pwd_short_split[$i]" $postslash)
+						set i_offset (math $i + $offset)
+						set -q git_repo_index
+						and test $i_offset -eq $git_repo_index
+						and set -l git_on "(tput smso)"
+						and set -l git_off "(tput rmso)"
+						and debug "found git repo at index %s, offset %s, dir %s" $i $offset $pwd_full_split_each_proper_path[$i]
+
+            set label_cmd_with_split_cmd[$i] (echo -ns \
+			   $label_cmd_per_level[$i_offset] $preslash $git_on "$pwd_short_split[$i]" $git_off $postslash)
+
+				 		set -e git_on #why does set -l persist across loops?
+						set -e git_off
         end
     else
         for i in (seq 1 (count $pwd_short_split) )

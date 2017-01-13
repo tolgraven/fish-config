@@ -1,5 +1,5 @@
 function sshwhenup --argument host user args
-	test -z "$host"
+    test -z "$host"
     and return 1
     set -l starttime (date +%s)
     set -l userat (not test -z "$user"; and echo -n $user@)
@@ -10,9 +10,9 @@ function sshwhenup --argument host user args
         echo #\n #\n
 
         if ping -q -c 1 $host ^&- >&-
-            ssh $args $userat$host #(not test -z "$user"; and echo -n $user@)$host #; and break
+            ssh $args $userat$host ^&-
         else if ping -q -c 1 $host.local ^&- >&-
-            ssh $args $userat$host.local
+            ssh $args $userat$host.local ^&-
         end
         set -l postcmdtime (date +%s)
 

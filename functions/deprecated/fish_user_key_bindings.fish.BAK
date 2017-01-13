@@ -32,7 +32,7 @@ function fish_user_key_bindings
     bind \ef forward-word
 
     bind \ea\ek 'commandline -r ""; commandline -f repaint' #erase all lines in buffer
-    bind \eq "ql (string escape -- (commandline --current-token))" #bind \es\ec __tol_set_anchor_pos; bind \er\ec __tol_restore_anchor_pos #bind \eQUE 'temp LINE-NUM func; wait for input sequence jump to char
+    bind \eq __tol_quicklook_file #bind \es\ec __tol_set_anchor_pos; bind \er\ec __tol_restore_anchor_pos #bind \eQUE 'temp LINE-NUM func; wait for input sequence jump to char
     bind \eM 'set -g __tol_mark_pos (commandline --cursor)'
     bind \en 'set -q __tol_mark_pos; and commandline --cursor $__tol_mark_pos'
     bind \ef __tol_desc_token #basic desc only for files, F for proper cat etc
@@ -64,5 +64,5 @@ function fish_user_key_bindings
     bind \ep __fish_go-back
     bind \eT 'kill -TRAP %self'
     bind \ej autojump_insert
-bind \ez fg
+bind \ez 'fg ^&-; cursor reset; commandline -f repaint'
 end

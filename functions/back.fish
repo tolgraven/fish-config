@@ -1,16 +1,15 @@
 function back
-	#sudo pkill cpulimit &
     t screen on
-    t speakers on
-    sleep 1
-    caffeinate -u -d -t 1 &
-    resound
     contall
-    sleep 1
+    caffeinate -u -d -t 1 & #wake screen
+    t speakers on #how avoid turning on sub auto?
+
+    set -q volume_before_away #check so dont nil volume if double triggered
+    and volume_ramp $volume_before_away #restore volume level
+    set -e volume_before_away
+    #resound #no need w new sound card!! :D
+
     #brightness (brightness) #brightness refresh #these fuck up and stall if the monitor isnt responding...
     #contrast (contrast)
-
-    #whatelse? #not speakers on bc what if sound ##ehh so what if sound??
-    #that's where a sound level meter comes into play hehe
-    #would be sweet for everything from waking up to evenings to whabla
+    #sudo pkill cpulimit & #always lead to weird stuff
 end

@@ -1,1 +1,0 @@
-complete -c oa -d 'app' -x -a "(mdfind -onlyin /Applications -onlyin ~/Applications -onlyin /Developer/Applications 'kMDItemKind==Application' | grep -v 'Default ' | grep -v 'Uninstall' | sed -E 's/.+\/(.+)\.app/\1/g')" # -v "Default " is for stupid chrome webapps with longass weird hash names... yup

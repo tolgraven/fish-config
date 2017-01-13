@@ -1,11 +1,11 @@
 function brew-search
-	test -z "$argv"
+    test -z "$argv"
     and return 1
     tput civis
 
     test (string length -- $argv) -gt 2 #messy if desc search for just 1-2 letters
-    and set output (spin "brew search --desc $argv | grep $argv")
-    or set output (spin "brew search --desc $argv | grep \ $argv")
+    and set output (brew search --desc $argv | grep $argv) #(spin "brew search --desc $argv | grep $argv")
+    or set output (brew search --desc $argv | grep \ $argv) #(spin "brew search --desc $argv | grep \ $argv")
 
     set hitcount (count $output)
     test "$hitcount" -eq 0

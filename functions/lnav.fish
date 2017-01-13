@@ -1,5 +1,5 @@
 function lnav
-	if test -z "$argv"
+    if test -z "$argv"
         ##and psc tmux >/dev/null
         #if tmux has -t lnav ^&-
         #debug "attaching to tmux"
@@ -11,7 +11,7 @@ function lnav
 
         #itermprofileswitch "tmux new -A -s 'lnav' -d fish -c 'command lnav'"  # -A = attach if already exists
         profile lnav
-        itermprofileswitch "tmux new -A -s 'lnav'" lnav "-d fish -c 'profile lnav; command lnav -r'"
+        itermprofileswitch "tmux new -A -s 'lnav'" lnav "-d fish -c 'profile lnav; command lnav '"
         and tmux set -t "lnav" mouse off
         and tmux attach -t lnav
         profile reset

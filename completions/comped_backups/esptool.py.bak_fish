@@ -1,1 +1,0 @@
-complete -c esptool.py -a (string split "," "load_ram,dump_mem,read_mem,write_mem,write_flash,run,image_info,make_image,elf2image,read_mac,chip_id,flash_id,read_flash,verify_flash,erase_flash,version") -d "command"

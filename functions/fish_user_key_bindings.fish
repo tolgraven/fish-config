@@ -64,5 +64,5 @@ function fish_user_key_bindings
     bind \ep __fish_go-back
     bind \eT 'kill -TRAP %self'
     bind \ej autojump_insert
-bind \ez fg
+bind \ez 'fg ^&-; cursor reset; commandline -f repaint' #he
 end

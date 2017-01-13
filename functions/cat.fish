@@ -1,4 +1,7 @@
-function cat
+function cat -d "cancy cat with auto syntax coloring and stuff"
+	test -r $argv[-1]
+	and set -l file $argv[-1] #separate other args i guess as well
+
 	if not contains -- '--force' $argv
         if not isatty 1 #regular if piped etc
             or status --is-command-substitution
@@ -13,43 +16,39 @@ function cat
     end
 
     test (count $argv) -gt 0
-    and not string match -- '-*' $argv[-1]
-    and if grep -q bplist00 $argv[-1]
+    and not string match -- '-*' $file
+    and if grep -q bplist00 $file
         debug "binary plist, args %s" $argv
-        cat (plutil -p $argv | psub)
-        #plutil -p $argv | cat #broken by fish
+        cat (plutil -p $argv | psub) 					#plutil -p $argv | cat #broken by fish
         return $status
-    else if not test -e $argv[-1] #not a file
-        and string match -r -q -- 'http?://*' $argv[-1]
-        #curl $argv[-1] | cat
-        cat (curl --quiet $argv[-1] | psub)
+    else if not test -e $file #not a file
+        and string match -r -q -- 'http?://*' $file
+        cat (curl --quiet $file | psub) 				#curl $argv[-1] | cat
         return $status
     end
-    set -l ext (extname $argv[-1])
-    and switch "$ext" #(extname $argv[-1]) #if test (extname $argv[-1]) = 'fish'
+    set -l ext (extname $file)
+    and switch "$ext"
         case 'fish'
             debug "fish, args %s" $argv
-            #or begin; not string match -- '-*' $argv[1]
-            #and test (extname $argv[1]) = 'fish'; end
-            ##isatty 1; and 
-            set color "--ansi" #or set color ""
+            set color "--ansi"
 
             test (count $argv) -eq 1
             and command cat $argv | fish_indent $color
-            or command cat $argv[-1] | fish_indent $color | command cat $argv[1..-2]
+            or command cat $file | fish_indent $color | command cat $argv[1..-2]
             return $status
-        case 'png' 'jpg' 'jpeg' 'gif' #else if string match --quiet -r -- 'png|jpg|jpeg|gif' (extname $argv[-1])
+        case 'png' 'jpg' 'jpeg' 'gif'
             debug "imgcat, args %s" $argv
-            imgcat $argv[-1]
+            imgcat $file
             return $status
+				#case 'whatever apple stuff like .app'; quicklook? ;)
         case '*'
-            debug "highlight, args %s" $argv
-            highlight $argv[-1] ^&-
-            and return $status #continue to below if highlight throws silent error..
-    end #else 
+            debug "highlight, args %s, ext %s" $argv $ext
+            highlight $file  ^&-
+            and return $status #and so will continue to below if highlight throws silent error.. smart!
+    end
     if test -z "$argv"
-        highlight #something is fucking broken in fish, piping to functions doesnt work anymore???
         debug "highlight, generic (piped)"
+        highlight #something is fucking broken in fish, piping to functions doesnt work anymore???
         return $status
     end
     if type -q vimcat

@@ -1,2 +1,0 @@
-complete -xc brightness -a '(seq 0 25 100)\t"value"\n' -d "value"
-complete -xc brightness -a '(brightness)' -d "current value"

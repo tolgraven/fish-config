@@ -1,1 +1,0 @@
-complete -xc funcat -a "(functions -a)"

@@ -1,1 +1,0 @@
-complete -xc chrome-cli -a "help list info open close reload back forward activate presentation size position source execute version"

@@ -1,5 +1,5 @@
 function tolmenu --description 'select and modify in-prompt' --argument list action autoerase
-	test -z "$list"
+    test -z "$list"
     and set list ls -A
     test -z "$action"
     and set action "la"
@@ -10,7 +10,8 @@ function tolmenu --description 'select and modify in-prompt' --argument list act
     tput civis #hide cursor
     tput cud1
 
-    echo -s -n (eval $list)\n | slmenu -i -p ">>" | read -l "choice"
+    set -l slmenu_args -i -p ">>" -l 8 #-i -l 8 -p ">>"
+    echo -s -n (eval $list)\n | slmenu $slmenu_args | read -l "choice"
     if not test -z "$choice"
         set choice (echo $choice | strip_ansi_color)
         set output (eval $action \"$choice\")

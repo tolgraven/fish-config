@@ -1,5 +1,5 @@
 function sfz --description 'search (mdfind) then cd to result and optionally execute app' --argument search program
-	set searchdump "/tmp/sfzsearchtmp"
+    set searchdump "/tmp/sfzsearchtmp"
     set -l searchmode "search " #'mdfind -name "$search" | cgrep -i "$search" '
     switch "$search"
         case "-l" # use locate instead of search (mdfind)
@@ -29,11 +29,12 @@ function sfz --description 'search (mdfind) then cd to result and optionally exe
     or find . | grep -i "$search" >>$searchdump
     sort $searchdump | uniq | string replace -- "/Users/"(whoami) '~' >$searchdump
 
-    command cat $searchdump | ccat --color=always | fzf --ansi --query "$search " | read -l result
+    tput cnorm
+    command cat $searchdump | highlight | fzf --ansi --query "$search " | read -l result
 
     tput cuu1
     tput el1
-    tput cnorm
+
     test -z "$result"
     and return 1
     set result (string replace '~' /Users/(whoami) $result)

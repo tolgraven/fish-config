@@ -1,9 +1,9 @@
 function audio
-	if test -z "$argv[1]"
-        SwitchAudioSource -c
+    if test -z "$argv[1]"
+        echo (SwitchAudioSource -c | string split "ASDSSSSS")[-1]
 
     else if contains -- $argv "-a"
-        set devices (SwitchAudioSource -a)
+        set devices (SwitchAudioSource -a | string split "ASDSSSSS")[-1]
         set longestdevice (strlen_longest $devices\n)
 
         set inputs (echo -n -s $devices\n | grep --color=never input)
@@ -24,9 +24,9 @@ function audio
 
     else if test (count $argv) -eq 1
         and not string match -q -- '-*' $argv[1]
-        SwitchAudioSource -s $argv | ccat #change device if just passing device
+        SwitchAudioSource -s $argv | highlight #change device if just passing device
         #echo ERROR $argv
     else
-        SwitchAudioSource $argv | ccat
+        SwitchAudioSource $argv | highlight #| ccat
     end
 end
