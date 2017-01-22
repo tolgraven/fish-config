@@ -9,12 +9,12 @@ function __complete_tldr
         echo -s $page \t (string sub -s 3 -l 40 $desc) #"common"
     end
     for page in $__tldr_platform
-set desc (grep --color=never ">" $__tldrc/osx/$page.md)[1]   
-     echo -s $page \t (string sub -s 3 -l 40 $desc)  #"osx"
+        set desc (grep --color=never ">" $__tldrc/osx/$page.md)[1]
+        echo -s $page \t (string sub -s 3 -l 40 $desc) #"osx"
     end
     #    set pages (ls ~/.tldrc/tldr-master/pages/common ~/.tldrc/tldr-master/pages/osx/ | grep -v ':' | strip_empty_lines)
     #    for file in $pages
     #        echo -s (string replace '.md' '' $file)
     #    end
 end
-complete -xc tldr -a "(__complete_tldr)" #"(for file in (ls ~/.tldrc/tldr-master/pages/common ~/.tldrc/tldr-master/pages/osx/ | grep -v ':'); string replace '.md' '' $file; end)"
+complete -xc tldr -a "(__complete_tldr)"

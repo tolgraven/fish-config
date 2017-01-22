@@ -20,9 +20,10 @@ end
 #needs to have this name or we'd also have to delete the internal function
 function __fish_command_not_found_handler --on-event fish_command_not_found 
   set -l stat $status;  set -l cmdline $argv #works!
-	if not isatty 1; __fish_default_command_not_found_handler $argv; end 
+	if not isatty 1; __fish_default_command_not_found_handler $argv; return; end 
 
 		tput cuu1
+		history --delete $cmdline
 	# commandline "Command not found"; commandline -f repaint
 	#sleep 0.05; commandline -a "."; sleep 0.05; commandline -a "."; sleep 0.05; commandline -a "."
 	#sleep 0.05
@@ -35,21 +36,37 @@ function __fish_command_not_found_handler --on-event fish_command_not_found
 	## commandline -C $last_commandline_pos; commandline -f repaint; return $stat
 end
 #all handlers must be actively sourced at startup i guess...
-function tol_sigint_handler --on-signal SIGINT
-	  set -l cmdline (commandline)
-		set -l cmdpos (commandline -C)
+function tol_sigint_handler --on-signal SIGINT #argv is also SIGINT..
+		get_row | read rowpos
+		test "$rowpos" -eq "$LINES"; and set -l lastrow true
+
+		tput civis 
+	  set -g cmdline (commandline)
+		set -g cmdpos (commandline -C)
+		commandline ""; commandline -f repaint
+
+		echo -n (test -z "$lastrow"; and echo)"Everything reset, UR CLEAN."
+		sleep 0.25; tput cuu 1
+
     tol_reload_key_bindings #restore key bindings
     while set -l index (contains -i %self $__tol_func_pid) #unset is-editing funcs
-        set -Ue __tol_func_editing[$index]
-        set -Ue __tol_func_pid[$index]
+        set -Ue __tol_func_editing[$index]; set -Ue __tol_func_pid[$index]
     end
-    tput cnorm #restore cursor
-    tput rmcup #restore view
-    commandline -f repaint
     profile reset #restore iterm profile
-		commandline $cmdline
-		commandline -C $cmdpos
-    debug "received SIGINT pid %s" %self
+    tput rmcup #restore view
+		# for file in $fisher_path/conf.d/*.fish; source $file; end
+		# debug "row %s, cmdline %s, cmdpos %s, does work?" $rowpos $cmdline $cmdpos #not working in this func
+
+		commandline -r "$cmdline"
+		# commandline -C $cmdpos
+		tput vpa $rowpos #restore row number (rmcup jumps)
+    echo -n (tput cnorm) #restore cursor
+		not test -z "$cmdline"; and tput cuu1 #needs extra jump
+		test -z "$lastrow"; and tput cuu1 #except if restored pos is actually bottom row
+		commandline -f repaint
+		# echoerr (commandline)
+		# commandline -f execute
+    # debug "received SIGINT pid %s" %self
 end
 
 # function __tol_fish_preexec --on-event fish_preexec

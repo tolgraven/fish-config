@@ -1,7 +1,7 @@
 function __tol_fzf_ctrl_r
     type -q fzf
     or return 1
-    set colorcmd "fish_indent --ansi" #set colorcmds "ccat --color=always" "ccze -A" "fish_indent --ansi" "cat" "vimcat -c 'setfiletype \"fish\"'" "highlight"; set colorcmd $colorcmds[3]
+    set colorcmd "fish_indent --ansi"
     set -l tmpfile "/tmp/fzfoutput"
 
     set linenr (commandline --line)
@@ -10,7 +10,7 @@ function __tol_fzf_ctrl_r
     test -z "$cmdline" #just quote and these wont need redir to avoid spewing, dummy
     and set cmdquery ""
     or set cmdquery "-q $cmdline" #prepopulate search
-    debug "cmdquery" -- $cmdquery
+    debug "cmdquery %s" -- $cmdquery
     #| ack -x {} | string split cmd: | grep -v cmd: | grep -v .config/fish/fish_history' \
     #--preview='fish -c mancat (string split \' \' -- {})[1]' --preview-window=right:40 \#2nd line below
     set -l preview 'history search --show-time --exact {} | fish_indent --ansi'
@@ -27,13 +27,18 @@ function __tol_fzf_ctrl_r
         and commandline -rb (cat $tmpfile)
 
     else
-        debug -- "normal fzf window" $colorcmd $cmdline $fzfopts
-        history | string match "*$cmdline*" | eval $colorcmd | eval (__fzfcmd) "$fzfopts" | read -l --array fzf_last_select #skip highlighting grep bc fzf does that anyways, plus it fucks with rest of line etc
+        debug -- "normal fzf window %s %s %s" $colorcmd $cmdline $fzfopts
+        #history | string match "*$cmdline*" | eval $colorcmd | eval (__fzfcmd) "$fzfopts" | read -l --array fzf_last_select
+        test -z "$cmdline"
+        and set histcmd "history"
+        or set histcmd "history search --contains '$cmdline'"
+        debug "histcmd: %s" $histcmd
+
+        eval $histcmd | eval $colorcmd | eval (__fzfcmd) "$fzfopts" | read -l --array fzf_last_select
 
         test $fzf_last_select[1]
         and commandline -rb -- "$fzf_last_select"
-        #and if test (count (commandline -o)) -gt 2 # > 2 tokens grab 3rd til last, if doing timestamps...
-        #commandline -rb -- (string join -- " " (commandline -o)[3..-1]); end
+        #and if test (count (commandline -o)) -gt 2; commandline -rb -- (string join -- " " (commandline -o)[3..-1]); end #>2 tok use 3..last if inline timestamps
     end
     set -q had24color
     and set fish_term24bit $had24color

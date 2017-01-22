@@ -1,5 +1,6 @@
-function path_colorize -d "colorize path with tags and rules" -a path
+function path_colorize -d "colorize path with tags and rules" -a path is_shortened
 	#like colorpwd but generic (can run for files in sfz and stuff)
+	#probably have to run path_transform first, split here, then for each part run path_shorten --restore to get a proper path to lookup. bc cant grep properly with ansi escapes...
 
 	set path (string replace -- '~' "$HOME" $path | string trim -r -c '/') #expand user, remove trailing slash
  	set path_split (string split -- '/' $path)[2..-1] 
@@ -49,7 +50,7 @@ function path_colorize -d "colorize path with tags and rules" -a path
 	debug "$cmd_per_level"
 
 	for i in (seq 1 (count $path_split)) 
-		set post '/' 		# always, exceot last round...
+		set post '/' 		# always, except last round...
 		set pre "" 			# only first round, except if ~
 		test $i -eq 1
 		# and test "$offset" -eq 0

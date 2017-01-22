@@ -1,5 +1,6 @@
 function fish_user_key_bindings
-    bind \ec __tol_copy_pipe # add pipe to pbcopy to end of cmdline
+    bind \ep\eb __tol_copy_pipe # add pipe to pbcopy to end of cmdline
+
     bind \eC __tol_copy_line # curr line as-is to system clipboard
     bind \eI __tol_fish_indent # adds pipe to indent/color    
     bind \cv __tol_clipboard_paste
@@ -15,7 +16,7 @@ function fish_user_key_bindings
     bind \eR refish
     bind \e0 'clear; commandline -f repaint' # clear scr
     bind \ei 'commandline (commandline | fish_indent); commandline -f repaint' # indent and repaint
-    bind \et 'tolmenu tolmenu_get_actions eval'
+    bind \et 'tolmenu_fzf tolmenu_get_actions eval' #'tolmenu tolmenu_get_actions eval'
     bind \eD debug_commandline
 
     bind -k sr '__tol_toggle_selecting; set -q __tol_fish_selecting; or begin; commandline -f backward-char; commandline -f forward-char; end' # arrow up 
@@ -32,9 +33,7 @@ function fish_user_key_bindings
     bind \ef forward-word
 
     bind \ea\ek 'commandline -r ""; commandline -f repaint' #erase all lines in buffer
-    bind \eq __tol_quicklook_file #bind \es\ec __tol_set_anchor_pos; bind \er\ec __tol_restore_anchor_pos #bind \eQUE 'temp LINE-NUM func; wait for input sequence jump to char
-    bind \eM 'set -g __tol_mark_pos (commandline --cursor)'
-    bind \en 'set -q __tol_mark_pos; and commandline --cursor $__tol_mark_pos'
+    bind \eq __tol_quicklook_file #bind \eM 'set -g __tol_mark_pos (commandline --cursor)' #bind \en 'set -q __tol_mark_pos; and commandline --cursor $__tol_mark_pos'
     bind \ef __tol_desc_token #basic desc only for files, F for proper cat etc
     bind \eF __tol_cat_token
     bind \eg __tol_edit_token #test whee
@@ -43,12 +42,14 @@ function fish_user_key_bindings
     bind \eJ __tol_eval_job_and_sneak_peek
     bind \ee\et 'commandline -t (eval (commandline -t))' # eval curr token
     bind \ee\eb 'commandline (eval (commandline))' # eval curr cmdline
+
     bind \ee\et 'set -l cmdline (commandline); set -l cmdpos (commandline -C); commandline $cmdline; commandline -C $cmdpos' #run entire, reinsert
     bind \ee\ev 'commandline -t (vared (commandline -t))'
     bind \em transpose-words
     bind \e- __tol_toggle_comment_commandline #needs to learn whitespace 
     #IDEA: eval curr code without leaving pos within it (inc failing) + divert all error msgs, either other part same term or prob tmux/fzf or dump to file tail in pane, then instead of error msgs about variables, just highlight
     bind \e\' __tol_move_dir_up
+    #bind \e.\e. __tol_move_dir_up
     bind \e. __tol_rerun_last_command
     bind \e: history-token-search-backward
     bind \e+ history-token-search-backward
@@ -62,7 +63,18 @@ function fish_user_key_bindings
     bind ! __history_previous_command ### bang-bang ### 
     bind '$' __history_previous_command_arguments
     bind \ep __fish_go-back
+    bind \eP 'pwd | pbcopy' #copy cwd
     bind \eT 'kill -TRAP %self'
     bind \ej autojump_insert
-bind \ez 'fg ^&-; cursor reset; commandline -f repaint' #he
+    bind \ez 'fg ^&-; cursor reset; commandline -f repaint' #he
+    bind 'eval (commandline --token) --help; commandline -f repaint' \eH
+
+
+    bind \ee\ef "commandline 'exec fish'; commandline -f execute"
+    bind \eb\ed "binded; commandline -f repaint"
+    bind \ec\ed "comped (commandline --token); commandline -f repaint"
+    bind \ef\ec "funcat (commandline --token); commandline -f repaint"
+    bind \ej\eo jobs
+    bind \eh\em 'history merge; echo -n (set_color brblue)"History merged!"; sleep 0.4; commandline -f repaint'
+    bind \ep\es 'pscc (commandline --token); commandline -f repaint' #list running processes for token
 end

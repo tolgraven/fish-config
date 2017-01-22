@@ -1,20 +1,21 @@
-function tolmenu --description 'select and modify in-prompt' --argument list action autoerase
-    test -z "$list"
-    and set list ls -A
-    test -z "$action"
-    and set action "la"
+function tolmenu --description 'select and modify in-prompt' --argument list_func action_func autoerase
+    test -z "$list_func"
+    and set list_func ls -A
+    test -z "$action_func"
+    and set action_func "la"
+
+    #tolmenu_fzf $list_func $action_func
 
     set -l cmdline (commandline)
     set -l cmdpos (commandline -C)
-    tput sc #save pos
-    tput civis #hide cursor
+    tput civis
     tput cud1
 
-    set -l slmenu_args -i -p ">>" -l 8 #-i -l 8 -p ">>"
-    echo -s -n (eval $list)\n | slmenu $slmenu_args | read -l "choice"
+    set -l slmenu_args -i -p ">>" -l 8
+    echo -ns (eval $list_func)\n | slmenu $slmenu_args | read -l "choice"
     if not test -z "$choice"
         set choice (echo $choice | strip_ansi_color)
-        set output (eval $action \"$choice\")
+        set output (eval $action_func \"$choice\")
     else #esc leaks through
         commandline $cmdline
         commandline -C $cmdpos
@@ -25,18 +26,15 @@ function tolmenu --description 'select and modify in-prompt' --argument list act
     tput dl1
     tput cuu1
 
-    set outlines (echo -n -s $output\n)
-
+    set outlines (echo -ns $output\n)
     echoright $outlines
     debug $outlines (count $outlines)
-
-    not test -z $autoerase
+    not test -z "$autoerase"
     and for i in (seq 1 (math (count $outlines)+1 ))
         tput dl1 #clear line
         tput cuu1 #move line up
     end
-    and tput el #tput cuu1 #tput rc #restore pos
-
+    and tput el
     tput cnorm #show cursor
     commandline -f repaint
 end

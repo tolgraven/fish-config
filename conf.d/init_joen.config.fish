@@ -11,6 +11,12 @@ set -g theme_show_exit_status 			yes
 set -q XDG_CONFIG_HOME;     or set -Ux XDG_CONFIG_HOME 		"$HOME/.config"
 set -q XDG_DATA_HOME;       or set -Ux XDG_DATA_HOME   		"$HOME/.local/share"
 set -q XDG_CACHE_HOME;      or set -Ux XDG_CACHE_HOME  		"$HOME/.cache"
+#force shit to use XDG...
+set -x GNUPGHOME 			"$XDG_CONFIG_HOME/gnupg"
+set -x LESSHISTFILE 		"$XDG_CONFIG_HOME/less/history"; set -x LESSKEY "$XDG_CONFIG_HOME/less/keys"
+set -x MPLAYER_HOME 		"$XDG_CONFIG_HOME/mplayer"
+set -x SUBVERSION_HOME "$XDG_CONFIG_HOME/subversion"
+
 set -x LC_ALL en_GB.UTF-8;  set -x LANG en_GB.UTF-8
 
 set -q GITHUB_TOKEN; 				or set -Ux GITHUB_TOKEN 			"76cceb8c7cba52c92f2c41eaa8d113db7ddcdb46"
@@ -59,3 +65,8 @@ test -f "/usr/local/share/autojump/autojump.fish"; and source "/usr/local/share/
 test -z (which env_parallel.fish);  or source (which env_parallel.fish) #GNU parallel shell support
 # type -q thefuck;                    and eval (thefuck --alias | tr '\n' ';') #fucking startup performance a bit?
 #ulimit -n 65536 #is persistent and only set in osx
+
+set -q tol_fish_abbr_file
+or set -U tol_fish_abbr_file ~/.config/fish/conf.d/abbr.fish_defs
+test (count (abbr -l)) -eq (count (cat $tol_fish_abbr_file))
+or source $tol_fish_abbr_file

@@ -19,7 +19,7 @@ function func --description 'edit and save function' --argument function force
 
     # set -l newdef (tolfunc $function)
     # and echo -ns $newdef\n >$new
-		tolfunc $function > $new
+    tolfunc $function >$new
 
     while set -l index (contains -i $function $__tol_func_editing) #clears all instances for good measure, since we only got here if forced
         set -e __tol_func_editing[$index]
