@@ -78,4 +78,5 @@ bind \ej\eo jobs
 bind \eh\em 'history merge; echo -n (set_color brblue)"History merged!"; sleep 0.4; commandline -f repaint'
 bind \ep\es 'pscc (commandline --token); commandline -f repaint' #list running processes for token
 
+bind \eg\eg print_var
 end
