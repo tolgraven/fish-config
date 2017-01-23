@@ -1,0 +1,1594 @@
+{
+  "version": 1,
+  "width": 82,
+  "height": 25,
+  "duration": 54.179585,
+  "command": null,
+  "title": null,
+  "env": {
+    "TERM": "xterm-256color",
+    "SHELL": "/usr/local/bin/fish"
+  },
+  "stdout": [
+    [
+      0.409319,
+      "\u001b]1337;RemoteHost=tolgraven@absurd\u0007\u001b]1337;CurrentDir=/Users/tolgraven/Google Drive/Mackup/.config/fish\u0007"
+    ],
+    [
+      0.000241,
+      "\u001b]1337;ShellIntegrationVersion=3;shell=fish\u0007"
+    ],
+    [
+      0.005107,
+      "\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.009463,
+      "\u001b]0;~/Goog/Mack/.conf/fish\u0007"
+    ],
+    [
+      0.304724,
+      "\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      5.2e-05,
+      "\u001b[38;5;237m⏎\u001b(B\u001b[m                                                                                \r⏎ \r\u001b[2K\u001b]0;~/Goog/Mack/.conf/fish\u0007\r\r"
+    ],
+    [
+      0.005504,
+      "\u001b]133;D;0\u0007\u001b]133;A\u0007\u001b[38;2;255;152;26m\u001b[33m~/\u001b[31m.l\u001b[31mn/\u001b[33m.conf/\u001b[91m\u001b[7mfish\u001b[27m\u001b[30m\u001b(B\u001b[m \u001b]133;B\u0007\u001b[K\u001b[31C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m06\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[18C"
+    ],
+    [
+      0.9,
+      "p\u001b[30C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m06\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[19C"
+    ],
+    [
+      0.005512,
+      "\u001b[30C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m06\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[19C"
+    ],
+    [
+      0.005614,
+      "\b\u001b[38;2;95;135;255mp\u001b[30C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m06\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[19C"
+    ],
+    [
+      0.005547,
+      "\u001b[38;2;209;209;209mrofile standard\u001b[15C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m06\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[19C"
+    ],
+    [
+      0.130754,
+      "\u001b[38;2;95;135;255mr\u001b[38;2;209;209;209mofile standard\u001b[15C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m06\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[20C"
+    ],
+    [
+      0.005524,
+      "\u001b[29C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m06\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[20C"
+    ],
+    [
+      0.107098,
+      "\u001b[38;2;95;135;255mi\u001b[30m\u001b(B\u001b[m\u001b[K\u001b[28C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m06\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[21C"
+    ],
+    [
+      0.005523,
+      "\u001b[28C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m06\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[21C"
+    ],
+    [
+      0.005582,
+      "\b\b\b\u001b[38;2;255;138;0mpri\u001b[28C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m06\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[21C"
+    ],
+    [
+      0.005637,
+      "\u001b[38;2;209;209;209mntf \"%s\\n\" \"$fish_color_no…\u001b[C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m06\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[21C"
+    ],
+    [
+      0.083955,
+      "\u001b[38;2;255;138;0mn\u001b[38;2;209;209;209mtf \"%s\\n\" \"$fish_color_no…\u001b[C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m06\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[22C"
+    ],
+    [
+      0.005521,
+      "\u001b[27C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m06\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[22C"
+    ],
+    [
+      0.151026,
+      "\u001b[38;2;255;138;0mt\u001b[38;2;209;209;209mf \"%s\\n\" \"$fish_color_no…\u001b[C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m06\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[23C"
+    ],
+    [
+      0.005533,
+      "\u001b[26C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m06\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[23C"
+    ],
+    [
+      0.005624,
+      "\b\b\b\b\b\u001b[38;2;95;135;255mprint\u001b[38;2;209;209;209mf \"%s\\n\" \"$fish_color_no…\u001b[C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m06\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[23C"
+    ],
+    [
+      0.326318,
+      "\u001b[38;2;95;135;255m_\u001b[30m\u001b(B\u001b[m\u001b[K\u001b[25C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m06\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[24C"
+    ],
+    [
+      0.005576,
+      "\u001b[25C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m06\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[24C"
+    ],
+    [
+      0.005578,
+      "\b\b\b\b\b\b\u001b[38;2;255;138;0mprint_\u001b[25C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m06\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[24C"
+    ],
+    [
+      0.017444,
+      "\u001b[38;2;209;209;209mcolors\u001b[19C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m06\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[24C"
+    ],
+    [
+      0.198379,
+      "\u001b[38;2;255;138;0mv\u001b[30m\u001b(B\u001b[m\u001b[K\u001b[24C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m06\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[25C"
+    ],
+    [
+      0.00553,
+      "\u001b[24C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m06\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[25C"
+    ],
+    [
+      0.151408,
+      "\u001b[38;2;255;138;0ma\u001b[23C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m06\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[26C"
+    ],
+    [
+      0.005553,
+      "\u001b[23C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m06\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[26C"
+    ],
+    [
+      0.105471,
+      "\u001b[38;2;255;138;0mr\u001b[22C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m06\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[27C"
+    ],
+    [
+      0.00555,
+      "\u001b[22C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m06\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[27C"
+    ],
+    [
+      0.9,
+      "\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.002471,
+      "\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      5.2e-05,
+      "\u001b[38;5;237m⏎\u001b(B\u001b[m                                                                                \r⏎ \r\u001b[2K"
+    ],
+    [
+      1.9e-05,
+      "\u001b]0;~/Goog/Mack/.conf/fish\u0007\u001b]0;~/Goog/Mack/.conf/fish\u0007\r\r"
+    ],
+    [
+      0.001672,
+      "\u001b]133;D;0\u0007\u001b]133;A\u0007function print_var\u001b[K\u001b[38C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[K\r\nend\u001b[K"
+    ],
+    [
+      0.00175,
+      "\u001b[A\u001b[A\r\u001b[38;2;95;135;255mfunction\u001b[30m\u001b(B\u001b[m print_var\u001b[38C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[38;2;95;135;255mend\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.9,
+      "\u001b[A\u001b[A\u001b[53C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n"
+    ],
+    [
+      0.9,
+      "\u001b[A\u001b[56C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n    \u001b[38;2;215;135;135me\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001649,
+      "\u001b[A\u001b[51C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[5C"
+    ],
+    [
+      0.00172,
+      "\u001b[A\u001b[51C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[5C\u001b[38;2;95;135;255mc\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001657,
+      "\u001b[A\u001b[50C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[6C"
+    ],
+    [
+      0.001654,
+      "\u001b[A\u001b[50C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[4C\u001b[38;2;255;138;0mec\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.061828,
+      "\u001b[A\u001b[50C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[6C\u001b[38;2;215;135;135mh\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001651,
+      "\u001b[A\u001b[49C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[7C"
+    ],
+    [
+      0.001684,
+      "\u001b[A\u001b[49C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[6C\u001b[38;2;255;138;0mh\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.198129,
+      "\u001b[A\u001b[49C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[7C\u001b[38;2;215;135;135mo\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.00161,
+      "\u001b[A\u001b[48C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[8C"
+    ],
+    [
+      0.001659,
+      "\u001b[A\u001b[48C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[4C\u001b[38;2;95;135;255mecho\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.30063,
+      "\u001b[A\u001b[48C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[8C\u001b[38;2;215;135;135m \u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001648,
+      "\u001b[A\u001b[47C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[9C"
+    ],
+    [
+      0.001679,
+      "\u001b[A\u001b[47C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[8C "
+    ],
+    [
+      0.132417,
+      "\u001b[A\u001b[47C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[9C\u001b[38;2;215;135;135m$\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001647,
+      "\u001b[A\u001b[46C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[10C"
+    ],
+    [
+      0.001684,
+      "\u001b[A\u001b[46C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[9C\u001b[38;2;255;138;0m$\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.412962,
+      "\u001b[A\u001b[46C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[10C\u001b[38;2;215;135;135mt\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001647,
+      "\u001b[A\u001b[45C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[11C"
+    ],
+    [
+      0.001664,
+      "\u001b[A\u001b[45C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[9C\u001b[33m$t\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.10869,
+      "\u001b[A\u001b[45C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[11C\u001b[38;2;215;135;135mh\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001657,
+      "\u001b[A\u001b[44C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[12C"
+    ],
+    [
+      0.001648,
+      "\u001b[A\u001b[44C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[11C\u001b[33mh\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.9,
+      "\u001b[A\u001b[44C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[12C\u001b[38;2;215;135;135me\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001643,
+      "\u001b[A\u001b[43C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[13C"
+    ],
+    [
+      0.001782,
+      "\u001b[A\u001b[43C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[13C\u001b[38;2;95;135;255m_\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001653,
+      "\u001b[A\u001b[42C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[14C"
+    ],
+    [
+      0.001672,
+      "\u001b[A\u001b[42C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[12C\u001b[33me_\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.32992,
+      "\u001b[A\u001b[42C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[14C\u001b[38;2;215;135;135mv\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001639,
+      "\u001b[A\u001b[41C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[15C"
+    ],
+    [
+      0.001654,
+      "\u001b[A\u001b[41C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[14C\u001b[33mv\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.12094,
+      "\u001b[A\u001b[41C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[15C\u001b[38;2;215;135;135ma\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001641,
+      "\u001b[A\u001b[40C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[16C"
+    ],
+    [
+      0.001665,
+      "\u001b[A\u001b[40C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[15C\u001b[33ma\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.131213,
+      "\u001b[A\u001b[40C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[16C\u001b[38;2;215;135;135mr\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001643,
+      "\u001b[A\u001b[39C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[17C"
+    ],
+    [
+      0.00166,
+      "\u001b[A\u001b[39C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[16C\u001b[33mr\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.9,
+      "$the_var\r\n"
+    ],
+    [
+      0.011441,
+      "\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.002334,
+      "\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      7.5e-05,
+      "\u001b[38;5;237m⏎\u001b(B\u001b[m                                                                                \r⏎ \r\u001b[2K"
+    ],
+    [
+      1.7e-05,
+      "\u001b]0;~/Goog/Mack/.conf/fish\u0007\u001b]0;~/Goog/Mack/.conf/fish\u0007\r\r"
+    ],
+    [
+      0.002784,
+      "\u001b]133;D;0\u0007\u001b]133;A\u0007> \u001b[K\u001b[55C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[C\u001b[C"
+    ],
+    [
+      0.9,
+      "t\u001b[54C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[3C"
+    ],
+    [
+      0.002762,
+      "\u001b[54C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[3C"
+    ],
+    [
+      0.002783,
+      "\b\u001b[38;2;95;135;255mt\u001b[54C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[3C"
+    ],
+    [
+      0.062211,
+      "\u001b[38;2;95;135;255mh\u001b[53C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[4C"
+    ],
+    [
+      0.002774,
+      "\u001b[53C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[4C"
+    ],
+    [
+      0.002783,
+      "\b\b\u001b[38;2;255;138;0mth\u001b[53C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[4C"
+    ],
+    [
+      0.241491,
+      "\u001b[38;2;255;138;0me\u001b[52C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[5C"
+    ],
+    [
+      0.00277,
+      "\u001b[52C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[5C"
+    ],
+    [
+      0.002863,
+      "\u001b[38;2;255;138;0m \u001b[51C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[6C"
+    ],
+    [
+      0.002772,
+      "\u001b[51C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[6C"
+    ],
+    [
+      0.002795,
+      "\b \u001b[51C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[6C"
+    ],
+    [
+      0.157805,
+      "c\u001b[50C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[7C"
+    ],
+    [
+      0.002762,
+      "\u001b[50C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[7C"
+    ],
+    [
+      0.002924,
+      "\b\u001b[38;2;95;175;215m\u001b[1m\u001b[4mc\u001b[50C\u001b(B\u001b[m\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[7C"
+    ],
+    [
+      0.061581,
+      "\u001b[38;2;95;175;215m\u001b[1m\u001b[4mo\u001b[49C\u001b(B\u001b[m\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[8C"
+    ],
+    [
+      0.002765,
+      "\u001b[49C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[8C"
+    ],
+    [
+      0.144339,
+      "\u001b[38;2;95;175;215m\u001b[1m\u001b[4mn\u001b[48C\u001b(B\u001b[m\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[9C"
+    ],
+    [
+      0.002759,
+      "\u001b[48C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[9C"
+    ],
+    [
+      0.121083,
+      "\u001b[38;2;95;175;215m\u001b[1m\u001b[4mt\u001b[47C\u001b(B\u001b[m\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[10C"
+    ],
+    [
+      0.002775,
+      "\u001b[47C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[10C"
+    ],
+    [
+      0.002789,
+      "\b\b\b\b\u001b[38;2;95;175;215mcont\u001b[47C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[10C"
+    ],
+    [
+      0.27515,
+      "\u001b[38;2;95;175;215me\u001b[46C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[11C"
+    ],
+    [
+      0.002773,
+      "\u001b[46C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[11C"
+    ],
+    [
+      0.002846,
+      "\u001b[38;2;95;175;215mn\u001b[45C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[12C"
+    ],
+    [
+      0.002771,
+      "\u001b[45C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[12C"
+    ],
+    [
+      0.116686,
+      "\u001b[38;2;95;175;215mt\u001b[44C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[13C"
+    ],
+    [
+      0.002764,
+      "\u001b[44C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[13C"
+    ],
+    [
+      0.164823,
+      "\u001b[38;2;95;175;215ms\u001b[43C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[14C"
+    ],
+    [
+      0.00276,
+      "\u001b[43C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[14C"
+    ],
+    [
+      0.469427,
+      "\u001b[43C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_var\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[57C\r\u001b[14C\r\n\u001b[3"
+    ],
+    [
+      1.7e-05,
+      "0m\u001b(B\u001b[m\u001b[38;5;237m⏎\u001b(B\u001b[m                                                                                \r⏎ \r\u001b[2K"
+    ],
+    [
+      0.002687,
+      "\u001b[30m\u001b(B\u001b[m\r"
+    ],
+    [
+      1.4e-05,
+      "\u001b]0;~/Goog/Mack/.conf/fish\u0007\r\r"
+    ],
+    [
+      0.001741,
+      "\u001b]133;D;0\u0007\u001b]133;A\u0007\u001b[38;2;95;135;255mfunction\u001b[30m\u001b(B\u001b[m print_var\u001b[K\u001b[38C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n    \u001b[38;2;95;135;255mecho\u001b[30m\u001b(B\u001b[m \u001b[33m$the_var\u001b[30m\u001b(B\u001b[m\u001b[K\r\n\u001b[38;2;95;135;255mend\u001b[30m\u001b(B\u001b[m\u001b[K\u001b[A\u001b[14C"
+    ],
+    [
+      0.9,
+      "\u001b[A\u001b[39C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[3C\r\n\u001b"
+    ],
+    [
+      1.9e-05,
+      "[30m\u001b(B\u001b[m\u001b[38;5;237m⏎\u001b(B\u001b[m                                                                                \r⏎ \r\u001b[2K"
+    ],
+    [
+      0.022133,
+      "Saving new function print_var\r\n"
+    ],
+    [
+      0.206229,
+      "\u001b[30m\u001b(B\u001b[m\r\u001b]0;~/Goog/Mack/.conf/fish\u0007\r\r"
+    ],
+    [
+      0.005751,
+      "\u001b]133;D;0\u0007\u001b]133;A\u0007\u001b[38;2;255;152;26m\u001b[33m~/\u001b[31m.l\u001b[31mn/\u001b[33m.conf/\u001b[91m\u001b[7mfish\u001b[27m\u001b[30m\u001b(B\u001b[m \u001b]133;B\u0007\u001b[38;2;255;138;0mprint_var\u001b[30m\u001b(B\u001b[m\u001b[K\u001b[22C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m24\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[27C"
+    ],
+    [
+      0.9,
+      "\u001b[38;2;255;138;0m \u001b[21C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m24\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[28C"
+    ],
+    [
+      0.005529,
+      "\u001b[21C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m24\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[28C"
+    ],
+    [
+      0.005573,
+      "\u001b[10D\u001b[38;2;95;135;255mprint_var\u001b[30m\u001b(B\u001b[m \u001b[21C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m24\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[28C"
+    ],
+    [
+      0.005532,
+      "\u001b[21C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m24\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[28C"
+    ],
+    [
+      0.309908,
+      "\u001b[21C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m24\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[28C\r\n\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.000497,
+      "\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      4.3e-05,
+      "the contents\r\n"
+    ],
+    [
+      0.002563,
+      "\u001b]0;~/Goog/Mack/.conf/fish\u0007\r"
+    ],
+    [
+      0.200733,
+      "\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      1.8e-05,
+      "\u001b[38;5;237m⏎\u001b(B\u001b[m                                                                                \r⏎ \r\u001b[2K\u001b]0;~/Goog/Mack/.conf/fish\u0007\r\r"
+    ],
+    [
+      0.005557,
+      "\u001b]133;D;0\u0007\u001b]133;A\u0007\u001b[38;2;255;152;26m\u001b[33m~/\u001b[31m.l\u001b[31mn/\u001b[33m.conf/\u001b[91m\u001b[7mfish\u001b[27m\u001b[30m\u001b(B\u001b[m \u001b]133;B\u0007\u001b[K\u001b[31C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m26\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[18C"
+    ],
+    [
+      0.9,
+      "print_var \u001b[21C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m26\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[28C"
+    ],
+    [
+      0.005572,
+      "\u001b[10D\u001b[38;2;95;135;255mprint_var\u001b[30m\u001b(B\u001b[m \u001b[21C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m26\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[28C"
+    ],
+    [
+      0.432321,
+      "\u001b[21C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m26\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[27C"
+    ],
+    [
+      0.169252,
+      "\u001b[22C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m26\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[26C"
+    ],
+    [
+      0.734162,
+      "\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.002335,
+      "\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      4.3e-05,
+      "\u001b[38;5;237m⏎\u001b(B\u001b[m                                                                                \r⏎ \r\u001b[2K"
+    ],
+    [
+      1.3e-05,
+      "\u001b]0;~/Goog/Mack/.conf/fish\u0007\u001b]0;~/Goog/Mack/.conf/fish\u0007\r\r"
+    ],
+    [
+      0.001732,
+      "\u001b]133;D;0\u0007\u001b]133;A\u0007function print_var\u001b[K\u001b[38C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n    echo $the_var\u001b[K\r\nend\u001b[K"
+    ],
+    [
+      0.001762,
+      "\u001b[A\u001b[A\r\u001b[38;2;95;135;255mfunction\u001b[30m\u001b(B\u001b[m print_var\u001b[38C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[4C\u001b[38;2;95;135;255mecho\u001b[30m\u001b(B\u001b[m \u001b[33m$the_var\r\n\u001b[38;2;95;135;255mend\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.9,
+      "\u001b[A\u001b[A\u001b[53C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[4C"
+    ],
+    [
+      0.448703,
+      "\u001b[A\u001b[52C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\u001b[17C"
+    ],
+    [
+      0.9,
+      "\u001b[A\u001b[39C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[K\r\n\u001b[38;2;95;135;255mend\u001b[A\r\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001648,
+      "\u001b[A\u001b[A\u001b[56C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n"
+    ],
+    [
+      0.9,
+      "\u001b[A\u001b[A\u001b[56C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n    \u001b[38;2;215;135;135mp\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001662,
+      "\u001b[A\u001b[A\u001b[51C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[5C"
+    ],
+    [
+      0.00167,
+      "\u001b[A\u001b[A\u001b[51C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[4C\u001b[38;2;95;135;255mp\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.12049,
+      "\u001b[A\u001b[A\u001b[51C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[5C\u001b[38;2;215;135;135mr\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001648,
+      "\u001b[A\u001b[A\u001b[50C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[6C"
+    ],
+    [
+      0.001656,
+      "\u001b[A\u001b[A\u001b[50C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[5C\u001b[38;2;95;135;255mr\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.109673,
+      "\u001b[A\u001b[A\u001b[50C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[6C\u001b[38;2;215;135;135mi\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001651,
+      "\u001b[A\u001b[A\u001b[49C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[7C"
+    ],
+    [
+      0.001661,
+      "\u001b[A\u001b[A\u001b[49C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[4C\u001b[38;2;255;138;0mpri\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.085455,
+      "\u001b[A\u001b[A\u001b[49C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[7C\u001b[38;2;215;135;135mn\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.00165,
+      "\u001b[A\u001b[A\u001b[48C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[8C"
+    ],
+    [
+      0.001665,
+      "\u001b[A\u001b[A\u001b[48C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[7C\u001b[38;2;255;138;0mn\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.098543,
+      "\u001b[A\u001b[A\u001b[48C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[8C\u001b[38;2;215;135;135mt\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001647,
+      "\u001b[A\u001b[A\u001b[47C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[9C"
+    ],
+    [
+      0.001672,
+      "\u001b[A\u001b[A\u001b[47C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[4C\u001b[38;2;95;135;255mprint\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.233065,
+      "\u001b[A\u001b[A\u001b[47C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[9C\u001b[38;2;215;135;135m_\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001655,
+      "\u001b[A\u001b[A\u001b[46C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[10C"
+    ],
+    [
+      0.001669,
+      "\u001b[A\u001b[A\u001b[46C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[4C\u001b[38;2;255;138;0mprint_\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.580943,
+      "\u001b[A\u001b[A\u001b[46C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[10C\u001b[38;2;215;135;135ma\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001638,
+      "\u001b[A\u001b[A\u001b[45C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[11C"
+    ],
+    [
+      0.001679,
+      "\u001b[A\u001b[A\u001b[45C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[10C\u001b[38;2;255;138;0ma\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.211449,
+      "\u001b[A\u001b[A\u001b[45C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[11C\u001b[38;2;215;135;135mr\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001648,
+      "\u001b[A\u001b[A\u001b[44C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[12C"
+    ],
+    [
+      0.001659,
+      "\u001b[A\u001b[A\u001b[44C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[11C\u001b[38;2;255;138;0mr\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.131307,
+      "\u001b[A\u001b[A\u001b[44C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[12C\u001b[38;2;215;135;135mr\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.00164,
+      "\u001b[A\u001b[A\u001b[43C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[13C"
+    ],
+    [
+      0.001671,
+      "\u001b[A\u001b[A\u001b[43C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[12C\u001b[38;2;255;138;0mr\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.131364,
+      "\u001b[A\u001b[A\u001b[43C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[13C\u001b[38;2;215;135;135ma\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.00164,
+      "\u001b[A\u001b[A\u001b[42C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[14C"
+    ],
+    [
+      0.001665,
+      "\u001b[A\u001b[A\u001b[42C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[13C\u001b[38;2;255;138;0ma\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.097607,
+      "\u001b[A\u001b[A\u001b[42C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[14C\u001b[38;2;215;135;135my\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001658,
+      "\u001b[A\u001b[A\u001b[41C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[15C"
+    ],
+    [
+      0.001689,
+      "\u001b[A\u001b[A\u001b[41C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[14C\u001b[38;2;255;138;0my\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.9,
+      "\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.002541,
+      "\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      5.2e-05,
+      "\u001b[38;5;237m⏎\u001b(B\u001b[m                                                                                \r⏎ \r\u001b[2K"
+    ],
+    [
+      1.5e-05,
+      "\u001b]0;~/Goog/Mack/.conf/fish\u0007\u001b]0;~/Goog/Mack/.conf/fish\u0007\r\r"
+    ],
+    [
+      0.001678,
+      "\u001b]133;D;0\u0007\u001b]133;A\u0007function print_array\u001b[K\u001b[34C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[K\r\nend\u001b[K"
+    ],
+    [
+      0.001771,
+      "\u001b[A\u001b[A\r\u001b[38;2;95;135;255mfunction\u001b[30m\u001b(B\u001b[m print_array\u001b[34C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\r\n\u001b[38;2;95;135;255mend\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.596738,
+      "\u001b[A\u001b[A\u001b[51C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n"
+    ],
+    [
+      0.84433,
+      "\u001b[A\u001b[54C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n    \u001b[38;2;215;135;135me\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001644,
+      "\u001b[A\u001b[49C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[5C"
+    ],
+    [
+      0.001727,
+      "\u001b[A\u001b[49C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[5C\u001b[38;2;95;135;255mc\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001646,
+      "\u001b[A\u001b[48C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[6C"
+    ],
+    [
+      0.001663,
+      "\u001b[A\u001b[48C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[4C\u001b[38;2;255;138;0mec\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.07171,
+      "\u001b[A\u001b[48C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[6C\u001b[38;2;215;135;135mh\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001639,
+      "\u001b[A\u001b[47C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[7C"
+    ],
+    [
+      0.001647,
+      "\u001b[A\u001b[47C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[6C\u001b[38;2;255;138;0mh\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.165076,
+      "\u001b[A\u001b[47C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[7C\u001b[38;2;215;135;135mo\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001641,
+      "\u001b[A\u001b[46C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[8C"
+    ],
+    [
+      0.001667,
+      "\u001b[A\u001b[46C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[4C\u001b[38;2;95;135;255mecho\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.806568,
+      "\u001b[A\u001b[46C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[8C\u001b[38;2;215;135;135m \u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001639,
+      "\u001b[A\u001b[45C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[9C"
+    ],
+    [
+      0.001656,
+      "\u001b[A\u001b[45C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[8C "
+    ],
+    [
+      0.469211,
+      "\u001b[A\u001b[45C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[9C\u001b[38;2;215;135;135m-\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001635,
+      "\u001b[A\u001b[44C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[10C"
+    ],
+    [
+      0.001658,
+      "\u001b[A\u001b[44C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[9C\u001b[38;2;95;175;215m-\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.289809,
+      "\u001b[A\u001b[44C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[10C\u001b[38;2;215;135;135mn\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001647,
+      "\u001b[A\u001b[43C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[11C"
+    ],
+    [
+      0.001655,
+      "\u001b[A\u001b[43C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[10C\u001b[38;2;95;175;215mn\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.121047,
+      "\u001b[A\u001b[43C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[11C\u001b[38;2;215;135;135ms\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001636,
+      "\u001b[A\u001b[42C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[12C"
+    ],
+    [
+      0.001659,
+      "\u001b[A\u001b[42C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[11C\u001b[38;2;95;175;215ms\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.163984,
+      "\u001b[A\u001b[42C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[12C\u001b[38;2;215;135;135m \u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001644,
+      "\u001b[A\u001b[41C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[13C"
+    ],
+    [
+      0.001653,
+      "\u001b[A\u001b[41C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[12C "
+    ],
+    [
+      0.414095,
+      "\u001b[A\u001b[41C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[13C\u001b[38;2;215;135;135m$\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001656,
+      "\u001b[A\u001b[40C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[14C"
+    ],
+    [
+      0.001658,
+      "\u001b[A\u001b[40C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[13C\u001b[38;2;255;138;0m$\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.761476,
+      "\u001b[A\u001b[40C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[14C\u001b[38;2;215;135;135mt\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001638,
+      "\u001b[A\u001b[39C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[15C"
+    ],
+    [
+      0.001664,
+      "\u001b[A\u001b[39C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[13C\u001b[33m$t\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.075169,
+      "\u001b[A\u001b[39C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[15C\u001b[38;2;215;135;135mh\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001648,
+      "\u001b[A\u001b[38C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[16C"
+    ],
+    [
+      0.001661,
+      "\u001b[A\u001b[38C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[15C\u001b[33mh\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.9,
+      "\u001b[A\u001b[38C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[16C\u001b[38;2;215;135;135me\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001646,
+      "\u001b[A\u001b[37C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[17C"
+    ],
+    [
+      0.001724,
+      "\u001b[A\u001b[37C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[17C\u001b[38;2;95;135;255m_\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001658,
+      "\u001b[A\u001b[36C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[18C"
+    ],
+    [
+      0.001661,
+      "\u001b[A\u001b[36C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[16C\u001b[33me_\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.306857,
+      "\u001b[A\u001b[36C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[18C\u001b[38;2;215;135;135ma\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001641,
+      "\u001b[A\u001b[35C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[19C"
+    ],
+    [
+      0.001672,
+      "\u001b[A\u001b[35C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[18C\u001b[33ma\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.142997,
+      "\u001b[A\u001b[35C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[19C\u001b[38;2;215;135;135mr\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001646,
+      "\u001b[A\u001b[34C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[20C"
+    ],
+    [
+      0.00167,
+      "\u001b[A\u001b[34C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[19C\u001b[33mr\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.131673,
+      "\u001b[A\u001b[34C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[20C\u001b[38;2;215;135;135mr\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001648,
+      "\u001b[A\u001b[33C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[21C"
+    ],
+    [
+      0.001662,
+      "\u001b[A\u001b[33C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[20C\u001b[33mr\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.10848,
+      "\u001b[A\u001b[33C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[21C\u001b[38;2;215;135;135ma\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001641,
+      "\u001b[A\u001b[32C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[22C"
+    ],
+    [
+      0.001665,
+      "\u001b[A\u001b[32C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[21C\u001b[33ma\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.087421,
+      "\u001b[A\u001b[32C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[22C\u001b[38;2;215;135;135my\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001647,
+      "\u001b[A\u001b[31C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[23C"
+    ],
+    [
+      0.001661,
+      "\u001b[A\u001b[31C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[22C\u001b[33my\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.87936,
+      "$the_array\r\n"
+    ],
+    [
+      0.006897,
+      "\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.002394,
+      "\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      5.7e-05,
+      "\u001b[38;5;237m⏎\u001b(B\u001b[m                                                                                \r⏎ \r\u001b[2K"
+    ],
+    [
+      1.1e-05,
+      "\u001b]0;~/Goog/Mack/.conf/fish\u0007\u001b]0;~/Goog/Mack/.conf/fish\u0007\r\r"
+    ],
+    [
+      0.002779,
+      "\u001b]133;D;0\u0007\u001b]133;A\u0007> \u001b[K\u001b[53C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_array\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[55C\r\u001b[C\u001b[C"
+    ],
+    [
+      0.782374,
+      "1\u001b[52C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_array\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[55C\r\u001b[3C"
+    ],
+    [
+      0.002751,
+      "\u001b[52C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_array\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[55C\r\u001b[3C"
+    ],
+    [
+      0.002795,
+      "\b\u001b[38;2;255;138;0m1\u001b[52C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_array\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[55C\r\u001b[3C"
+    ],
+    [
+      0.376972,
+      "\u001b[52C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_array\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[55C\r\r\n  "
+    ],
+    [
+      0.002776,
+      "\u001b[A\u001b[53C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_array\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[55C\r\r\n\u001b[C\u001b[C"
+    ],
+    [
+      0.401602,
+      "\u001b[A\u001b[53C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_array\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[55C\r\r\n\u001b[C\u001b[C\u001b[38;2;215;135;135m2\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.002762,
+      "\u001b[A\u001b[52C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_array\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[55C\r\r\n\u001b[3C"
+    ],
+    [
+      0.00278,
+      "\u001b[A\u001b[52C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_array\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[55C\r\r\n\u001b[C\u001b[C\u001b[38;2;255;138;0m2\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.411386,
+      "\u001b[A\u001b[52C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_array\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[55C\r\r\n\r\n  "
+    ],
+    [
+      0.002774,
+      "\u001b[A\u001b[A\u001b[53C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_array\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[55C\r\r\n\r\n\u001b[C\u001b[C"
+    ],
+    [
+      0.21057,
+      "\u001b[A\u001b[A\u001b[53C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_array\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[55C\r\r\n\r\n\u001b[C\u001b[C\u001b[38;2;215;135;135m3\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.002766,
+      "\u001b[A\u001b[A\u001b[52C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_array\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[55C\r\r\n\r\n\u001b[3C"
+    ],
+    [
+      0.002779,
+      "\u001b[A\u001b[A\u001b[52C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_array\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[55C\r\r\n\r\n\u001b[C\u001b[C\u001b[38;2;255;138;0m3\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.793341,
+      "\u001b[A\u001b[A\u001b[52C\u001b[30m\u001b[101marred\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[102mthe_array\u001b[30m\u001b(B\u001b[m\u001b[31m\u001b[40m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[33m G\u001b[30m\u001b(B\u001b[m \r\u001b[55C\r\r\n\r\n\u001b[3C\r\n"
+    ],
+    [
+      1.9e-05,
+      "\u001b[30m\u001b(B\u001b[m\u001b[38;5;237m⏎\u001b(B\u001b[m                                                                                \r⏎ \r\u001b[2K"
+    ],
+    [
+      0.002687,
+      "\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      1.1e-05,
+      "\r"
+    ],
+    [
+      1.3e-05,
+      "\u001b]0;~/Goog/Mack/.conf/fish\u0007\r\r"
+    ],
+    [
+      0.002093,
+      "\u001b]133;D;0\u0007\u001b]133;A\u0007\u001b[38;2;95;135;255mfunction\u001b[30m\u001b(B\u001b[m print_array\u001b[K\u001b[34C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n    \u001b[38;2;95;135;255mecho\u001b[30m\u001b(B\u001b[m \u001b[38;2;95;175;215m-ns\u001b[30m\u001b(B\u001b[m \u001b[33m$the_array\u001b[30m\u001b(B\u001b[m\u001b[K\r\n\u001b[38;2;95;135;255mend\u001b[30m\u001b(B\u001b[m\u001b[K\u001b[A\u001b[20C"
+    ],
+    [
+      0.9,
+      "\u001b[A\u001b[31C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[23C\u001b[38;2;215;135;135m\\\r\n\u001b[30m\u001b(B\u001b[m    \u001b[38;2;95;135;255mend\u001b[A\u001b[17C\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001649,
+      "\u001b[A\u001b[30C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[24C"
+    ],
+    [
+      0.001675,
+      "\u001b[A\u001b[30C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[23C\u001b[38;2;95;175;215m\\\r\n\u001b[4Cend\u001b[A\u001b[17C\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.456644,
+      "\u001b[A\u001b[30C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[24C\u001b[38;2;95;175;215mn\r\nend\u001b[30m\u001b(B\u001b[m\u001b[K\u001b[A\u001b[22C"
+    ],
+    [
+      0.00165,
+      "\u001b[A\u001b[29C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[25C"
+    ],
+    [
+      0.001681,
+      "\u001b[A\u001b[29C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\u001b[23C\u001b[4m\\n\r\n\u001b[38;2;95;135;255m\u001b[24mend\u001b[A\u001b[22C\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.638219,
+      "\u001b[A\u001b[29C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_array\u001b[30m\u001b(B\u001b[m \r\u001b[54C\r\r\n\r\n\u001b[3C\r\n"
+    ],
+    [
+      1.8e-05,
+      "\u001b[30m\u001b(B\u001b[m\u001b[38;5;237m⏎\u001b(B\u001b[m                                                                                \r⏎ \r\u001b[2K"
+    ],
+    [
+      0.023794,
+      "Saving new function print_array\r\n"
+    ],
+    [
+      0.004531,
+      "\u001b[30m\u001b(B\u001b[m\r"
+    ],
+    [
+      1.6e-05,
+      "\u001b]0;~/Goog/Mack/.conf/fish\u0007\r\r"
+    ],
+    [
+      0.00177,
+      "\u001b]133;D;0\u0007\u001b]133;A\u0007\u001b[38;2;95;135;255mfunction\u001b[30m\u001b(B\u001b[m print_var\u001b[K\u001b[38C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n    \u001b[38;2;95;135;255mecho\u001b[30m\u001b(B\u001b[m \u001b[33m$the_var\u001b[30m\u001b(B\u001b[m\u001b[K\r\n    \u001b[38;2;255;138;0mprint_array\u001b[30m\u001b(B\u001b[m\u001b[K\r\n\u001b[38;2;95;135;255mend\u001b[30m\u001b(B\u001b[m\u001b[K\u001b[A\u001b[12C"
+    ],
+    [
+      0.734267,
+      "\u001b[A\u001b[A\u001b[41C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[15C\u001b[38;2;215;135;135m \u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.001646,
+      "\u001b[A\u001b[A\u001b[40C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[16C"
+    ],
+    [
+      0.001701,
+      "\u001b[A\u001b[A\u001b[40C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\u001b[4C\u001b[38;2;95;135;255mprint_array\u001b[30m\u001b(B\u001b[m "
+    ],
+    [
+      0.357286,
+      "\u001b[A\u001b[A\u001b[40C\u001b[30m\u001b[104mtolfunc\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[42mprint_var\u001b[30m\u001b(B\u001b[m \r\u001b[56C\r\r\n\r\n\r\n\u001b[3C\r\n"
+    ],
+    [
+      1.6e-05,
+      "\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      1e-05,
+      "\u001b[38;5;237m⏎\u001b(B\u001b[m                                                                                \r⏎ \r\u001b[2K"
+    ],
+    [
+      0.048596,
+      "\u001b[92msaving edited function\u001b[30m\u001b(B\u001b[m\r\n"
+    ],
+    [
+      0.207927,
+      "\u001b[30m\u001b(B\u001b[m\r\u001b]0;~/Goog/Mack/.conf/fish\u0007\r\r"
+    ],
+    [
+      0.005564,
+      "\u001b]133;D;0\u0007\u001b]133;A\u0007\u001b[38;2;255;152;26m\u001b[33m~/\u001b[31m.l\u001b[31mn/\u001b[33m.conf/\u001b[91m\u001b[7mfish\u001b[27m\u001b[30m\u001b(B\u001b[m \u001b]133;B\u0007\u001b[38;2;95;135;255mprint_var\u001b[30m\u001b(B\u001b[m \u001b[K\u001b[21C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m50\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[26C"
+    ],
+    [
+      0.9,
+      "\u001b[23C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m50\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[27C"
+    ],
+    [
+      0.213119,
+      "\u001b[22C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m50\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[28C"
+    ],
+    [
+      0.213708,
+      "\u001b[21C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m50\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[28C\r\n\u001b[30m\u001b"
+    ],
+    [
+      1.5e-05,
+      "(B\u001b[m"
+    ],
+    [
+      0.00048,
+      "\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      4.8e-05,
+      "the contents\r\n"
+    ],
+    [
+      2.3e-05,
+      "1\r\n2\r\n3\r\n"
+    ],
+    [
+      0.002859,
+      "\u001b]0;~/Goog/Mack/.conf/fish\u0007\r"
+    ],
+    [
+      0.200238,
+      "\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      2e-05,
+      "\u001b[38;5;237m⏎\u001b(B\u001b[m                                                                                \r⏎ \r\u001b[2K\u001b]0;~/Goog/Mack/.conf/fish\u0007\r\r"
+    ],
+    [
+      0.005566,
+      "\u001b]133;D;0\u0007\u001b]133;A\u0007\u001b[38;2;255;152;26m\u001b[33m~/\u001b[31m.l\u001b[31mn/\u001b[33m.conf/\u001b[91m\u001b[7mfish\u001b[27m\u001b[30m\u001b(B\u001b[m \u001b]133;B\u0007\u001b[K\u001b[31C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m52\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[18C"
+    ],
+    [
+      0.9,
+      "b\u001b[30C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m52\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[19C"
+    ],
+    [
+      0.005539,
+      "\u001b[30C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m52\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[19C"
+    ],
+    [
+      0.005681,
+      "\b\u001b[38;2;255;138;0mb\u001b[30C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m52\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[19C"
+    ],
+    [
+      0.005789,
+      "\u001b[38;2;209;209;209minded\u001b[25C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m52\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[19C"
+    ],
+    [
+      0.084963,
+      "\u001b[38;2;255;138;0mi\u001b[38;2;209;209;209mnded\u001b[25C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m52\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[20C"
+    ],
+    [
+      0.005613,
+      "\u001b[29C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m52\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[20C"
+    ],
+    [
+      0.005597,
+      "\b\b\u001b[38;2;95;135;255mbi\u001b[38;2;209;209;209mnded\u001b[25C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m52\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[20C"
+    ],
+    [
+      0.121783,
+      "\u001b[38;2;95;135;255mn\u001b[38;2;209;209;209mded\u001b[25C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m52\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[21C"
+    ],
+    [
+      0.005526,
+      "\u001b[28C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m52\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[21C"
+    ],
+    [
+      0.005591,
+      "\b\b\b\u001b[38;2;255;138;0mbin\u001b[38;2;209;209;209mded\u001b[25C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m52\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[21C"
+    ],
+    [
+      0.068196,
+      "\u001b[38;2;255;138;0md\u001b[38;2;209;209;209med\u001b[25C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m52\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[22C"
+    ],
+    [
+      0.005527,
+      "\u001b[27C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m52\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[22C"
+    ],
+    [
+      0.005563,
+      "\b\b\b\b\u001b[38;2;95;135;255mbind\u001b[38;2;209;209;209med\u001b[25C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m52\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[22C"
+    ],
+    [
+      0.362105,
+      "\u001b[38;2;95;135;255me\u001b[38;2;209;209;209md\u001b[25C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m52\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[23C"
+    ],
+    [
+      0.005531,
+      "\u001b[26C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m52\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[23C"
+    ],
+    [
+      0.005619,
+      "\u001b[38;2;95;135;255md\u001b[25C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m52\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[24C"
+    ],
+    [
+      0.00553,
+      "\u001b[25C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m52\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[24C"
+    ],
+    [
+      0.758721,
+      "\u001b[25C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m29\u001b[37m52\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[24C\r\n\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.000643,
+      "\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.000921,
+      "\u001b[92mPress keys - unused adds new binding - existing gets edited \u001b[91m(ctrl-c doesnt work)\r\n"
+    ],
+    [
+      0.000216,
+      "\u001b]0;~/Goog/Mack/.conf/fish\u0007\r"
+    ],
+    [
+      0.9,
+      "\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.002263,
+      "\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      5.4e-05,
+      "\u001b[38;5;237m⏎\u001b(B\u001b[m                                                                                \r⏎ \r\u001b[2K"
+    ],
+    [
+      1.5e-05,
+      "\u001b]0;~/Goog/Mack/.conf/fish\u0007\u001b]0;~/Goog/Mack/.conf/fish\u0007\r\r"
+    ],
+    [
+      0.001293,
+      "\u001b]133;D;0\u0007\u001b]133;A\u0007    bind \\ep\\eb __tol_copy_pipe # add pipe to pbcopy to end of cmdline\u001b[K"
+    ],
+    [
+      0.001332,
+      "\u001b[66D\u001b[38;2;95;135;255mbind\u001b[30m\u001b(B\u001b[m \u001b[4m\\e\u001b[38;2;95;175;215m\u001b[24mp\u001b[30m\u001b(B\u001b[m\u001b[4m\\e\u001b[38;2;95;175;215m\u001b[24mb\u001b[30m\u001b(B\u001b[m \u001b[38;2;95;175;215m__tol_copy_pipe\u001b[30m\u001b(B\u001b[m \u001b[38;2;175;215;215m# add pipe to pbcopy to end of cmdline\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.9,
+      "\r\n\u001b[30"
+    ],
+    [
+      1.7e-05,
+      "m\u001b(B\u001b[m\u001b[38;5;237m⏎\u001b(B\u001b[m                                                                                \r⏎ \r\u001b[2K"
+    ],
+    [
+      0.209766,
+      "\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      1.9e-05,
+      "\u001b[38;5;237m⏎\u001b(B\u001b[m                                                                                \r⏎ \r\u001b[2K\u001b]0;~/Goog/Mack/.conf/fish\u0007\r\r"
+    ],
+    [
+      0.005209,
+      "\u001b]133;D;0\u0007\u001b]133;A\u0007\u001b[38;2;255;152;26m\u001b[33m~/\u001b[31m.l\u001b[31mn/\u001b[33m.conf/\u001b[91m\u001b[7mfish\u001b[27m\u001b[30m\u001b(B\u001b[m \u001b]133;B\u0007\u001b[K\u001b[31C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[32m3387\u001b[37m58\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[18C"
+    ],
+    [
+      0.9,
+      "binded\u001b[25C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[32m3387\u001b[37m58\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[24C"
+    ],
+    [
+      0.005303,
+      "\b\b\b\b\b\b\u001b[38;2;95;135;255mbinded\u001b[25C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[32m3387\u001b[37m58\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[24C"
+    ],
+    [
+      0.8598,
+      "\u001b[25C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[32m3387\u001b[37m58\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[24C\r\n"
+    ],
+    [
+      1.6e-05,
+      "\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.000602,
+      "\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.000292,
+      "\u001b[92mPress keys - unused adds new binding - existing gets edited \u001b[91m(ctrl-c doesnt work)\r\n"
+    ],
+    [
+      0.9,
+      "\u001b]0;~/Goog/Mack/.conf/fish\u0007\r"
+    ],
+    [
+      0.004581,
+      "\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.002793,
+      "\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      6.2e-05,
+      "\u001b[38;5;237m⏎\u001b(B\u001b[m                                                                                \r⏎ \r\u001b[2K\u001b]0;~/Goog/Mack/.conf/fish\u0007\u001b]0;~/Goog/Mack/.conf/fish\u0007\r\r"
+    ],
+    [
+      0.001688,
+      "\u001b]133;D;0\u0007\u001b]133;A\u0007bind \\ef\\ef \u001b[K\u001b[48C\u001b[30m\u001b[105mbinded\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[101m\\ef\\ef\u001b[30m\u001b(B\u001b[m \r\u001b[60C\r\u001b[12C"
+    ],
+    [
+      0.001695,
+      "\r\u001b[38;2;95;135;255mbind\u001b[30m\u001b(B\u001b[m \u001b[4m\\e\u001b[38;2;95;175;215m\u001b[24mf\u001b[30m\u001b(B\u001b[m\u001b[4m\\e\u001b[38;2;95;175;215m\u001b[24mf\u001b[30m\u001b(B\u001b[m \u001b[48C\u001b[30m\u001b[105mbinded\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[101m\\ef\\ef\u001b[30m\u001b(B\u001b[m \r\u001b[60C\r\u001b[12C"
+    ],
+    [
+      0.9,
+      "p\u001b[47C\u001b[30m\u001b[105mbinded\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[101m\\ef\\ef\u001b[30m\u001b(B\u001b[m \r\u001b[60C\r\u001b[13C"
+    ],
+    [
+      0.001623,
+      "\u001b[47C\u001b[30m\u001b[105mbinded\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[101m\\ef\\ef\u001b[30m\u001b(B\u001b[m \r\u001b[60C\r\u001b[13C"
+    ],
+    [
+      0.001658,
+      "\b\u001b[38;2;95;175;215mp\u001b[47C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b[105mbinded\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[101m\\ef\\ef\u001b[30m\u001b(B\u001b[m \r\u001b[60C\r\u001b[13C"
+    ],
+    [
+      0.120354,
+      "\u001b[38;2;95;175;215mr\u001b[46C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b[105mbinded\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[101m\\ef\\ef\u001b[30m\u001b(B\u001b[m \r\u001b[60C\r\u001b[14C"
+    ],
+    [
+      0.00164,
+      "\u001b[46C\u001b[30m\u001b[105mbinded\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[101m\\ef\\ef\u001b[30m\u001b(B\u001b[m \r\u001b[60C\r\u001b[14C"
+    ],
+    [
+      0.077315,
+      "\u001b[38;2;95;175;215mi\u001b[45C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b[105mbinded\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[101m\\ef\\ef\u001b[30m\u001b(B\u001b[m \r\u001b[60C\r\u001b[15C"
+    ],
+    [
+      0.001663,
+      "\u001b[45C\u001b[30m\u001b[105mbinded\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[101m\\ef\\ef\u001b[30m\u001b(B\u001b[m \r\u001b[60C\r\u001b[15C"
+    ],
+    [
+      0.099115,
+      "\u001b[38;2;95;175;215mn\u001b[44C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b[105mbinded\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[101m\\ef\\ef\u001b[30m\u001b(B\u001b[m \r\u001b[60C\r\u001b[16C"
+    ],
+    [
+      0.001634,
+      "\u001b[44C\u001b[30m\u001b[105mbinded\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[101m\\ef\\ef\u001b[30m\u001b(B\u001b[m \r\u001b[60C\r\u001b[16C"
+    ],
+    [
+      0.132778,
+      "\u001b[38;2;95;175;215mt\u001b[43C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b[105mbinded\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[101m\\ef\\ef\u001b[30m\u001b(B\u001b[m \r\u001b[60C\r\u001b[17C"
+    ],
+    [
+      0.001673,
+      "\u001b[43C\u001b[30m\u001b[105mbinded\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[101m\\ef\\ef\u001b[30m\u001b(B\u001b[m \r\u001b[60C\r\u001b[17C"
+    ],
+    [
+      0.695922,
+      "\u001b[38;2;95;175;215m_\u001b[42C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b[105mbinded\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[101m\\ef\\ef\u001b[30m\u001b(B\u001b[m \r\u001b[60C\r\u001b[18C"
+    ],
+    [
+      0.001677,
+      "\u001b[42C\u001b[30m\u001b[105mbinded\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[101m\\ef\\ef\u001b[30m\u001b(B\u001b[m \r\u001b[60C\r\u001b[18C"
+    ],
+    [
+      0.283187,
+      "\r\u001b[1m\u001b[100mbind \\ef\\ef print_\u001b[42C\u001b(B\u001b[m\u001b[30m\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b[105mbinded\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[101m\\ef\\ef\u001b[30m\u001b(B\u001b[m \r\u001b[60C\r\u001b[18C"
+    ],
+    [
+      0.100864,
+      "\u0007\r\r"
+    ],
+    [
+      0.002431,
+      "\u001b]133;D;0\u0007\u001b]133;A\u0007\u001b[1m\u001b[100mbind \\ef\\ef print_\u001b(B\u001b[m\u001b[30m\u001b[30m\u001b(B\u001b[m\u001b[K\u001b[42C\u001b[30m\u001b[105mbinded\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[101m\\ef\\ef\u001b[30m\u001b(B\u001b[m \r\u001b[60C\r\u001b[18C"
+    ],
+    [
+      0.001699,
+      "\r\u001b[38;2;95;135;255mbind\u001b[30m\u001b(B\u001b[m \u001b[4m\\e\u001b[38;2;95;175;215m\u001b[24mf\u001b[30m\u001b(B\u001b[m\u001b[4m\\e\u001b[38;2;95;175;215m\u001b[24mf\u001b[30m\u001b(B\u001b[m \u001b[38;2;95;175;215mprint_\u001b[42C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b[105mbinded\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[101m\\ef\\ef\u001b[30m\u001b(B\u001b[m \r\u001b[60C\r\u001b[18C"
+    ],
+    [
+      0.701246,
+      "\u001b[38;2;95;175;215mv\u001b[41C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b[105mbinded\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[101m\\ef\\ef\u001b[30m\u001b(B\u001b[m \r\u001b[60C\r\u001b[19C"
+    ],
+    [
+      0.001633,
+      "\u001b[41C\u001b[30m\u001b[105mbinded\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[101m\\ef\\ef\u001b[30m\u001b(B\u001b[m \r\u001b[60C\r\u001b[19C"
+    ],
+    [
+      0.1448,
+      "\u001b[38;2;95;175;215ma\u001b[40C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b[105mbinded\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[101m\\ef\\ef\u001b[30m\u001b(B\u001b[m \r\u001b[60C\r\u001b[20C"
+    ],
+    [
+      0.001635,
+      "\u001b[40C\u001b[30m\u001b[105mbinded\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[101m\\ef\\ef\u001b[30m\u001b(B\u001b[m \r\u001b[60C\r\u001b[20C"
+    ],
+    [
+      0.122154,
+      "\u001b[38;2;95;175;215mr\u001b[39C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b[105mbinded\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[101m\\ef\\ef\u001b[30m\u001b(B\u001b[m \r\u001b[60C\r\u001b[21C"
+    ],
+    [
+      0.001655,
+      "\u001b[39C\u001b[30m\u001b[105mbinded\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[101m\\ef\\ef\u001b[30m\u001b(B\u001b[m \r\u001b[60C\r\u001b[21C"
+    ],
+    [
+      0.9,
+      "\u001b[39C\u001b[30m\u001b[105mbinded\u001b[30m\u001b(B\u001b[m editing \u001b[30m\u001b[101m\\ef\\ef\u001b[30m\u001b(B\u001b[m \r\u001b[60C\r\u001b[21C\r\n"
+    ],
+    [
+      1.6e-05,
+      "\u001b[30m\u001b(B\u001b[m\u001b[38;5;237m⏎\u001b(B\u001b[m                                                                                \r⏎ \r\u001b[2K"
+    ],
+    [
+      0.211662,
+      "\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      2e-05,
+      "\u001b[38;5;237m⏎\u001b(B\u001b[m                                                                                \r⏎ \r\u001b[2K\u001b]0;~/Goog/Mack/.conf/fish\u0007\r\r"
+    ],
+    [
+      0.005242,
+      "\u001b]133;D;0\u0007\u001b]133;A\u0007\u001b[38;2;255;152;26m\u001b[33m~/\u001b[31m.l\u001b[31mn/\u001b[33m.conf/\u001b[91m\u001b[7mfish\u001b[27m\u001b[30m\u001b(B\u001b[m \u001b]133;B\u0007\u001b[K\u001b[31C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[32m8598\u001b[37m10\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[18C"
+    ],
+    [
+      0.9,
+      "the contents\r\n"
+    ],
+    [
+      5.1e-05,
+      "1\r\n2\r\n3\r\n"
+    ],
+    [
+      0.9,
+      "\r\r"
+    ],
+    [
+      0.005223,
+      "\u001b]133;D;0\u0007\u001b]133;A\u0007\u001b[38;2;255;152;26m\u001b[33m~/\u001b[31m.l\u001b[31mn/\u001b[33m.conf/\u001b[91m\u001b[7mfish\u001b[27m\u001b[30m\u001b(B\u001b[m \u001b]133;B\u0007\u001b[K\u001b[31C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[32m8598\u001b[37m10\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[18C\r\n"
+    ],
+    [
+      1.3e-05,
+      "\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.00051,
+      "\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      0.003011,
+      "\u001b]0;~/Goog/Mack/.conf/fish\u0007\r"
+    ],
+    [
+      0.204554,
+      "\u001b[30m\u001b(B\u001b[m"
+    ],
+    [
+      1.9e-05,
+      "\u001b[38;5;237m⏎\u001b(B\u001b[m                                                                                \r⏎ \r\u001b[2K\u001b]0;~/Goog/Mack/.conf/fish\u0007\r\r"
+    ],
+    [
+      0.005548,
+      "\u001b]133;D;0\u0007\u001b]133;A\u0007\u001b[38;2;255;152;26m\u001b[33m~/\u001b[31m.l\u001b[31mn/\u001b[33m.conf/\u001b[91m\u001b[7mfish\u001b[27m\u001b[30m\u001b(B\u001b[m \u001b]133;B\u0007\u001b[K\u001b[31C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m30\u001b[37m14\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[18C"
+    ],
+    [
+      0.765623,
+      "f\u001b[30C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m30\u001b[37m14\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[19C"
+    ],
+    [
+      0.005543,
+      "\u001b[30C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m30\u001b[37m14\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[19C"
+    ],
+    [
+      0.005533,
+      "\b\u001b[38;2;255;138;0mf\u001b[30C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m30\u001b[37m14\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[19C"
+    ],
+    [
+      0.005579,
+      "\u001b[38;2;209;209;209muncrm __do_something \u001b[9C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m30\u001b[37m14\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[19C"
+    ],
+    [
+      0.040597,
+      "\u001b[38;2;255;138;0mi\u001b[30m\u001b(B\u001b[m\u001b[K\u001b[29C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m30\u001b[37m14\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[20C"
+    ],
+    [
+      0.00554,
+      "\u001b[29C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m30\u001b[37m14\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[20C"
+    ],
+    [
+      0.005535,
+      "\b\b\u001b[38;2;95;135;255mfi\u001b[29C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m30\u001b[37m14\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[20C"
+    ],
+    [
+      0.005573,
+      "\u001b[38;2;209;209;209msh_colors \u001b[19C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m30\u001b[37m14\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[20C"
+    ],
+    [
+      0.073398,
+      "\u001b[38;2;95;135;255mn\u001b[30m\u001b(B\u001b[m\u001b[K\u001b[28C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m30\u001b[37m14\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[21C"
+    ],
+    [
+      0.00554,
+      "\u001b[28C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m30\u001b[37m14\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[21C"
+    ],
+    [
+      0.005537,
+      "\b\b\b\u001b[38;2;255;138;0mfin\u001b[28C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m30\u001b[37m14\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[21C"
+    ],
+    [
+      0.005589,
+      "\u001b[38;2;209;209;209md . | grep shada\u001b[12C\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m30\u001b[37m14\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[21C"
+    ],
+    [
+      0.9,
+      "\b\b\b\u001b[K\u001b[31C\u001b[30m\u001b(B\u001b[m\u001b[48;2;204;36;29m\u001b[38;2;235;219;178m absurd ✗… \u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m\u001b[1m\u001b[34mtolgraven\u001b[38;2;184;230;230mabsurd\u001b[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m04\u001b[37m30\u001b[37m14\u001b[30m\u001b(B\u001b[m\r\u001b[49C\r\u001b[18C"
+    ],
+    [
+      0.579619,
+      "\r\n\u001b"
+    ],
+    [
+      2.2e-05,
+      "[30m\u001b(B\u001b[m\u001b[30m\u001b(B\u001b[m"
+    ]
+  ]
+}

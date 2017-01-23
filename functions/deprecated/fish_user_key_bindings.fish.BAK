@@ -8,6 +8,7 @@ function fish_user_key_bindings
     bind \eY 'killed; commandline -f repaint'
     bind \ed __tol_dupl_line #"injected readline functions run after any commandline modifications" <-this is the...
     bind \eo __tol_down_new_line #bind \eo down-line
+
     bind \e8 __tol_insert_left_paran
     bind \e9 __tol_insert_right_paran
     bind \e7 backward-jump
@@ -78,5 +79,18 @@ function fish_user_key_bindings
     bind \eh\em 'history merge; echo -n (set_color brblue)"History merged!"; sleep 0.4; commandline -f repaint'
     bind \ep\es 'pscc (commandline --token); commandline -f repaint' #list running processes for token
 
-bind \eg\eg __do_some_stuff
+
+bind \eg\eh do_something_else 
+bind \ed\ed __do_whatever
+
+bind \ej\ej __somefunc
+bind \et\et print_var 
+bind \ee\ee print_var
+bind \ey\ey print_a_var 
+bind \eh\ey print_var 
+bind \es\es some_print_var
+bind \ef\ef print_var
+bind \eu\eu print_var
+bind \ev\ev print_var
+bind \ez\ez print_var
 end

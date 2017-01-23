@@ -1,6 +1,6 @@
 function binded --description 'add keybind interactively'
 set bindings_file ~/.config/fish/functions/fish_user_key_bindings.fish
-echo (set_color brgreen)"Press keys - unused adds new binding - existing gets edited" (set_color brred)"(ctrl-c doesnt work)"
+echo (set_color brgreen)"Press keys - unused adds binding, existing is edited" (set_color brred)"no ctrl-c"
 
 fish_key_reader ^&- | read -l bind
 set -l newkey (string escape -- (string split -- " " $bind)[2]) #first is best (-k instead of escape seq)

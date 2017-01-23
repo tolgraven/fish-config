@@ -23,7 +23,8 @@ function __fish_command_not_found_handler --on-event fish_command_not_found
 	if not isatty 1; __fish_default_command_not_found_handler $argv; return; end 
 
 		tput cuu1
-		history delete --exact --case-sensitive $cmdline
+		# history delete --exact --case-sensitive $cmdline #goes nuts for some reason
+
 	# commandline "Command not found"; commandline -f repaint
 	#sleep 0.05; commandline -a "."; sleep 0.05; commandline -a "."; sleep 0.05; commandline -a "."
 	#sleep 0.05

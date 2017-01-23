@@ -40,7 +40,8 @@ function func --description 'edit and save function' --argument function force
         #set -l diff (colordiff --minimal --ignore-case --ignore-all-space $orig $new | ack -v -- "---")
         #echo -n -s $diff\n; sleep 0.2; move_back_lines (count $diff); commandline -f repaint; echo | grep -Fxv (echo $new) # echo | sd $new
     else if not test -s "$orig" #if orig is zero
-        and test (command cat $new | strip_empty_lines | grep -v function | grep -v end | string trim) #-gt 0 #and shit aint empty
+        and test (count (command cat $new | strip_empty_lines)) -ne 2 # | grep -v "function $function" | grep -v "end" | string trim) #and shit aint empty
+				
         echo "Saving new function" $function
         # funcsave $function	
         cp $new ~/.config/fish/functions/$function.fish; and source ~/.config/fish/functions/$function.fish
