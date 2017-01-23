@@ -20,6 +20,7 @@ function func --description 'edit and save function' --argument function force
     # set -l newdef (tolfunc $function)
     # and echo -ns $newdef\n >$new
     tolfunc $function >$new
+		or return 1 #havoc previously after bug in tolfunc since was continuing at this point...
 
     while set -l index (contains -i $function $__tol_func_editing) #clears all instances for good measure, since we only got here if forced
         set -e __tol_func_editing[$index]
@@ -34,27 +35,19 @@ function func --description 'edit and save function' --argument function force
         and not test -z (diff --ignore-space-change -q $orig $new ^&-) # q = output if diffs, not quiet
 
         echo -s (set_color brgreen) "saving edited function" (set_color normal)
-        # funcsave $function
-        cp $new ~/.config/fish/functions/$function.fish
-        and source ~/.config/fish/functions/$function.fish
+        # funcsave $function #breaks autoload in other fish sessions
+        cp $new ~/.config/fish/functions/$function.fish; and source ~/.config/fish/functions/$function.fish
         #set -l diff (colordiff --minimal --ignore-case --ignore-all-space $orig $new | ack -v -- "---")
         #echo -n -s $diff\n; sleep 0.2; move_back_lines (count $diff); commandline -f repaint; echo | grep -Fxv (echo $new) # echo | sd $new
-    else if not test -s $orig #if orig is zero
-        and test (count (command cat $new | strip_empty_lines | grep -v function | grep -v end | string trim)) -gt 0 #and shit aint empty
+    else if not test -s "$orig" #if orig is zero
+        and test (command cat $new | strip_empty_lines | grep -v function | grep -v end | string trim) #-gt 0 #and shit aint empty
         echo "Saving new function" $function
         # funcsave $function	
-        cp $new ~/.config/fish/functions/$function.fish
-        and source ~/.config/fish/functions/$function.fish
+        cp $new ~/.config/fish/functions/$function.fish; and source ~/.config/fish/functions/$function.fish
     else #no change, supposedly. but somehow gets here when doing funcmv gah
         move_back_and_kill_lines $longest 1.5 #count $orig
         echo -n -s (set_color red) "   no change detected, not saving" (set_color normal) "."
-        sleep 0.1
-        echo -n -s "."
-        sleep 0.1
-        echo -n -s "."
-        sleep 0.3
-        if not test -s $orig
-            functions -e $function
-        end
+        sleep 0.1; echo -n -s "."; sleep 0.1; echo -n -s "."; sleep 0.3
+        if not test -s $orig; functions -e $function; end
     end
 end

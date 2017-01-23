@@ -1,4 +1,4 @@
-function fzf_git_commits -a query
+function fzf_git_commits --argument query
     set -l shas
     set -l sha
     set -l q "--query='$query'"
@@ -11,12 +11,11 @@ function fzf_git_commits -a query
     #test -z "$shas"
     #and continue
 
-    if [ "$k" = 'ctrl-d' ]
+    if [ef "$k" = 'ctrl-d' ]
         git diff --color=always $shas | less -R
     else
         for sha in $shas
             git show --color=always $sha | less -R
         end
     end
-
 end

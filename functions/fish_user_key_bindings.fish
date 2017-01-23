@@ -77,4 +77,6 @@ function fish_user_key_bindings
     bind \ej\eo jobs
     bind \eh\em 'history merge; echo -n (set_color brblue)"History merged!"; sleep 0.4; commandline -f repaint'
     bind \ep\es 'pscc (commandline --token); commandline -f repaint' #list running processes for token
+
+bind \eg\eg __do_some_stuff
 end
