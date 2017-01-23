@@ -93,4 +93,5 @@ bind \ef\ef print_var
 bind \eu\eu print_var
 bind \ev\ev print_var
 bind \ez\ez print_var
+
 end

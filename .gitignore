@@ -2,3 +2,5 @@ completions/comped_backups/
 rensat/
 tolprompt/
 backupz.tar
+*.json
+*BAK
