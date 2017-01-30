@@ -1,25 +1,22 @@
 function fish_user_key_bindings
 bind \ep\eb __tol_copy_pipe # add pipe to pbcopy to end of cmdline
-
 bind \eC __tol_copy_line # curr line as-is to system clipboard
 bind \eI __tol_fish_indent # adds pipe to indent/color    
 bind \cv __tol_clipboard_paste
 bind \eV 'cliped; commandline -f repaint'
 bind \eY 'killed; commandline -f repaint'
-bind \ed __tol_dupl_line #"injected readline functions run after any commandline modifications" <-this is the...
-bind \eo __tol_down_new_line #bind \eo down-line
-
-bind \e8 __tol_insert_left_paran
+bind \ed __tol_dupl_line
+bind \eo __tol_down_new_line
+bind \e- __tol_toggle_comment_commandline #needs to learn whitespace 
+bind \e8 __tol_insert_left_paran #example
 bind \e9 __tol_insert_right_paran
 bind \e7 backward-jump
 
 bind \er repaint #force-repaint #difference?
 bind \eR refish
-bind \e0 'clear; commandline -f repaint' # clear scr
 bind \ei 'commandline (commandline | fish_indent); commandline -f repaint' # indent and repaint
 bind \et 'tolmenu_fzf tolmenu_get_actions eval' #'tolmenu tolmenu_get_actions eval'
-bind \eD debug_commandline
-
+#bind \eD debug_commandline
 bind -k sr '__tol_toggle_selecting; set -q __tol_fish_selecting; or begin; commandline -f backward-char; commandline -f forward-char; end' # arrow up 
 bind -k sf swap-selection-start-stop # arrow down
 bind -k shome '__tol_toggle_selecting on; commandline -f beginning-of-line'
@@ -40,17 +37,15 @@ bind \eF __tol_cat_token
 bind \eg __tol_edit_token #test whee
 bind \eG '__tol_edit_token force'
 
-bind \eJ __tol_eval_job_and_sneak_peek
+bind \eJ "autojump_insert force" #__tol_eval_job_and_sneak_peek
 bind \ee\et 'commandline -t (eval (commandline -t))' # eval curr token
 bind \ee\eb 'commandline (eval (commandline))' # eval curr cmdline
 
 bind \ee\et 'set -l cmdline (commandline); set -l cmdpos (commandline -C); commandline $cmdline; commandline -C $cmdpos' #run entire, reinsert
 bind \ee\ev 'commandline -t (vared (commandline -t))'
 bind \em transpose-words
-bind \e- __tol_toggle_comment_commandline #needs to learn whitespace 
 #IDEA: eval curr code without leaving pos within it (inc failing) + divert all error msgs, either other part same term or prob tmux/fzf or dump to file tail in pane, then instead of error msgs about variables, just highlight
 bind \e\' __tol_move_dir_up
-#bind \e.\e. __tol_move_dir_up
 bind \e. __tol_rerun_last_command
 bind \e: history-token-search-backward
 bind \e+ history-token-search-backward
@@ -78,5 +73,11 @@ bind \ej\eo jobs
 bind \eh\em 'history merge; echo -n (set_color brblue)"History merged!"; sleep 0.4; commandline -f repaint'
 bind \ep\es 'pscc (commandline --token); commandline -f repaint' #list running processes for token
 
-bind \eg\eg print_var
+bind \ep\em 'pio device monitor --baud 115200 $pio_local_monitor_opts'
+bind \ep\eu 'pio run -t upload $pio_local_upload_opts'
+bind \e\u00E5 'tol_up-or-search 5'
+bind \e\u00E4 tol_execute
+bind \ec\es commandline_save
+bind \ec\er commandline_restore
+bind \r tol_execute
 end

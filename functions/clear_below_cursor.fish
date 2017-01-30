@@ -1,0 +1,3 @@
+function clear_below_cursor
+printf "\033[J" #dunno why this works and the tput version doesnt...
+end

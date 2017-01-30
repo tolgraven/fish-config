@@ -1,3 +1,3 @@
 function pping
-	prettyping --nolegend $argv
+prettyping --nolegend $argv ^&-
 end

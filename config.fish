@@ -61,7 +61,7 @@ function tol_sigint_handler --on-signal SIGINT #argv is also SIGINT..
 
 		tput vpa $rowpos 												#restore row number (since rmcup jumps randomly)
     echo -n (tput cnorm) 										#restore cursor
-		test -z "$lastrow"; 		and tput cuu1 #except if restored pos is actually bottom row
+		test -z "$lastrow"; 	and tput cuu1 		#except if restored pos is actually bottom row
 		
 		# commandline -rb "$cmdline" #not sure why this doesnt work and also blanks a line...
 		# commandline -C $cmdpos
