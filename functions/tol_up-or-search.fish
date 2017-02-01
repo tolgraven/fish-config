@@ -1,22 +1,28 @@
 function tol_up-or-search --description 'up-or-search with auto completion popup' --argument preview_count
 if commandline --search-mode # If we are already in search mode, continue
+commandline -f history-search-backward #test move up
+clear_below_cursor
 set his $__tol_up_or_search_hist
 set from (contains -i -- (commandline --current-buffer) $his[1..100])
-set from (math "$from + 2") #dunno why this offset
+test -z "$from"
+and return
+
+set from (math "$from + 2") #1 instead of 2 bc -f moved up   #2") #dunno why this offset
 set to (math "$from + $preview_count - 1")
-tput civis
-clear_below_cursor
+#tput civis
 tput cud1
 
 set output $__tol_up_or_search_ansi[$from..$to]
 for i in (seq 1 $preview_count)
 set hist_i (math $i + $from - 1)
 set col (math $last_prompt_length - 2 - (string length "$hist_i"))
-echo -s (tput hpa $col) (set_color red) $hist_i (set_color normal) ". " $output[$i]
+set outlines[$i] (printf "%*s" $col (echo -s (set_color red) $hist_i (set_color normal) '. ' $output[$i]) )
+#(echo -s (tput hpa $col) (set_color red) $hist_i (set_color normal) ". " $output[$i])
 end
+echo -ns $outlines\n
 tput cuu (math "$preview_count + 1")
-tput cnorm
-commandline -f history-search-backward
+#tput cnorm
+
 return
 end
 
