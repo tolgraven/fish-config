@@ -1,1 +1,1 @@
-complete -c trash -a '(ls -A)'
+#complete -c trash -a '(ls -A)'

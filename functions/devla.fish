@@ -1,34 +1,21 @@
 function devla --description 'List contents of directory, including hidden files in directory using long format'
-	debug "devla starting"
-    set -q tols_filtered_files
-    or set -U tols_filtered_files .DS_Store .Trash .Trashes .DocumentRevisions-V100 .PKInstallSandboxManager .Spotlight-V100 .TemporaryItems .Trashes .com.apple.timemachine .fseventsd .localized \$RECYCLE.BIN .IABootFiles .IAProductInfo #._ #cant have last one bc filters priv functions #should just check if defined and else read from something in .config/tols...
-    set -q tols_autolabeled_files
-    or set -U tols_autolabeled_files "Green mp3 wav aif flac asd alp maxpat fxb vst component amdx" "Red zip rar 7z dmg" #etc, same here
+	debug "devla starting" 	#DEPS: makeicns, libicns (for icns2png), osxutils (labels), grc, fish 2.3, more?
+    set -q tols_filtered_files; or set -U tols_filtered_files .DS_Store .Trash .Trashes .DocumentRevisions-V100 .PKInstallSandboxManager .Spotlight-V100 .TemporaryItems .Trashes .com.apple.timemachine .fseventsd .localized \$RECYCLE.BIN .IABootFiles .IAProductInfo #._ #cant have last one bc filters priv functions #should just check if defined and else read from something in .config/tols...
+    set -q tols_autolabeled_files; or set -U tols_autolabeled_files "Green mp3 wav aif flac asd alp maxpat fxb vst component amdx" "Red zip rar 7z dmg" #etc, same here
 
     if not type -q grc
-        ls -lAhG $argv | for filter in $filters
-            grep --color=always -v $filter
-        end
-        return 0 # DEPS: makeicns, libicns (for icns2png), osxutils (labels), grc, fish 2.3, more?
-    end # LATER NAME OF UTIL: tols. get it? ;) TODO: !! file size useless for dirs, filecount useless for non-dirs, put both in same column
-    set dirname (pwd)
-    or return $status
+        ls -lAhG $argv | for filter in $filters; grep --color=always -v $filter; end; return 0
+    end # LATER NAME OF UTIL: tols. get it? ;) TODO: file size useless for dirs, filecount useless for non-dirs, put both in same column
+    set dirname (pwd); or return $status
 
     test (count $argv) -gt 0
-    and if test -d $dirname/$argv[-1]
-        set dirname $dirname/$argv[-1]
-        and set -e argv[-1]
-    else if test -d $argv[-1]
-        set dirname $argv[-1]
-        and set -e argv[-1]
+    and if test -d $dirname/$argv[-1]; 	set dirname $dirname/$argv[-1]; and set -e argv[-1]
+    else if test -d $argv[-1]; 					set dirname $argv[-1]; 					and set -e argv[-1]
     end
-    test (count $argv) -gt 0 # after presumably unsetting dirr part
-    and set opts $argv
 
+    test (count $argv) -gt 0; and set opts $argv  # after presumably unsetting dirr part
     set output (grc -es --colour=on ls -lAhG $opts $dirname)
-    test (count $output) -gt 1
-    and set firstline $output[1]
-    and set output $output[2..-1]
+    test (count $output) -gt 1; and set firstline $output[1]; and set output $output[2..-1]
 
     set items (command ls -A $dirname)
     for filter in $tols_filtered_files
@@ -54,14 +41,11 @@ function devla --description 'List contents of directory, including hidden files
     set output (string replace -r -- '(\N\N\d+)(G+)\s*' '\$1'(set_color red)\ '\$2'B(set_color normal) $output)
 
     debug "Finished early shit, getting labels and icons"
-    test (count $items) -gt 0
-    and test (count $items) -eq (count $output)
+    test (count $items) -gt 0; and test (count $items) -eq (count $output)
     and for i in (seq 1 (count $items)) #below needs to strip colors from the item its checking, then np
         set output[$i] (string replace -- "$items[$i]" ( __tols_addicon "$dirname" "$items[$i]")"$items[$i]" "$output[$i]") #could actually run this earlier, so just one call/replace per filetype... then eval.
-
         set output[$i] (__tols_labelline "$dirname" "$items[$i]" "$output[$i]") #reformat to addlabel like above i guess bc gonna needa eval... or refactor again so get label as var in loop here so can pass it to both...
-    end
-    debug "Done getting labels and icons"
+    end; debug "Done getting labels and icons"
     set output (string replace --all -- '.' (set_color black)'.'(set_color brblue) $output) # should add per filetype, like w labels. also should prob be done per line and from the left only changing first last part. and/or again before symlink part
     set output (string replace -- '->' \ \ \t"$emojis_nonshitty[6]" $output)
     set output (string replace -r -- '(20\d\d+)' (set_color black)'\$1'(set_color normal) $output) # years ie old get dimmed

@@ -32,25 +32,14 @@ set -g $argv $tmp
 end
 end
 else
-printf (_ '%s: %s is an array variable. Use %svared%s %s[n]%s to edit the n:th element of %s\n') vared $argv (set_color $fish_color_command; echo) (set_color $fish_color_normal; echo) $argv (set_color normal; echo) $argv
+#printf (_ '%s: %s is an array variable. Use %svared%s %s[n]%s to edit the n:th element of %s\n') vared $argv (set_color $fish_color_command; echo) (set_color $fish_color_normal; echo) $argv (set_color normal; echo) $argv
 end
 end
 else
-printf (_ '%s: Expected exactly one argument, got %s.\n\nSynopsis:\n\t%svared%s VARIABLE\n') vared (count $argv) (set_color $fish_color_command; echo) (set_color $fish_color_normal; echo)
+#printf (_ '%s: Expected exactly one argument, got %s.\n\nSynopsis:\n\t%svared%s VARIABLE\n') vared (count $argv) (set_color $fish_color_command; echo) (set_color $fish_color_normal; echo)
 end
 
-if test (count $$array) -eq 1 #regular var 
-vared $array
-return $status
-end
 if test -z "$key"
-if contains $array (set -Un)
-set scope (set_color -o brblue)' U'(set_color normal) # ' U '
-else if contains $array (set -gn)
-set scope (set_color -o yellow)' G'(set_color normal) # ' G '
-else if contains $array (set -ln)
-set scope (set_color -o normal)' L'(set_color normal) #' L '
-end
 
 set -l IFS #shadow before setting init so get sep lines in read later
 set init (echo -n $$array\n | fish_indent)
@@ -59,7 +48,7 @@ set -l prompt "printf '> '"
 set -l right_prompt (__tol_make_ed_right_prompt "arred" brred $array brgreen (arrow)$scope)
 
 set -l IFS \n #split array by newlines
-read --prompt "$prompt" --right-prompt "$right_prompt" --array --mode-name "arred" --shell --command "$init" newarray
+read --prompt "$prompt" --right-prompt "$right_prompt" --shell --command "$init" --array newarray
 and set $array $newarray
 else
 set -l index (contains -i $key $$array)

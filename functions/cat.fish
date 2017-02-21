@@ -1,5 +1,6 @@
 function cat --description 'cancy cat with auto syntax coloring and stuff'
-test -r $argv[-1]
+#test -r $argv[-1] #-r = file readable
+not test -z "$argv[-1]" #temp test
 and set -l file $argv[-1] #separate other args i guess as well
 
 if not contains -- '--force' $argv
@@ -14,14 +15,10 @@ else
 set index (contains --index -- '--force' $argv)
 and set -e argv[$index]
 end
-
+debug "hurf"
 test (count $argv) -gt 0
 and not string match -- '-*' $file
-and if grep -q bplist00 $file
-debug "binary plist, args %s" $argv
-cat (plutil -p $argv | psub) #plutil -p $argv | cat #broken by fish
-return $status
-else if not test -e $file #not a file
+and if not test -e $file #not a file
 if string match -r -q -- 'http?://*' $file #url
 debug "url: %s" $file
 cat (curl --quiet $file | psub) #curl $argv[-1] | cat
@@ -31,7 +28,12 @@ debug "fish function: %s" $file
 funcat $file
 return $status
 end
+else if grep -q bplist00 $file #binary plist
+debug "binary plist, args %s" $argv
+cat (plutil -p $argv | psub) #plutil -p $argv | cat #broken by fish
+return $status
 end
+debug "more checkz"
 set -l ext (extname $file)
 and switch "$ext"
 case 'fish'

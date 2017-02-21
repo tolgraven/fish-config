@@ -1,12 +1,10 @@
-# Given a decimal number start and end print all unicode codepoint.
-# If $3 is specified, it's used as the current column number.
+# Given a decimal number start and end print all unicode codepoint.  If $3 is specified, it's used as the current column number.
 function print-decimal-unicode-range() {
     local start="$1"
     local end="$2"
     local continuedCount="$3"
     local count="${continuedCount:-0}"
-    # Use alternating colors to see which symbols extend out of the bounding
-    # box.
+
     local bgColor='\x1b[48;2;54;11;0m'
     local alternateBgColor='\x1b[48;2;0;54;11m'
     local currentColor="${bgColor}"
@@ -42,36 +40,12 @@ function print-unicode-ranges() {
 }
 
 function test-fonts() {
-    echo "Nerd - Pomicons:"
-    print-unicode-ranges e000 e00a
-    echo; echo
-
-    echo "Nerd - Powerline"
-    print-unicode-ranges e0a0 e0a2 e0b0 e0b3
-    echo; echo
-
-    echo "Nerd - Powerline Extra"
-    print-unicode-ranges e0a3 e0a3 e0b4 e0c8
-    echo; echo
-
-    echo "Nerd - Symbols original"
-    print-unicode-ranges e5fa e62a
-    echo; echo
-
-    echo "Nerd - Devicons"
-    print-unicode-ranges e700 e7c5
-    echo; echo
-
-    echo "Nerd - Font awesome"
-    print-unicode-ranges f000 f295
-    echo; echo
-
-    echo "Nerd - Octicons"
-    print-unicode-ranges f400 f4ae
-    echo; echo
-
-    echo "Nerd - Font Linux"
-    print-unicode-ranges f300 f315
-    echo
-
+    echo "Nerd - Pomicons:"; print-unicode-ranges e000 e00a;  echo;echo
+		echo "Nerd - Powerline";  print-unicode-ranges e0a0 e0a2 e0b0 e0b3;  echo;echo
+    echo "Nerd - Powerline Extra";  print-unicode-ranges e0a3 e0a3 e0b4 e0c8; echo;echo
+    echo "Nerd - Symbols original";  print-unicode-ranges e5fa e62a; echo;echo
+    echo "Nerd - Devicons";  print-unicode-ranges e700 e7c5;  echo; echo
+    echo "Nerd - Font awesome";  print-unicode-ranges f000 f295;  echo;echo
+    echo "Nerd - Octicons";  print-unicode-ranges f400 f4ae;  echo;echo
+    echo "Nerd - Font Linux";  print-unicode-ranges f300 f315; echo
 }

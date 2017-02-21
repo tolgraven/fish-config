@@ -1,9 +1,11 @@
 function fontpatcher
-	pushd (pwd)
-
-    set -l fontdir ~/Library/Fonts
-    set -l patcherdir /V/SO-FUNKY/CODE/fonts-themes/nerd-fonts/
-    cd $patcherdir
-    ./font-patcher --out $fontdir --fontawesome --fontlinux --octicons --pomicons --powerline --powerlineextra --careful $fontdir/$argv[-1]
-    popd
+set -l fontdir ~/Library/Fonts
+set -l patcherdir /V/SO-FUNKY/CODE/fonts-themes/nerd-fonts/
+pushd $patcherdir
+#set -l font_types --fontawesome --fontawesomeextension --fontlinux --powersymbols --octicons --pomicons --powerline --powerlineextra
+set -l font_types --complete
+for arg in $argv
+./font-patcher --progressbars --careful $font_types --out $fontdir $fontdir/$arg
+end
+popd
 end

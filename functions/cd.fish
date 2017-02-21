@@ -28,10 +28,10 @@ builtin cd $argv
 set -l cd_status $status
 
 if test (count (ls)) -le 30 #should rather check how many chars, compare to screen width, etc
+and status is-interactive
+
 tput sc #should do like above and then tput cuu x back that many lines, cause this doesnt work towards bottom of terminal...
 clear_below_cursor
-
-#tput cud1
 ls
 tput rc
 commandline -f repaint

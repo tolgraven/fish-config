@@ -1,4 +1,4 @@
 function ranger
-	#zsh
-    command ranger
+#zsh
+command ranger $argv
 end

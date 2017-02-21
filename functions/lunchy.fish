@@ -1,4 +1,7 @@
 function lunchy
-	#command lunchy $argv | cat
-    command lunchy $argv
+if type -q highlight
+command lunchy $argv | highlight
+else
+command lunchy $argv
+end
 end

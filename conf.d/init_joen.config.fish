@@ -61,7 +61,8 @@ switch (hostname)
 	end
 end
 
-test -f "/usr/local/share/autojump/autojump.fish"; and source "/usr/local/share/autojump/autojump.fish" #removed fisher fucker
+# test -f "/usr/local/share/autojump/autojump.fish"; and source "/usr/local/share/autojump/autojump.fish" #removed fisher fucker
+type -q autojump; and test -f (dirname (which autojump))/../share/autojump/autojump.fish; and source (dirname (which autojump))/../share/autojump/autojump.fish #more generic like
 test -z (which env_parallel.fish);  or source (which env_parallel.fish) #GNU parallel shell support
 # type -q thefuck;                    and eval (thefuck --alias | tr '\n' ';') #fucking startup performance a bit?
 #ulimit -n 65536 #is persistent and only set in osx
