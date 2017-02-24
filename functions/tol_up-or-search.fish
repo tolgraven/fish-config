@@ -4,7 +4,7 @@ if commandline --search-mode # If we are already in search mode, continue
 commandline -f history-search-backward
 
 set preview_count (math "$LINES - $__search_line_nr - 2") #dynamic count, size - pos - padding
-or set preview_count 7
+#or set preview_count 7
 test $preview_count -lt 7
 and set preview_count 7
 test $preview_count -gt 15
@@ -26,8 +26,7 @@ test -z "$col"
 and set col 2
 #set outlines[$i] (tput hpa $col)(set_color red)$hist_i(set_color normal).\ $output[$i]
 set outlines[$i] (set_color red)$hist_i(set_color normal).\ $output[$i]
-end
-#echo -n (tput hpa $col) $outlines\n
+end #echo -n (tput hpa $col) $outlines\n
 printf "%s%s" (tput hpa $col)$outlines\n
 tput cuu (math "$preview_count + 1")
 
@@ -47,6 +46,7 @@ tput cud1
 clear_below_cursor
 for i in (seq 1 $preview_count)
 set hist_i (math "$i + $from - 1")
+#FANCY IDEA: put timestamp when cmd was run prior to index, when prompt is long enough to allow it
 echo -s (tput hpa $col) (set_color red) $hist_i (set_color normal) ". " "$output[$i]"
 end
 tput cuu (math "$preview_count + 1") #correct

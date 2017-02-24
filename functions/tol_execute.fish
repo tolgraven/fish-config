@@ -1,6 +1,6 @@
 function tol_execute --description 'clear lines below cursor, then execute'
 #implement...
-#set -l line (get_row)
+#get_row read -l line
 #debug $line
 #if not test $line = $LINES
 #set lines 5

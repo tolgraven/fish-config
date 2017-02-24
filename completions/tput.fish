@@ -9,9 +9,5 @@ function __tput_complete
         #set descs[$i] (string split -- "-" $__tput_comps[$i])[2]
         #echo -s things[$i] \t $descs[$i]
     end
-    echo -n $__tput_comps\n >$tput_comp_file
-
-    #for i in (seq 1 (count $args))    
-    #echo -s $args '\t' $descs
-    #end
+#    echo -n $__tput_comps\n >$tput_comp_file #WHY THE FUCK DID I DO THIS
 end

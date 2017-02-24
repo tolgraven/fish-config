@@ -16,6 +16,7 @@ set -x GNUPGHOME 			"$XDG_CONFIG_HOME/gnupg"
 set -x LESSHISTFILE 		"$XDG_CONFIG_HOME/less/history"; set -x LESSKEY "$XDG_CONFIG_HOME/less/keys"
 set -x MPLAYER_HOME 		"$XDG_CONFIG_HOME/mplayer"
 set -x SUBVERSION_HOME "$XDG_CONFIG_HOME/subversion"
+# set -q VIRTUALFISH_HOME; 		or set -Ux $VIRTUALFISH_HOME ~/.config/
 
 set -x LC_ALL en_GB.UTF-8;  set -x LANG en_GB.UTF-8
 
@@ -64,6 +65,7 @@ end
 # test -f "/usr/local/share/autojump/autojump.fish"; and source "/usr/local/share/autojump/autojump.fish" #removed fisher fucker
 type -q autojump; and test -f (dirname (which autojump))/../share/autojump/autojump.fish; and source (dirname (which autojump))/../share/autojump/autojump.fish #more generic like
 test -z (which env_parallel.fish);  or source (which env_parallel.fish) #GNU parallel shell support
+eval (python -m virtualfish)
 # type -q thefuck;                    and eval (thefuck --alias | tr '\n' ';') #fucking startup performance a bit?
 #ulimit -n 65536 #is persistent and only set in osx
 

@@ -19,8 +19,8 @@ set -g $token '' #init empty as global
 set isvar
 else if test -d (string replace -- '~' "$HOME" $token) #dir, cd there
 cd (string replace -- '~' "$HOME" $token)
-else if test -f (string replace -- '~' "$HOME" $token) #file, cd there. or maybe: open small text file in toled, open large in $EDITOR
-#cd (dirname (string replace -- '~' "$HOME" $token))
+else if test -f (string replace -- '~' "$HOME" $token) #file, open. maybe check type first though..
+#test (file $thefile) something whatever
 eval $EDITOR (string replace -- '~' "$HOME" $token)
 else #debug "unknown, creating function"
 func $token #maybe look up if its a content of a var or array? +if --thing find parent token and comped

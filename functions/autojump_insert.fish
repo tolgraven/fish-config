@@ -1,9 +1,10 @@
-function autojump_insert --description 'use autojump to put path at cursor' -a lucky
+function autojump_insert --description 'use autojump to put path at cursor' --argument lucky
 set -l token (commandline --current-token)
 set -l output (autojump $token)
 set -l completions (complete --do-complete="j $token"| while read line; autojump $line | string replace $HOME '~'; end)
 if test -z "$lucky"
-echo -ns $completions\n | slmenu -i -l (count $completions) | read choice
+#echo -ns $completions\n | slmenu -i -l (count $completions) | read choice
+echo -ns $completions\n | fzf --height=(count $completions) --reverse | read choice
 else #jump straight
 set choice $completions[1]
 end

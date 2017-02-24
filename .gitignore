@@ -5,3 +5,5 @@ backupz.tar
 *.json
 *BAK
 record/
+
+functions/deprecated/

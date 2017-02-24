@@ -3,7 +3,7 @@ test -z "$command"
 and set argv[1] "info"
 set -l deluge "/Applications/Deluge.app/Contents/MacOS/deluge-console"
 test "$command" = "p"
-and set command "pause" #not pscc deluged >&- ^&-; and deluged #using launchctrl properly now
+and set argv[1] "pause" #not pscc deluged >&- ^&-; and deluged #using launchctrl properly now
 switch "$command"
 case 'info' 'i'
 set -l output (eval $deluge $argv | string trim | strip_empty_lines | grep -v "ID: " | string replace --all 'Name:' (set_color -o blue)''(tput smso) | hide 'State: ' 'Seeds: ' 'Size: ' 'Tracker status: ' 'Progress: ' ' Speed' ' time')
@@ -17,23 +17,13 @@ tput rmcup
 tput cnorm
 commandline -f repaint
 end
-function __prompt --on-variable deluge_prompt
-tput hpa 60 #echo "DAT PROMPT!!!"
-tol_reload_key_bindings
-read --prompt 'printf "deluge command > "' out
-and eval $deluge $out
-end
 tput civis
-tput smcup
-set -l refresh 2
+tput smcup #set -l refresh 2
 while true
-#bind \n __deluge_prompt; bind \x20 'set -g deluge_prompt' #__deluge_prompt #__prompt
 set output (deluge info) #refresh content _before_ clearing scr so ready to go
-clear #tput smcup 
-echo -ns $output\n
-#tput vpa (math "$LINES - 2")
-#echo "press enter for command prompt"
-sleep $refresh
+tput smcup #clear
+echo -ns $output\n #tput vpa (math "$LINES - 2"); echo "press enter for command prompt"
+#sleep $refresh
 end
 case 'pb' 'c' 'clip' 'clipboard' 'm' 'magnet'
 deluge add (string escape (pbpaste))

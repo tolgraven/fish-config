@@ -5,6 +5,7 @@ commandline -f history-search-forward
 set from (contains -i -- (commandline --current-buffer) $__tol_up_or_search_hist[1..100])
 switch "$from"
 case 0 1 ''
+clear_below_cursor
 return
 end
 set to (math "$from + $preview_count - 1")

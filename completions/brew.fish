@@ -30,10 +30,9 @@ function __fish_brew_formulae
     end
 end
 function __fish_brew_installing_formula
-    if __fish_brew_using_command install
-        #        or __fish_brew_using_command reinstall
+    if __fish_brew_using_command install #or __fish_brew_using_command reinstall
         set -l tokens (commandline --tokenize)
-        #        debug "tokens: $tokens"
+
         test (count $tokens) -ge 3 #brew + install + formula
         or return
         for candidate in $tokens[-1..3] #search backwards for first valid formula
@@ -53,32 +52,18 @@ function __fish_brew_installing_formula
     end
 end
 function __fish_brew_formula_options -a formula
-    if type -q jq
-        set -l info (brew info --json=v1 $formula)
-        set -l opts (echo $info | jq "map(.options)[][].option" | string trim --chars='"' | string replace --all -- '--' '')
-        set -l descs (echo $info | jq "map(.options)[][].description" | string trim --chars='"' | string replace --all -- '\n' '')
-        test (count $opts) -eq (count $descs)
-        and for i in (seq 1 (count $opts))
-set -q opts[$i]            
-and echo -s $opts[$i] \t $descs[$i]
-        end
-        debug "opts: $opts, descs: $descs"
-    else
-        set -l info (brew info $formula)
-        set -l start (contains -i -- '==> Options' $info)
-        and set start (math "$start + 1")
-        set -l stop (contains -i -- '--HEAD' $info)
-        and set stop (math "$stop - 1")
-        or set stop (count $info)
-        set -l newline
-        for line in $info[$start..$stop]
+        set -l opts (brew options $formula)
+        test -z "$opts"
+        and return
+        set opts $opts[1..-2] #last line is empty
+        for line in $opts
             string match -q -- '--*' $line
             and echo -ns $newline (string replace -- '--' '' $line) \t
             or echo -n (string trim -- "$line")" "
             set newline \n #so gets skipped first echo
         end
     end
-end
+
 complete -f -c brew -n '__fish_brew_using_command install' -a '(__fish_brew_formulae)'
 complete -f -c brew -n '__fish_brew_installing_formula' -a ''
 complete -f -c brew -n '__fish_brew_using_command info' -a '(__fish_brew_formulae)'

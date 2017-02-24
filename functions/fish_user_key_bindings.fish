@@ -26,6 +26,7 @@ bind \ee\ef "commandline 'exec fish'; commandline -f execute"
 bind \eh\em 'history merge; echo -n (set_color brblue)"History merged!"; sleep 0.4; commandline -f repaint'
 
 bind \et 'tolmenu_fzf tolmenu_get_actions eval' #'tolmenu tolmenu_get_actions eval'
+bind \eT "commandline 'tmux attach -t '; commandline -f complete-and-search" #good
 bind \e: __tol_extra_prompt
 bind \ei __tol_tell_iterm
 bind \eq __tol_quicklook_file #bind \eM 'set -g __tol_mark_pos (commandline --cursor)' #bind \en 'set -q __tol_mark_pos; and commandline --cursor $__tol_mark_pos'
@@ -59,6 +60,8 @@ bind \ep\em 'pio device monitor --baud 115200 $pio_local_monitor_opts'
 bind \ep\eu 'pio run -t upload $pio_local_upload_opts'
 
 bind \r tol_execute #bind \ec\es commandline_save #bind \ec\er commandline_restore
+bind \n tol_execute
+#bind \cj tol_execute
 debug_key_bindings
 bind -k up 'tol_up-or-search 7'
 bind -k down 'tol_down-or-search 7'
@@ -77,4 +80,5 @@ bind \ey\ep __tol_put_contents
 bind \e4 __tol_token_with_last_arg
 bind \e1 __tol_token_with_last_cmdline
 #bind - __tol_autocomplete
+bind \em\em transpose-words
 end
