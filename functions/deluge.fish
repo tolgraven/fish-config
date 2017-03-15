@@ -18,12 +18,13 @@ tput cnorm
 commandline -f repaint
 end
 tput civis
-tput smcup #set -l refresh 2
+tput smcup
+set -l refresh 3
 while true
 set output (deluge info) #refresh content _before_ clearing scr so ready to go
-tput smcup #clear
+clear #tput smcup
 echo -ns $output\n #tput vpa (math "$LINES - 2"); echo "press enter for command prompt"
-#sleep $refresh
+sleep $refresh
 end
 case 'pb' 'c' 'clip' 'clipboard' 'm' 'magnet'
 deluge add (string escape (pbpaste))

@@ -39,6 +39,7 @@ function tol_sigint_handler --on-signal SIGINT -d "hella reset stuff on ctrl-c" 
 		status is-interactive; or return
 
 		get_line | read rowpos
+		commandline --line | read cursorpos
 		test "$rowpos" -eq "$LINES"; and set -l lastrow
 
 		tput civis  																									#to avoid flicker

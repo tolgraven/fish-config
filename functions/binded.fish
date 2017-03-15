@@ -38,4 +38,5 @@ cp "$bindings_file" ~/.config/fish/functions/deprecated/(basename "$bindings_fil
 echo -ns $binds\n >"$bindings_file"
 and source "$bindings_file"
 and fish_user_key_bindings
+commandline -f repaint
 end

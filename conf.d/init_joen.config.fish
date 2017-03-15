@@ -2,11 +2,13 @@ set -q fish_escape_delay_ms; 			or set -U fish_escape_delay_ms 		100
 set -q fish_prompt_pwd_length; 		or set -U fish_prompt_pwd_length 	4
 if contains $TERM_PROGRAM "iTerm.app"
 	set -g fish_term24bit 						1
-	set -g theme_nerd_fonts 					yes 		#only enable nerdfonts on box, not mobile etc
+	set -g theme_nerd_fonts 					'yes' 		#only enable nerdfonts on box, not mobile etc
 end
-set -g theme_color_scheme 					gruvbox #share these with bobthefish since reusing their entire git thing
-set -g theme_git_worktree_support 	yes
-set -g theme_show_exit_status 			yes
+set -g theme_color_scheme 					'gruvbox' #share these with bobthefish since reusing their entire git thing
+set -g theme_git_worktree_support 	'yes'
+set -g theme_show_exit_status 			 'no' 		#'yes' #got my own
+set -g theme_title_display_process 	'yes'
+set -g theme_title_display_tty 			'yes' 		#tol custom
 
 set -q XDG_CONFIG_HOME;     or set -Ux XDG_CONFIG_HOME 		"$HOME/.config"
 set -q XDG_DATA_HOME;       or set -Ux XDG_DATA_HOME   		"$HOME/.local/share"
@@ -24,6 +26,7 @@ set -q GITHUB_TOKEN; 				or set -Ux GITHUB_TOKEN 			"76cceb8c7cba52c92f2c41eaa8d
 set -q GITHUB_USER; 				or set -Ux GITHUB_USER 				"tolgraven"
 set -q HOMEBREW_GITHUB_API_TOKEN; or set -Ux HOMEBREW_GITHUB_API_TOKEN $GITHUB_TOKEN
 set -q HOMEBREW_CASK_OPTS; 	or set -Ux HOMEBREW_CASK_OPTS "--appdir=/Applications"
+# set -q HOMEBREW_CACHE; 			or set -Ux BREW_CACHE /Volumes/SO-FUNKY/Users/tolgraven/Library/Caches/Homebrew #nah, just move and symlink..
 
 set -q LESS_TERMCAP_mb; 		or configure_pager  					#funky colors. -U so only once per host
 set -q LESS;            		or set -Ux LESS "--ignore-case --raw-control-chars --squeeze-blank-lines --status-column --tilde"

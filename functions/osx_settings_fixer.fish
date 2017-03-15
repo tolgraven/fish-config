@@ -81,6 +81,9 @@ function osx_settings_fixer
     defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/Bluetooth.menu", "/System/Library/CoreServices/Menu Extras/TimeMachine.menu", "/System/Library/CoreServices/Menu Extras/Volume.menu"
     #vim /System/Library/LaunchDaemons/com.apple.syslogd.plist #is binary plist so need to fiddle unless can edit in place. add <string>-mps_limit</string> \n <string>[new syslog msg-per-second limit (or 0 to disable limit]</string> below <string>/u/sbin/syslogd</string> then launchctrl unload/reload
 
+	sudo defaults write com.apple.usbd NoIPadNotifications -bool YES
+	sudo defaults write com.apple.usbd NoIPhoneNotifications -bool YES	
+
     killall Dock #restart dock, finder, prefs daemon to activate
     killall Finder
     killall cfprefsd

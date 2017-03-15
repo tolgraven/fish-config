@@ -3,6 +3,7 @@ set -l cmdline (commandline)
 test -z "$cmdline"
 and return
 
+
 set -l pos (commandline --cursor)
 set -l line (commandline --line)
 set -l line_count (count $cmdline\n)
@@ -16,4 +17,10 @@ set -l cmdline_new $cmdline[1..$line] $cmdline[$line] $after_part
 
 commandline $cmdline_new
 commandline --cursor $pos
+
+switch "$argv"
+case 'comment'
+__tol_toggle_comment_commandline
+commandline -f down-line
+end
 end
