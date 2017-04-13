@@ -1,5 +1,6 @@
 function __stderred -a trigger -d "toggle stderred on var stderred" --on-variable stderred
-	test "$trigger" != "startup"; and echoerr "switching stderred"
+	test "$trigger" != "startup"; and status is-interactive; and set -l echo_status
+	set -ql echo_status; and echoerr "switching stderred"
 	if set -q stderred
 		debug "inserting stderred into DYLD_INSERT_LIBRARIES"
 		contains "$stderred_path" $DYLD_INSERT_LIBRARIES; and return
@@ -19,6 +20,5 @@ function __stderred -a trigger -d "toggle stderred on var stderred" --on-variabl
 	end
 
 	# change below to like "post message for prompt" instead...
-	test "$trigger" != "startup"; and echoerr "switched stderred"
-	commandline -f repaint
+	set -ql echo_status; and echoerr "switched stderred"; and commandline -f repaint
 end
