@@ -1,8 +1,8 @@
 function tolmenu_fzf --description 'tolmenu, but with fzf backend' --argument list_func action_func autoerase
 test -z "$list_func"
-and set list_func ls -A
+and set list_func "tolmenu_get_actions" #ls -A
 test -z "$action_func"
-and set action_func "la"
+and set action_func "eval" #"la"
 
 set -l list (eval $list_func)
 set -l list_size (count $list)

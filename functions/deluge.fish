@@ -1,7 +1,9 @@
 function deluge --description 'control deluge from fish commandline' --argument command argument
 test -z "$command"
 and set argv[1] "info"
-set -l deluge "/Applications/Deluge.app/Contents/MacOS/deluge-console"
+set -l deluge 'deluge'
+type --no-functions -q deluge
+or set deluge "/Applications/Deluge.app/Contents/MacOS/deluge-console"
 test "$command" = "p"
 and set argv[1] "pause" #not pscc deluged >&- ^&-; and deluged #using launchctrl properly now
 switch "$command"

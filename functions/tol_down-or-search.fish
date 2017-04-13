@@ -8,8 +8,7 @@ case 0 1 ''
 clear_below_cursor
 return
 end
-set to (math "$from + $preview_count - 1")
-#tput civis
+set to (math "$from + $preview_count - 1") #tput civis
 tput cud1
 clear_below_cursor
 
@@ -22,8 +21,9 @@ continue
 end
 set hist_i (math $i + $from - 1) #the actual index
 set col (math $last_prompt_length - 2 - (string length "$hist_i"))
-#echo -s (tput hpa $col) (set_color red) $hist_i (set_color normal) ". " $output[$i]
-set outlines[$i] (echo -s (tput hpa $col) (set_color red) $hist_i (set_color normal) ". " $output[$i])
+set max_length (math "$COLUMNS - $col")
+
+set outlines[$i] (echo -s (tput hpa $col) (set_color red) $hist_i (set_color normal) ". " (string sub -l $max_length "$output[$i]"))
 end
 printf "%s%s" (tput hpa $col)$outlines\n
 tput cuu (math (math $preview_count - $skipped) + 1)

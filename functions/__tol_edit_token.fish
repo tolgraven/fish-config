@@ -1,7 +1,10 @@
 function __tol_edit_token --description 'edit contents of current token interactively, funced, vared, etc' --argument force
+set -l cmdline (commandline)
+test -z "$cmdline"
+and return 1
 set -l token (commandline -t)
 test -z "$token"
-and set token (commandline --tokenize)[-1] #check last token in case we just got a space after it. should actually check the relevant token based on pos, rather than just last...
+and set -l token (commandline --tokenize)[1] #check last token in case we just got a space after it. should actually check the relevant token based on pos, rather than just last...
 test -z "$token"
 and return 1
 

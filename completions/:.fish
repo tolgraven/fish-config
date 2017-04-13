@@ -1,4 +1,4 @@
-complete -xc : -a '(set abbrs (grep abbr ~/.config/fish/conf.d/abbr.fish | string replace "abbr " "")
+complete -xc : -a '(set abbrs (grep abbr $tol_fish_abbr_file | string replace "abbr " "")
 for a in $abbrs
-	echo -s (string split " " $a)[1] \t (string split --max 1 " " $a)[2]
+	echo -s (string split " " $a)[1] \t (string trim -c "\'" (string split --max 1 " " $a)[2])
 end)'

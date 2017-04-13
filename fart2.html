@@ -1,0 +1,86 @@
+<div class="highlight"><pre><span></span><span class="nx">set</span> <span class="o">-</span><span class="nx">q</span> <span class="nx">fish_path</span><span class="p">;</span> <span class="nx">or</span> <span class="nx">set</span> <span class="o">-</span><span class="nx">U</span> <span class="nx">fish_path</span> <span class="nx">$HOME</span><span class="o">/</span><span class="p">.</span><span class="nx">config</span><span class="o">/</span><span class="nx">fish</span><span class="o">/</span><span class="nx">fisherman</span> 
+<span class="nx">set</span> <span class="o">-</span><span class="nx">g</span> <span class="nx">fisher_path</span> <span class="nx">$fish_path</span> <span class="err">#</span><span class="nx">actually</span> <span class="nx">only</span> <span class="nx">fishers</span> <span class="nx">path</span><span class="p">,</span> <span class="nx">dumb</span> <span class="nx">name</span>
+
+<span class="k">if</span> <span class="nx">not</span> <span class="nx">contains</span> <span class="nx">$fish_function_path</span> <span class="nx">$fisher_path</span><span class="o">/</span><span class="nx">functions</span>
+  <span class="nx">set</span> <span class="nx">fish_function_path</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="nx">$fisher_path</span><span class="o">/</span><span class="nx">functions</span>
+  <span class="nx">set</span> <span class="nx">fish_function_path</span> <span class="nx">$HOME</span><span class="o">/</span><span class="p">.</span><span class="nx">config</span><span class="o">/</span><span class="nx">fish</span><span class="o">/</span><span class="nx">functions</span> <span class="nx">$fish_function_path</span>
+<span class="nx">end</span>
+<span class="k">if</span> <span class="nx">not</span> <span class="nx">contains</span> <span class="nx">$fish_complete_path</span> <span class="nx">$fisher_path</span><span class="o">/</span><span class="nx">completions</span>
+  <span class="nx">set</span> <span class="nx">fish_complete_path</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="nx">$fisher_path</span><span class="o">/</span><span class="nx">completions</span>
+  <span class="nx">set</span> <span class="nx">fish_complete_path</span> <span class="nx">$HOME</span><span class="o">/</span><span class="p">.</span><span class="nx">config</span><span class="o">/</span><span class="nx">fish</span><span class="o">/</span><span class="nx">completions</span> <span class="nx">$fish_complete_path</span>
+<span class="nx">end</span>
+<span class="k">for</span> <span class="nx">file</span> <span class="k">in</span> <span class="nx">$fisher_path</span><span class="o">/</span><span class="nx">conf</span><span class="p">.</span><span class="nx">d</span><span class="o">/*</span><span class="p">.</span><span class="nx">fish</span><span class="p">;</span> <span class="nx">source</span> <span class="nx">$file</span><span class="p">;</span> <span class="nx">end</span>
+
+<span class="nx">not</span> <span class="nx">set</span> <span class="o">-</span><span class="nx">q</span> <span class="nx">iterm_integration_off</span><span class="p">;</span> <span class="nx">and</span> <span class="nx">test</span> <span class="o">-</span><span class="nx">e</span> <span class="p">{</span><span class="nx">$HOME</span><span class="p">}</span><span class="o">/</span><span class="p">.</span><span class="nx">iterm2_shell_integration</span><span class="p">.</span><span class="nx">fish</span>
+<span class="nx">and</span> <span class="nx">source</span> <span class="p">{</span><span class="nx">$HOME</span><span class="p">}</span><span class="o">/</span><span class="p">.</span><span class="nx">iterm2_shell_integration</span><span class="p">.</span><span class="nx">fish</span> <span class="o">^&amp;-</span>
+
+<span class="err">#</span><span class="nx">needs</span> <span class="nx">to</span> <span class="nx">have</span> <span class="k">this</span> <span class="nx">name</span> <span class="nx">or</span> <span class="nx">we</span><span class="s1">&#39;d also have to delete the internal function</span>
+<span class="s1">function __fish_command_not_found_handler --on-event fish_command_not_found </span>
+<span class="s1">	if not isatty 1; or not status is-interactive </span>
+<span class="s1">		__fish_default_command_not_found_handler $argv</span>
+<span class="s1">	else</span>
+<span class="s1">		tput cuu1</span>
+<span class="s1">		commandline $argv #cmdline contents is passed in argv so works</span>
+<span class="s1">	end </span>
+<span class="s1">	#check if can get and restore crusor pos... </span>
+<span class="s1">	# history delete --exact --case-sensitive $cmdline #goes nuts for some reason</span>
+
+<span class="s1">	# echo &quot;type &#39;</span><span class="nx">get</span><span class="s1">&#39; to search ALL YOUR PKGMANAGERS ALL OF THEM (current compatible nr: 0)&quot;; echo hurharharhur</span>
+<span class="s1">	##tput cup (string split &quot; &quot; $__tol_pos_preexec; or get_row)[1] (math $last_prompt_length + $last_commandline_pos)</span>
+<span class="s1">end</span>
+
+<span class="s1">#all handlers must be actively sourced at startup i guess...</span>
+<span class="s1">function tol_sigint_handler --on-signal SIGINT -d &quot;hella reset stuff on ctrl-c&quot; #argv is just &quot;SIGINT&quot;..</span>
+<span class="s1">		status is-interactive; or return</span>
+
+<span class="s1">		get_line | read rowpos</span>
+<span class="s1">		commandline --line | read cursorpos</span>
+<span class="s1">		test &quot;$rowpos&quot; -eq &quot;$LINES&quot;; and set -l lastrow</span>
+
+<span class="s1">		tput civis  																		#to avoid flicker</span>
+<span class="s1">		commandline_save sigint; commandline &quot;&quot;</span>
+
+<span class="s1">		#was gonna source config files as well but causes error for some reason?</span>
+<span class="s1">    tol_reload_key_bindings 												#restore key bindings</span>
+<span class="s1">    while set -l index (contains -i %self $__tol_func_pid) 	#unset is-editing funcs</span>
+<span class="s1">        set -Ue __tol_func_editing[$index]; set -Ue __tol_func_pid[$index]</span>
+<span class="s1">    end</span>
+<span class="s1">    profile reset 																	#restore iterm profile</span>
+<span class="s1">		echo -n (tput rmcup) (tput vpa $rowpos)  				#reset smcup if any+line number in case not</span>
+<span class="s1">		set -q lastrow; or tput cuu1 										#up 1, except if were at bottom row</span>
+<span class="s1">		echo -n &quot;Everything reset, UR CLEAN.&quot;</span>
+
+<span class="s1">		sleep 0.10</span>
+<span class="s1">		tput cnorm</span>
+
+<span class="s1">		commandline_restore sigint</span>
+<span class="s1">		clear_below_cursor</span>
+<span class="s1">end</span>
+
+<span class="s1"># function __tol_fish_preexec --on-event fish_preexec</span>
+<span class="s1"># #  if know curr line and know term size will know if output has caused scrolling so can adjust. tho lines is tricky with the wrapping and all... #wait don&#39;</span><span class="nx">t</span> <span class="nx">actually</span> <span class="nx">have</span> <span class="nx">to</span> <span class="nx">count</span> <span class="nx">lines</span> <span class="nx">because</span> <span class="nx">won</span><span class="err">&#39;</span><span class="nx">t</span> <span class="nx">be</span> <span class="nx">nothing</span> <span class="k">else</span> <span class="nx">back</span> <span class="nx">there</span><span class="p">...</span>
+<span class="err">#</span> <span class="err">#</span>  <span class="err">###</span> <span class="nx">IMPORTANT</span> <span class="nx">IDEA</span><span class="o">!!!</span> <span class="err">#</span><span class="nx">keypress</span> <span class="nx">to</span> <span class="nb">eval</span> <span class="nx">a</span> <span class="nx">part</span> <span class="nx">of</span> <span class="nx">the</span> <span class="nx">commandline</span> <span class="p">(</span><span class="nx">a</span> <span class="nx">would</span><span class="o">-</span><span class="nx">be</span> <span class="nx">subshell</span> <span class="nx">like</span><span class="p">),</span> <span class="nx">take</span> <span class="nx">result</span> <span class="nx">and</span> <span class="nx">replace</span> <span class="nx">expression</span> <span class="k">in</span> <span class="nx">commandline</span> <span class="kd">with</span> <span class="nx">that</span>
+<span class="err">#</span> <span class="err">#</span>  <span class="err">###</span> <span class="nx">and</span> <span class="nx">one</span> <span class="nx">to</span> <span class="k">do</span> <span class="nx">it</span> <span class="kd">with</span> <span class="nx">a</span> <span class="nx">whole</span> <span class="nx">line</span> <span class="nx">or</span> <span class="nx">piece</span> <span class="nx">of</span> <span class="nx">code</span> <span class="kr">as</span> <span class="nx">well</span><span class="p">.</span> <span class="nx">would</span> <span class="nx">be</span> <span class="nx">so</span> <span class="nx">massively</span> <span class="nx">easier</span> <span class="nx">to</span> <span class="nx">debug</span> <span class="nx">stuff</span> <span class="nx">then</span><span class="p">...</span>
+<span class="err">#</span> 	<span class="nx">status</span> <span class="nx">is</span><span class="o">-</span><span class="nx">interactive</span><span class="p">;</span> <span class="nx">or</span> <span class="k">return</span>
+<span class="err">#</span>
+<span class="err">#</span>   <span class="nx">set</span> <span class="o">-</span><span class="nx">g</span> <span class="nx">last_commandline_pos</span> <span class="p">(</span><span class="nx">commandline</span> <span class="o">-</span><span class="nx">C</span><span class="p">);</span>   <span class="nx">set</span> <span class="o">-</span><span class="nx">g</span> <span class="nx">last_commandline_line_nr</span> <span class="p">(</span><span class="nx">commandline</span> <span class="o">-</span><span class="nx">L</span><span class="p">)</span>
+<span class="err">#</span> 	<span class="nx">set</span> <span class="o">-</span><span class="nx">g</span> <span class="nx">last_commandline</span> <span class="nx">$argv</span>
+<span class="err">#</span>   <span class="err">#</span> <span class="nx">debug</span> <span class="s2">&quot;last commandline: %s  at pos: %s  at prompt-line %s&quot;</span> <span class="nx">$last_commandline</span> <span class="nx">$last_commandline_pos</span> <span class="nx">$last_commandline_line_nr</span>
+<span class="err">#</span> <span class="nx">end</span>
+
+<span class="err">#</span> <span class="kd">function</span> <span class="nx">__tol_fish_postexec</span> <span class="o">--</span><span class="nx">on</span><span class="o">-</span><span class="nx">event</span> <span class="nx">fish_postexec</span>
+<span class="err">#</span> 	<span class="nx">status</span> <span class="nx">is</span><span class="o">-</span><span class="nx">interactive</span><span class="p">;</span> <span class="nx">or</span> <span class="k">return</span>
+<span class="err">#</span> 	
+<span class="err">#</span>   <span class="err">#</span> <span class="nx">get_pos</span> <span class="o">|</span> <span class="nx">read</span> <span class="o">-</span><span class="nx">g</span> <span class="nx">__tol_pos_postexec</span>
+<span class="err">#</span>   <span class="err">#</span> <span class="nx">debug</span> <span class="s2">&quot;postexec pos %s&quot;</span> <span class="nx">$__tol_pos_postexec</span>
+<span class="err">#</span>   <span class="err">#</span> <span class="nx">set</span> <span class="o">-</span><span class="nx">g</span> <span class="nx">last_commandline</span> <span class="nx">$argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>   <span class="err">#</span><span class="nx">TODO</span>: <span class="kt">save</span> <span class="nx">pwd</span><span class="p">,</span> <span class="nx">stat</span><span class="p">,</span> <span class="nx">stdout</span><span class="o">/</span><span class="nx">err</span> <span class="nx">like</span> <span class="nx">a</span> <span class="nx">parallel</span> <span class="nx">fish_history</span> <span class="nx">w</span> <span class="nx">more</span> <span class="nx">info</span><span class="p">,</span> <span class="nx">bring</span> <span class="nx">up</span> <span class="k">in</span> <span class="nx">fzf</span> <span class="nx">hist</span><span class="p">.</span>
+<span class="err">#</span> <span class="nx">end</span>
+
+<span class="err">#</span> <span class="kd">function</span> <span class="nx">__tol_fish_prompt</span> <span class="o">--</span><span class="nx">on</span><span class="o">-</span><span class="nx">event</span> <span class="nx">fish_prompt</span> <span class="o">-</span><span class="nx">d</span> <span class="s2">&quot;event fish_prompt hook&quot;</span>
+  <span class="err">#</span> <span class="nx">get_pos</span> <span class="o">|</span> <span class="nx">read</span> <span class="o">-</span><span class="nx">g</span> <span class="nx">__tol_pos_preprompt</span>
+  <span class="err">#</span> <span class="nx">debug</span> <span class="s2">&quot;preprompt_pos pos %s&quot;</span> <span class="nx">$__tol_pos_preprompt</span>
+<span class="err">#</span> <span class="nx">end</span>
+
+<span class="err">#</span> <span class="nx">Hook</span> <span class="k">for</span> <span class="nx">desk</span> <span class="nx">activation</span>
+<span class="nx">test</span> <span class="o">-</span><span class="nx">n</span> <span class="s2">&quot;$DESK_ENV&quot;</span><span class="p">;</span> <span class="nx">and</span> <span class="p">.</span> <span class="s2">&quot;$DESK_ENV&quot;</span><span class="p">;</span> <span class="nx">or</span> <span class="kc">true</span>
+</pre></div>

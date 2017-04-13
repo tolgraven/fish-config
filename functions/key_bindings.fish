@@ -1,0 +1,4 @@
+function key_bindings
+func fish_user_key_bindings force
+and fish_user_key_bindings
+end

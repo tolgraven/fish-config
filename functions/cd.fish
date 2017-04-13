@@ -20,29 +20,31 @@ return $status
 end
 if test -f "$argv" #tol check, if is file
 set dir (dirname $argv)
+debug "hit file %s, cd to its dir %s" $argv $dir
 test -d "$dir"
 and set argv $dir
 end
 
 builtin cd $argv
 set -l cd_status $status
+set -l ls (set -lx CLICOLOR_FORCE 1; ls -G)
+test (count $ls) -gt 20
+#and set ls (set -lx CLICOLOR_FORCE 1; set -l ls (ls -Gtr); echo $ls[1 .. 30] )
+and set ls (set -lx CLICOLOR_FORCE 1; echo (set_color red)(count $ls)" files, 20 most recent: "(set_color normal) (ls -Gtr)[1..20] )
 
-set -l ls (ls -G)
-if test (count $ls) -le 30 #should rather check how many chars, compare to screen width, etc
-and status is-interactive
-
-#tput sc #should do like above then tput cuu x back that many lines, cause this doesnt work towards bottom of terminal...
+#if test (count $ls) -le 30 #should rather check how many chars, compare to screen width, etc
+#and status is-interactive
 clear_below_cursor
 tput cud1
 commandline -f repaint
 set lslines (math (string length -- "$ls") / $COLUMNS) #+1
-echo $ls
+
+echo (set_color -b black)$ls\ (set_color normal)
 tput cuu 2
 test $lslines -gt 0
 and tput cuu $lslines
-#tput rc
 
-end
+#end
 
 if test $cd_status -eq 0 -a "$PWD" != "$previous"
 set -q dirprev[$MAX_DIR_HIST]

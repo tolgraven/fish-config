@@ -1,3 +1,3 @@
 function rg
-    rg --hidden $argv
+command rg --hidden $argv
 end

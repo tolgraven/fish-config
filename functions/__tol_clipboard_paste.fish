@@ -1,10 +1,12 @@
 function __tol_clipboard_paste
-#set -l lines (pbpaste)
-pbpaste | while read -l line
-set lines $lines "$line"
-end
+set -l lines (pbpaste)
 for line in $lines
-set new "$new" "$line" #easiest way to not get any extra linebreaks
+#pbpaste | while read -l line
+#set lines $lines "$line"
+commandline -i $line \n
 end
-commandline -i $new
+#for line in $lines
+#set new "$new" "$line" #easiest way to not get any extra linebreaks
+#end
+#commandline -i $new
 end

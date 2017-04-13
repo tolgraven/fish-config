@@ -1,6 +1,7 @@
 function update
 if type -q teamocil
-tmux -CC new -s update fish -c "teamocil update" ^&-
+# tmux -CC new -s update fish -c "teamocil update" ^&-
+tmux new -s update fish -c "teamocil update" ^&-
 else
 old-update
 end

@@ -20,12 +20,14 @@ abbr sl set_label
 abbr gl get_label
 abbr ah audiohijack
 abbr prs 'profile standard'
-abbr :sm 'string match'
-abbr :sj 'string join'
-abbr :ssp 'string split'
-abbr :sr 'string replace'
-abbr :st 'string trim'
-abbr :sl 'string length'
+abbr :m 'string match'
+abbr :j 'string join'
+abbr :sp 'string split'
+abbr :r 'string replace'
+abbr :t 'string trim'
+abbr :l 'string length'
+abbr :s 'string sub'
+abbr :sl 'string sub -l (string length -- ) )'
 abbr mc mancat
 abbr aus audioswitch
 abbr pull 'git pull'
@@ -39,7 +41,6 @@ abbr ydl 'youtube-dl '
 abbr fed 'funcedloop'
 abbr dla 'devla'
 abbr ptf 'pastetofile'
-abbr confish 'vim ~/.config/fish/config.fish; and source ~/.config/fish/config.fish'
 abbr icat 'imgcat'
 abbr reload 'tol_reload_key_bindings'
 abbr ds 'docker_startit'
@@ -55,7 +56,7 @@ abbr doff 'debug_off'
 abbr p 'psc'
 abbr ocat 'command cat'
 abbr clnav 'command lnav'
-abbr kb 'func fish_user_key_bindings force; and fish_user_key_bindings'
+abbr kb 'key_bindings'
 abbr tc 'tmuxrc'
 abbr brm 'brew uninstall '
 abbr chr 'chrome-cli'
@@ -83,27 +84,17 @@ abbr :cbgr 'set_color brgrey)'
 abbr :cbg 'set_color brgreen)'
 abbr :cby 'set_color bryellow)'
 abbr :cbc 'set_color brcyan)'
-abbr :for 'for i in (seq 1 (count -)); #debug "index %s value %s" $i $var
+abbr :for 'for i in (seq 1 (count -))
 
 end'
 abbr :forxi 'set -l i 1; for x in ()
-#debug "index %s value %s" $i $x
 
-set i (math $i+1); end #;echo count: (count )'
+set i (math $i+1); end'
 abbr :d 'debug " %s  %s" $ $'
 abbr :switch 'switch ()
 case "";
 case "";
 case "*";
-end'
-abbr :if 'if ()
-
-else if ()
-
-end'
-abbr :while 'while ()
-
-
 end'
 abbr sac 'strip_ansi_color'
 abbr sel 'strip_empty_lines'
@@ -146,9 +137,6 @@ abbr cr 'cursor reset'
 abbr c0 'cursor block'
 abbr c2 'cursor underline'
 abbr c1 'cursor line'
-abbr gs 'gig status'
-abbr gs 'git status'
-abbr gc 'git add --all; git commit -m'
 abbr ee 'eval echo'
 abbr ascr 'asciinema rec -w 0.8 '
 abbr asc 'asciinema'
@@ -156,7 +144,13 @@ abbr hk 'hostsknown'
 abbr hu 'hostsup'
 abbr tma 'tmux_new_or_attach'
 abbr ta 'tmux a -t'
+abbr gs 'git status'
+abbr gc 'git_commit'
 abbr gp 'git pull'
 abbr gr 'git reset --hard'
 abbr gm 'git merge'
 abbr gmt 'git mergetool'
+abbr :e 'emojify'
+abbr gb 'git branch -v'
+abbr gre 'git remote -v'
+abbr ch 'chrome-cli'
