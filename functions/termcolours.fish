@@ -1,7 +1,4 @@
 function termcolours --argument cols
-#test -z "$cols"
-#and set cols 5
-#__termcolours | gpr --columns=$cols -t --page-width 180 --width 180 #--across #100
 clear
 set -l i 1
 set -l col_off 0

@@ -5,5 +5,8 @@ string match -q -- $last_char ' '
 or commandline --insert ' '
 
 commandline -f history-token-search-backward
-and commandline -f execute
+#commandline -f repaint
+sleep 0.1
+#commandline -f execute
+tol_execute
 end

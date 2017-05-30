@@ -14,6 +14,7 @@ profile lnav
 #itermprofileswitch "tmux new -A -s 'lnav'" lnav "-d fish -c 'profile lnav; command lnav '"
 #and tmux set -t "lnav" mouse off
 #and tmux attach -t lnav
+set -lx TERM screen-256color
 command lnav $argv #lnav completely broken in newer tmux with 24bit color. and cant toggle that per session, only server :/
 profile reset
 else

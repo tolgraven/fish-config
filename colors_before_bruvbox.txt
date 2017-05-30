@@ -1,0 +1,27 @@
+[1G__tol_setup_fish_colors[30m(B[m[32G 
+ [1G[38;2;209;209;209mfish_color_autosuggestion[30m(B[m[32G[38;2;209;209;209md1d1d1[1C[30m(B[m 
+ [1G[38;2;95;135;255mfish_color_command[30m(B[m[32G[38;2;95;135;255m5f87ff[1C[30m(B[m 
+ [1G[38;2;175;215;215mfish_color_comment[30m(B[m[32G[38;2;175;215;215mafd7d7[1C[30m(B[m 
+ [1G[38;2;255;152;26mfish_color_cwd[30m(B[m[32G[38;2;255;152;26mff981a[1C[30m(B[m 
+ [1G[31mfish_color_cwd_root[30m(B[m[32G[31mred[1C[30m(B[m 
+ [1G[38;2;215;135;135mfish_color_end[30m(B[m[32G[38;2;215;135;135md78787[1C[30m(B[m 
+ [1G[38;2;255;138;0mfish_color_error[30m(B[m[32G[38;2;255;138;0mff8a00[1C[30m(B[m 
+ [1G[4mfish_color_escape[30m(B[m[32G[2D[4m--underline[1C[30m(B[m 
+ [1G[36mfish_color_history_current[30m(B[m[32G[36mcyan[1C[30m(B[m 
+ [1G[36mfish_color_host[30m(B[m[32G[36mcyan[1C[30m(B[m 
+ [1G[32mfish_color_match[30m(B[m[32G[32mgreen[1C[30m(B[m 
+ [1G[30m(B[mfish_color_normal[30m(B[m[32G[30m(B[mnormal[1C[30m(B[m 
+ [1G[33mfish_color_operator[30m(B[m[32G[33myellow[1C[30m(B[m 
+ [1G[38;2;95;175;215mfish_color_param[30m(B[m[32G[38;2;95;175;215m5fafd7[1C[30m(B[m 
+ [1G[38;2;215;215;255mfish_color_quote[30m(B[m[32G[38;2;215;215;255md7d7ff[1C[30m(B[m 
+ [1G[1m[4m[95mfish_color_redirection[30m(B[m[32G[2D[1m--bold[1C[4m--underline[1C[95mbrpurple[1C[30m(B[m 
+ [1G[48;2;40;80;165mfish_color_search_match[30m(B[m[32G[2D[48;2;40;80;165m--background=2850a5[1C[30m(B[m 
+ [1G[1m[41mfish_color_selection[30m(B[m[32G[2D[1m--bold[1C[41m--background=red[1C[30m(B[m 
+ [1G[31mfish_color_status[30m(B[m[32G[31mred[1C[30m(B[m 
+ [1G[1m[32mfish_color_user[30m(B[m[32G[2D[1m--bold[1C[32mgreen[1C[30m(B[m 
+ [1G[1m[4mfish_color_valid_path[30m(B[m[32G[2D[1m--bold[1C[4m--underline[1C[30m(B[m 
+ [1G[37mfish_pager_color_completion[30m(B[m[32G[37mgrey[1C[30m(B[m 
+ [1G[95mfish_pager_color_description[30m(B[m[32G[95mbrpurple[1C[30m(B[m 
+ [1G[94mfish_pager_color_prefix[30m(B[m[32G[94mbrblue[1C[30m(B[m 
+ [1G[32mfish_pager_color_progress[30m(B[m[32G[32mgreen[1C[30m(B[m 
+ 

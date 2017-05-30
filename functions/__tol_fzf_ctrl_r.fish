@@ -11,7 +11,6 @@ and set cmdquery "-q '$cmdline'\ " #prefill search. wasnt working before with >1
 
 set -l preview "--preview='history search --show-time --exact (echo (string split \#\  {})[1] | string trim) | fish_indent --ansi'"
 set -l fzfopts "--no-sort +m --toggle-sort=ctrl-r $preview --bind 'alt-enter:execute:/usr/local/bin/fish -c {}' $cmdquery"
-
 if test -z "$cmdline" #debug -- "normal fzf window %s %s %s" $colorcmd $cmdline $fzfopts
 set -l fish_term24bit 0 #cant use truecolor in fullscreen
 set fzfopts $fzfopts "--preview-window=down:4:wrap" #fullscreen, bottom preview window
@@ -51,19 +50,15 @@ switch "$line"
 case '# M|T|W|F|S' '# *'
 set -q timestamp #arriving again at new timestamp = flush last assembled
 and printf "%s %*s"\n (string trim -r -c ';' -- "$hit_output") $timestamp_col (set_color $fish_color_comment)$timestamp(set_color normal)
-#and printf "%s%s"\n (string trim -r -c ';' -- "$hit_output") (tput hpa $timestamp_col)(set_color $fish_color_comment)$timestamp(set_color normal)
-#and echo -s (string trim -r -c ';' -- "$hit_output") (tput hpa $timestamp_col)(set_color $fish_color_comment)$timestamp(set_color normal)
-#debug "out: %s" "$hit_output"
+#and echo -s (string trim -r -c ';' -- "$hit_output") (tput hpa $timestamp_col)(set_color $fish_color_comment)$timestamp(set_color normal); #debug "out: %s" "$hit_output"
 set timestamp $line
 set new_hit
 set outer
 set hit_output
-case '*'
-#debug 'incoming line: %s' $line
-set ansied (echo "$line" | eval $colorcmd) #echo "$line" | eval $colorcmd | read ansied #set ansied (echo $line | eval $colorcmd)
+case '*' #debug 'incoming line: %s' $line
+set ansied (echo "$line" | eval $colorcmd)
 if test (count $ansied) -gt 2 #apparently spews an extra line so >2 == >1
 #and debug "ansied %s lines, 1: %s, 2: %s" (count $ansied) $ansied[1] $ansied[2]
-#and set ansied $ansied\; #reduce back anything fish_indent has seperated
 for ansi in $ansied
 set stripped (strip_ansi_color "$ansi" | strip_empty_lines | string trim)
 not test -z "$stripped"
@@ -76,7 +71,6 @@ if set -q new_hit
 set hit_output "$outer" #"$ansied" #grab ansi here so can keep own formatting etc
 set -e new_hit
 else #not timestamp but not new, so a multiline (in a seperate sense from fish_indents splitting)
-#set hit_output "$hit_output"(set_color normal)"; "$ansied(set_color normal) #add lines together just one in results
 set hit_output "$hit_output"(set_color normal)"$outer"(set_color normal) #add lines together just one in results
 end
 end #but this will all get wrecked by stupid fish_indent... fix source or workaround

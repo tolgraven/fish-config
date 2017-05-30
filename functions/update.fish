@@ -1,7 +1,11 @@
-function update
+function update -d "update fucken errthang++"
 if type -q teamocil
+if test "$TMUX"
+teamocil update
+else
 # tmux -CC new -s update fish -c "teamocil update" ^&-
 tmux new -s update fish -c "teamocil update" ^&-
+end
 else
 old-update
 end

@@ -17,5 +17,6 @@ set -l clonedir (ls -t | strip_ansi_color )[1]
 debug "clonedir: $clonedir"
 test -d "$clonedir"
 and cd $clonedir
-and devla
+#and devla
+and la
 end

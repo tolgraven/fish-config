@@ -12,7 +12,7 @@ bind \e- __tol_toggle_comment_commandline #needs get whitespace #bind \e8 __tol_
 bind \ea beginning-of-buffer
 bind \ee end-of-buffer
 bind \ek kill-word #kill fwd like \ck but just one word #REMINDER: meta-delete does \cw but for just A-z etc
-bind \ef nextd-or-forward-word #forward-word #not working
+bind \ef forward-word #nextd-or-forward-word #forward-word #not working
 bind \ea\ek 'commandline_save nuke; commandline -r ""' #nuke commandline
 shift-arrows-select_key_bindings
 bind \ck __tol_kill_line_or_selection
@@ -46,7 +46,7 @@ bind ! __history_previous_command ### bang-bang ###
 bind '$' __history_previous_command_arguments
 bind \e\_ __fish_go-back
 bind \eP 'pwd | pbcopy' #copy cwd #bind \eb\ep 'kill -TRAP %self' #breakpoint
-bind \eg\ej autojump_insert # as in 'go(key)'-jump #convoluted binding bc M-hjkl and zm busy for vim/tmux nav...
+bind \eg\ej 'autojump_fzf insert' # as in 'go(key)'-jump #convoluted binding bc M-hjkl and zm busy for vim/tmux nav...
 bind \eg\eJ "autojump_insert force" #__tol_eval_job_and_sneak_peek
 bind \ez 'fg ^&-; cursor reset; commandline -f repaint' #\cz in reverse 
 bind \ej\eo jobs
@@ -57,7 +57,7 @@ bind \r tol_execute #bind \ec\es commandline_save #bind \ec\er commandline_resto
 bind \n tol_execute #wraps execute, adds clear below cursor etc #bind \cj tol_execute
 debug_key_bindings
 tol_history_search_bindings #bind \e\e\[A tol_token-search-backward #meta-up #bind \e\[1\;4A 'echo funkeh bind' # meta-shift-up #bind \e\[1\;4B 'echo meta-shift-down' # meta-shift-down #bind \e\[1\;4D 'prevd; commandline -f repaint' #meta-shift-left #bind \e\[1\;4C 'nextd; commandline -f repaint' #meta-shift-right
-bind \ef\eg fzf_git_commits #bind \et\ea __tol_tmux_attach
+bind \ef\eg 'fg ^&-; cursor reset; commandline -f repaint'
 bind \ey\ep __tol_put_contents
 bind \e4 __tol_token_with_last_arg
 bind \e1 __tol_token_with_last_cmdline
@@ -65,4 +65,9 @@ bind \et\et transpose-words
 bind \em\ev __tol_mv_edit_file_names #blanking a line will rm/trash the filein_dir #bulk file mgmnt
 bind \eg\eb __tol_git_branch
 bind \ey\ey __tol_yank_to_var
+bind \eg\ec fzf_git_commits
+bind \ev\es __tol_vimsession
+bind \e\? __fish_man_page
+bind \ew forward-word 
+bind \ea\ej 'autojump_fzf cd'
 end

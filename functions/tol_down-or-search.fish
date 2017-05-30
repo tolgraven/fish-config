@@ -1,7 +1,9 @@
 function tol_down-or-search --description 'up-or-search with auto completion popup' --argument preview_count
 if commandline --search-mode # If we are already in search mode, continue
 commandline -f history-search-forward
-
+test $TMUX
+and clear_below_cursor
+and return
 set from (contains -i -- (commandline --current-buffer) $__tol_up_or_search_hist[1..100])
 switch "$from"
 case 0 1 ''

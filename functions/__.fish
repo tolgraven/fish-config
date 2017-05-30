@@ -1,4 +1,4 @@
-function _ -d "subtraction, wraps math"
+function __ --description 'subtraction, wraps math'
 	set -l count (count $argv)
 	switch "$count"
 		case 0

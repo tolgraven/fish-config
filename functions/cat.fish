@@ -55,12 +55,14 @@ imgcat $file
 return $status
 case 'whatever apple stuff like .app' #quicklook? ;)
 case '*'
-highlight $file ^&-
 debug "highlight, args %s, ext %s" $argv $ext
+highlight $file ^&-
+or highlight $file --syntax=conf ^&-
 and return $status #and, so will continue below if highlight lacks def and throws.. smart!
 end
 
 if test -z "$argv"
+#OI!!! add check for ansi escapes and cat clean in that case
 highlight #something is fucking broken in fish, piping to functions doesnt work anymore???
 debug "highlight, generic (piped)"
 return $status

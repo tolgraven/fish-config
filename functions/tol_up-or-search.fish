@@ -1,8 +1,9 @@
 function tol_up-or-search --description 'up-or-search with auto completion popup' --argument preview_count
-#set lineno (commandline -L)
 if commandline --search-mode # If we are already in search mode, continue
 commandline -f history-search-backward
-
+test $TMUX
+clear_below_cursor
+and return #temp fix for weirdness...
 set preview_count (math "$LINES - $__search_line_nr - 2") #dynamic count, size - pos - padding
 test $preview_count -lt 7
 and set preview_count 7

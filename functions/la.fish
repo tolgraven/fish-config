@@ -2,23 +2,24 @@ function la --description 'List contents of directory, including hidden files in
 set -U tols_filtered_files .DS_Store .Trash .Trashes .DocumentRevisions-V100 .PKInstallSandboxManager .Spotlight-V100 .TemporaryItems .Trashes .com.apple.timemachine .fseventsd .localized \$RECYCLE.BIN .IABootFiles .IAProductInfo
 set -g tols_autolabeled_files "Green mp3 wav aif flac asd alp maxpat fxb vst component amdx" "Red zip rar 7z dmg" #etc
 if not type -q grc
-ls -lAhG $argv | for filter in $filters
-grep --color=always -v $filter
-end
+set -x CLICOLOR_FORCE
+ls -lAhG $argv | string match -r -v (string join '|' $tols_filtered_files)
 return
 end #TODO: size useless f dirs/count f nondirs so share col. +for /Volumes w drive icos /Icon support, plus size/used
 set dirname (pwd)
 or return $status
-test (count $argv) -gt 0 #and if test -d $dirname/$argv[-1]; #set dirname $dirname/$argv[-1]
-and if test -d (set dirname $dirname/$argv[1]; echo $dirname)
+not test -z "$argv"
+and if test -d "$dirname/$argv[-1]" #(set dirname $dirname/$argv[-1]; echo $dirname)
+set dirname $dirname/$argv[-1]
 set -e argv[-1]
-else if test -d $argv[-1]
-or test -r $argv[1] #pass through also if a file so doesn't grab entire dir...
+else if test -d "$argv[-1]"
+or test -r "$argv[-1]" #pass through also if a file so doesn't grab entire dir...
 set dirname $argv[-1]
 and set -e argv[-1]
 end
-test (count $argv) -gt 0 # after presumably unsetting dirr part
+test (count $argv) -gt 0 # after presumably unsetting dir part
 and set opts $argv
+debug "dirname: $dirname, opts: $opts"
 set output (grc -es --colour=on ls -lAhG $opts $dirname)
 test (count $output) -gt 1
 and set firstline $output[1]
@@ -28,7 +29,7 @@ for filter in $tols_filtered_files
 set items (echo -s -n $items\n | grep --color=always -v $filter)
 set output (echo -s -n $output\n | grep --color=always -v $filter)
 end
-set output (__tol_la_text_replacements "$output"\n)
+set output (__tol_la_text_replacements $output)
 test (count $items) -gt 0
 and test (count $items) -eq (count $output)
 and for i in (seq 1 (count $items))

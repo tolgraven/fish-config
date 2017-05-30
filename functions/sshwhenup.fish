@@ -31,8 +31,8 @@ set sleep 300
 end
 
 echo -s "Host" (set_color green) " $host " (set_color --bold brred) "not seen for " (set_color brblue)$waitedfor (set_color normal) "s"
-spin "sleep (math (random 1 10) + $sleep)" #randomize so all dont hit at once..
-
+#spin "sleep (math (random 1 10) + $sleep)" #randomize so all dont hit at once..
+sleep (math (random 1 10) + $sleep)
 tput cuu 2 #3 #4
 end
 end
