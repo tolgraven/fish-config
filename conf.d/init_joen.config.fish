@@ -1,6 +1,7 @@
+# echo "init joen conf.d fish BEGIN"
 function setorset -a flags var values
 	test (count $argv) -ge 3;  or return 1
-	if not set -q $var;  set $flags $var $argv[3..-1];  end
+	if not set -q $var;  			set $flags $var $argv[3..-1];  end
 end
 
 setorset -U fish_escape_delay_ms 		200
@@ -9,7 +10,6 @@ if contains $TERM_PROGRAM "iTerm.app"; or test "$TMUX"; and set -q 24bit
 	set -g fish_term24bit 						1
 	set -g theme_nerd_fonts 					'yes' 		#only enable nerdfonts on box, not mobile etc
 end
-set -g theme_color_scheme 					'gruvbox' #share these with bobthefish since reusing their entire git thing
 set -g theme_git_worktree_support 	'yes'
 set -g theme_show_exit_status 			 'no' 		#'yes' #got my own
 set -g theme_title_display_process 	'yes'
@@ -26,33 +26,28 @@ setorset -Ux XDG_CACHE_HOME  	"$HOME/.cache"
 #more xdg stuff...
 #export ATOM_HOME="$XDG_DATA_HOME"/atom
 #export CARGO_HOME="$XDG_DATA_HOME"/cargo
-#$ mkdir -p "$XDG_CACHE_HOME"/less
-# export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
-# export LESSHISTFILE=- can be used to disable this feature.
 # export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey
 #export WGETRC="$XDG_CONFIG_HOME/wgetrc"
-
 set -x GNUPGHOME 							"$XDG_CONFIG_HOME/gnupg"
 set -x MPLAYER_HOME 					"$XDG_CONFIG_HOME/mplayer"
 set -x SUBVERSION_HOME 				"$XDG_CONFIG_HOME/subversion"
 # set -q VIRTUALFISH_HOME; 		or set -Ux $VIRTUALFISH_HOME ~/.config/
 
-set -x LC_ALL 	en_GB.UTF-8;  set -x LANG 	en_GB.UTF-8
+set -x LC_ALL en_GB.UTF-8;  set -x LANG 	en_GB.UTF-8
 
-setorset -Ux GITHUB_TOKEN 		"76cceb8c7cba52c92f2c41eaa8d113db7ddcdb46"
+setorset -Ux GITHUB_TOKEN 		"282616fc76aeaa7360e07b4761749b1503611f0c"	#hub w repo acc, shouldnt actually be in here...
 setorset -Ux GITHUB_USER 			"tolgraven"
 setorset -Ux HOMEBREW_GITHUB_API_TOKEN 	$GITHUB_TOKEN
 setorset -Ux HOMEBREW_CASK_OPTS 	"--appdir=/Applications"
-# setorset -Ux BREW_CACHE 			/Volumes/SO-FUNKY/Users/tolgraven/Library/Caches/Homebrew #nah, just move and symlink..
 
 set -q 			 LESS_TERMCAP_mb; 	or configure_pager 	#funky colors. -U in func so only once per host
 setorset -Ux LESS 						"--ignore-case --raw-control-chars --squeeze-blank-lines --status-column --tilde -x4 -F"
-set 		 -x  LESSHISTFILE 		"$XDG_CONFIG_HOME/less/history"; set -x LESSKEY "$XDG_CONFIG_HOME/less/keys"
+set 		 -x  LESSHISTFILE 		"$XDG_CACHE_HOME/less/history"; set -x LESSKEY "$XDG_CONFIG_HOME/less/keys"
 setorset -Ux MOST_INITFILE 		"$XDG_CONFIG_HOME/most/mostrc"
 # setorset -Ux PAGER "vimpager -s -c 'set nocursorline | set showtabline=1 | set nowrap'"
 setorset -Ux PAGER 						"less"
 setorset -Ux BROWSER 					'elinks'
-type -q nvim; and setorset -Ux EDITOR 	'nvim'
+type -q nvim; and set -x EDITOR 	'nvim'; and set -x VISUAL 'nvim'
 
 set 		 -gx NVIM_TUI_ENABLE_CURSOR_SHAPE 	1
 set 		 -gx NVIM_TUI_ENABLE_TRUE_COLOR 		1
@@ -88,31 +83,27 @@ function _grc_wrap --argument cmd
 	end
 end; 		for cmd in $grc_wrap_commands; _grc_wrap $cmd; end
 
-
 switch (hostname)
-	case absurd
+	case 'absurd*' 'NU*'
 		set -g stderred_path 			~/.local/lib/libstderred.dylib 	#no check, so dont get outdated hanging aroudn if change
-		setorset -Ux STDERRED_BLACKLIST "fzf|lnav|htop|tmux|zsh|brew|go|mosh|ssh"
+		setorset -Ux STDERRED_BLACKLIST "fzf|lnav|htop|tmux|zsh|brew|go|mosh|ssh|elinks|tldr|elinks"
 		__stderred startup
 end
 if status is-interactive 	#can I wrap all these?
-	type -q autojump; and test -f (dirname (which autojump))/../share/autojump/autojump.fish; and source (dirname (which autojump))/../share/autojump/autojump.fish #more generic like
+	type -q autojump; and test -f (dirname (which autojump))/../share/autojump/autojump.fish; and source (dirname (which autojump))/../share/autojump/autojump.fish
 	source (rbenv init - | psub) 	#ruby rbenv
-	test -z (which env_parallel.fish);  or source (which env_parallel.fish) #GNU parallel shell support
+	# test -z (which env_parallel.fish);  or source (which env_parallel.fish) #GNU parallel shell support
 	eval (python -m virtualfish)
 	# eval (docker-machine env default ^&-) #)^ /dev/null)
 # test -n "$DESK_ENV"; and source "$DESK_ENV"; or true
 	# type -q thefuck; and status is-interactive; and eval (thefuck --alias | tr '\n' ';') #fucking startup performance a fuckton god damnit why. interactive check should help at least
 end
-#ulimit -n 65536 #is persistent and only set in osx
 
-# XXX regular keybind recycling the f/t functionality from vim bindings!
-# and prob implement a lil vim-seek 2-char thing for good measure
+# XXX regular keybind recycling the f/t functionality from vim bindings! +prob vim-seek 2-char thing for good measure
 
-
-function __tol_setup_fish_colors
-	set -U __tol_setup_fish_colors
-	#set all ze colors, bruvbox mode liek.
+# echo "setup colors..."
+function __tol_setup_fish_colors -d "set all ze colors, bruvbox mode liek."
+	set -U __tol_setup_fish_colors	 		 #only needs to be run once. unset to force changes
 	
 	set -U	fish_color_autosuggestion    d1d1d1
 	set -U	fish_color_command           5f87ff
@@ -139,18 +130,28 @@ function __tol_setup_fish_colors
 	set -U	fish_pager_color_description brpurple
 	set -U	fish_pager_color_prefix      brblue
 	set -U	fish_pager_color_progress    green
+end
+function __tol_setup_fish_dirs
+	setorset -U fish_user_paths ~/.local/{bin,go/bin} /usr/local/sbin /usr/sbin
 
 end
-set -q __tol_setup_fish_colors; or __tol_setup_fish_colors
+function __tol_setup_fish_stuff
+	set -q __tol_setup_fish_colors; or __tol_setup_fish_colors
+	set -q __tol_setup_fish_dirs; 	or __tol_setup_fish_dirs
+	# set -q __tol_setup_fish_glyphs; or __tol_setup_fish_glyphs
+	# set -q __tol_setup_fish_emoji; or __tol_setup_fish_emoji
+end
+ __tol_setup_fish_stuff
 
-setorset -U  __tols_folder_Blue   \U0001f4d8
-setorset -U  __tols_folder_Gray   \U0001f4d3
-setorset -U  __tols_folder_Green  \U0001f4d7
-setorset -U  __tols_folder_None   \U0001f4c1
-setorset -U  __tols_folder_Orange \U0001f4d9
-setorset -U  __tols_folder_Purple \U0001f47e
-setorset -U  __tols_folder_Red    \U0001f4d5
-setorset -U  __tols_folder_Yellow \U0001f4d4
+
+setorset -U  __tols_folder_Blue				 \U0001f4d8
+setorset -U  __tols_folder_Gray				 \U0001f4d3
+setorset -U  __tols_folder_Green			 \U0001f4d7
+setorset -U  __tols_folder_None				 \U0001f4c1
+setorset -U  __tols_folder_Orange			 \U0001f4d9
+setorset -U  __tols_folder_Purple			 \U0001f47e
+setorset -U  __tols_folder_Red				 \U0001f4d5
+setorset -U  __tols_folder_Yellow			 \U0001f4d4
 
 
 # e_check:\u2755\x1e\u2714\x1e\u2753\x1e\u274c\x1e\u2b55\ufe0f\u2b50\ufe0f\U0001f512\x1e\U0001f513                                                                                                                                                                                                                                                                                                                                                                                                                              
@@ -168,6 +169,5 @@ setorset -U  __tols_folder_Yellow \U0001f4d4
 # emojis_nonshitty:\U0001f4be\x1e\U0001f4bd\x1e\U0001f3b9\x1e\U0001f6a8\x1e\U0001f3c1\x1e\U0001f680\x1e\u231a\x1e\U0001f4bb\x1e\U0001f5b1\x1e\U0001f5a5\x1e\u2328\x1e\U0001f4f1\x1e\U0001f5d1\x1e\U0001f50d\x1e\U0001f50e\x1e\U0001f3f4\x1e\U0001f526\x1e\u2714\x1e\U0001f503\x1e\u2795\x1e\u2796\x1e\u2797\x1e\U0001f4b2\x1e\U0001f553\x1e\U0001f513\x1e\U0001f512\x1e\u2755\x1e\u2753\x1e\U0001f6ab\x1e\u274c\x1e\u2b55\ufe0f\x1e\u23f3\x1e\u231b\ufe0f\x1e\U0001f507\x1e\U0001f50a\x1e\U0001f509\x1e\U0001f508\x1e\U0001f578 
 
 
-
-
+# echo "init joen conf.d fish END"
 # fish_config_file:/Users/tolgraven/.config/fish/config.fish                                                                                                                                                                                                                                                                                                                                                                                                                                                              

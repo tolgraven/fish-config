@@ -4,7 +4,6 @@ not test -z "$argv[-1]"
 and for i in (seq (count $argv))
 if test -r $argv[$i] #file, readable
 or functions -q -- $argv[$i]
-
 set file $argv[$i]
 set -e arguments[$i]
 end
@@ -23,7 +22,6 @@ and set -e argv[$i] #removing my own "--force" param, should it exist
 set i (contains --index -- '--force' $arguments)
 and set -e arguments[$i]
 end
-
 not test -z "$file"
 and not string match -- '-*' $file
 and if not test -e $file #not a file
@@ -47,7 +45,7 @@ and switch "$ext"
 case 'fish'
 test (count $arguments) -eq 0
 and command cat $file | fish_indent --ansi
-or command cat $file | fish_indent --ansi | command cat $arguments #pass through if passed like -n etc
+or command cat $file | fish_indent --ansi | command cat $arguments #pass through if passed like -n et
 debug "fish, args %s" $argv
 return $status
 case 'png' 'PNG' 'jpg' 'JPG' 'jpeg' 'JPEG' 'gif' 'GIF' #debug "imgcat, args %s" $argv
@@ -60,16 +58,11 @@ highlight $file ^&-
 or highlight $file --syntax=conf ^&-
 and return $status #and, so will continue below if highlight lacks def and throws.. smart!
 end
-
-if test -z "$argv"
-#OI!!! add check for ansi escapes and cat clean in that case
+if test -z "$argv" #OI!!! add check for ansi escapes and cat clean in that case 
 highlight #something is fucking broken in fish, piping to functions doesnt work anymore???
-debug "highlight, generic (piped)"
+#debug "highlight, generic (piped)"
 return $status
-end
-#if type -q vimcat #debug "vimcat, args %s" $argv
-#vimcat $argv #fix args in vimcat func instead?
-#else 
+end #if type -q vimcat #debug "vimcat, args %s" $argv  #vimcat $argv #fix args in vimcat func instead?  #else
 if type -q ccat #debug "ccat, args %s" $argv
 command cat $argv | ccat
 else #debug "straight cat, args %s" $argv

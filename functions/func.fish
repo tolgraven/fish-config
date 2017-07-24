@@ -8,7 +8,8 @@ and return 1
 debug "editing function %s" $function
 set -l orig (mktemp)
 set -l new (mktemp)
-functions $function >$orig
+# functions $function >$orig
+funcat $function >$orig 	#better to stick to builtins but fish ofc fucked functions up ugh, use my wrapper
 
 bind --erase "!"
 bind --erase "\$"

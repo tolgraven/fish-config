@@ -70,4 +70,5 @@ bind \ev\es __tol_vimsession
 bind \e\? __fish_man_page
 bind \ew forward-word 
 bind \ea\ej 'autojump_fzf cd'
+bind \er\er ranger
 end

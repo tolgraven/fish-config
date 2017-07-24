@@ -1,3 +1,3 @@
 function osa
-	osascript -e "$argv"
+osascript -e \"$argv\"
 end
