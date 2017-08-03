@@ -6,10 +6,9 @@ else
 set hide
 end
 
-set output (functions $argv | fish_indent $color | string replace --all '    ' '  ' ) #| read output
+set output (functions $argv | fish_indent $color | string replace --all '  ' '  ' )
 if set -q hide
 debug "filter out first junk line from $argv"
-string match --all -v -r '# Defined in /' $output
 else
 echo -ns $output\n
 end

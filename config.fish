@@ -57,7 +57,27 @@ function tol_sigint_handler --on-signal SIGINT -d "hella reset stuff on ctrl-c" 
 		clear_below_cursor
 end
 
-# function __tol_fish_preexec --on-event fish_preexec
+function __tol_fish_sigwinch --on-signal SIGWINCH
+	# temp fix to resize woes: just fukn kill right-side prompt, let it come back next line...
+	if test (count (functions fish_right_prompt)) -gt 3
+		functions -e fish_right_prompt_backup
+		functions -c fish_right_prompt fish_right_prompt_backup
+		# functions -e fish_right_prompt 		#causes bugs when just nuked it seems
+		function fish_right_prompt
+		end
+		commandline -f repaint
+	end
+end
+
+function __tol_fish_preexec --on-event fish_preexec
+	# if not functions -q fish_right_prompt; and functions -q fish_right_prompt_backup
+	if test (count (functions fish_right_prompt)) -eq 3; and functions -q fish_right_prompt_backup
+		functions -e fish_right_prompt
+		functions -c fish_right_prompt_backup fish_right_prompt
+		functions -e fish_right_prompt_backup
+		commandline -f repaint
+	end
+
 # #  if know curr line and know term size will know if output has caused scrolling so can adjust. tho lines is tricky with the wrapping and all... #wait don't actually have to count lines because won't be nothing else back there...
 # #  ### IMPORTANT IDEA!!! #keypress to eval a part of the commandline (a would-be subshell like), take result and replace expression in commandline with that
 # #  ### and one to do it with a whole line or piece of code as well. would be so massively easier to debug stuff then...
@@ -66,7 +86,7 @@ end
 #   set -g last_commandline_pos (commandline -C);   set -g last_commandline_line_nr (commandline -L)
 # 	set -g last_commandline $argv
 #   # debug "last commandline: %s  at pos: %s  at prompt-line %s" $last_commandline $last_commandline_pos $last_commandline_line_nr
-# end
+end
 
 # function __tol_fish_postexec --on-event fish_postexec
 # 	status is-interactive; or return
@@ -80,6 +100,3 @@ end
   # get_pos | read -g __tol_pos_preprompt
   # debug "preprompt_pos pos %s" $__tol_pos_preprompt
 # end
-
-# Hook for desk activation
-test -n "$DESK_ENV"; and . "$DESK_ENV"; or true

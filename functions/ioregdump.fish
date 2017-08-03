@@ -1,4 +1,9 @@
 function ioregdump
-	ioreg -l -w0 -p IODeviceTree >~/Downloads/ioreg{$ioregcounter}.txt
-    set ioregcounter (math $ioregcounter+1)
+not set -q ioregcounter
+and set -U ioregcounter 0
+set ioregfile ~/Downloads/ioreg{$ioregcounter}.txt
+#  ioreg -f -l -w0 -p IODeviceTree >$ioregfile
+ioreg -f -l -w0 >$ioregfile
+set ioregcounter (math $ioregcounter+1)
+vim -c "set ft=cfg" $ioregfile
 end

@@ -44,11 +44,12 @@ set result (string replace '~' $HOME $result)
 if test -d "$result"
 and not string match -q -a -r '.app|.vst|.component' -- (string sub --start=-9 -- $result)
 test -d "$result/Contents"
-and cd $result/Contents
-or eval cd "$result"
+and cd "$result/Contents"
+or cd "$result"
 else if test (count $argv) -lt 3
 and not type -q $program
-cd (dirname (echo $result)) #gets dir part of complete path
+#  cd (dirname (echo $result)) #gets dir part of complete path
+cd (string escape (dirname $result)) #gets dir part of complete path
 and commandline (echo -n "" \"(basename $result)\" ) #gets file part of complete path
 and commandline -C 0
 else
