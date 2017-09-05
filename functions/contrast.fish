@@ -9,10 +9,10 @@ contrast (math (contrast) (string sub -l 1 -- $argv[1]) (string sub -s 2 -- $arg
 return
 case '*'
 set -U contrast_unscaled $argv[1]
-set scaled (math "$contrast_unscaled / 1.42")
-set asus (math "$scaled / 1.9 + 15")
-set output (ddcctl -d 1 -c $scaled | string sub -s -3)[-1]
-ddcctl -d 2 -c $asus >/dev/null
+set scaled1 (math "$contrast_unscaled / 1.33") #philips
+set scaled2 (math "$scaled1 / 1.9 + 15") #asus
+set output (ddcctl -d 1 -c $scaled1 | string sub -s -3)[-1]
+ddcctl -d 2 -c $scaled2 >/dev/null
 end
 or set -q contrast_unscaled
 and echo $contrast_unscaled

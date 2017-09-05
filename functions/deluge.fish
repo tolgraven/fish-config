@@ -28,7 +28,7 @@ clear #tput smcup
 echo -ns $output\n #tput vpa (math "$LINES - 2"); echo "press enter for command prompt"
 sleep $refresh
 end
-case 'pb' 'c' 'clip' 'clipboard' 'm' 'magnet'
+case 'pb' 'c' 'clip' 'clipboard' 'm' 'magnet' 'copy'
 deluge add (string escape (pbpaste))
 case 'console'
 eval $deluge

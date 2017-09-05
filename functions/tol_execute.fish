@@ -1,5 +1,4 @@
 function tol_execute --description 'do stuff, then execute'
-# IMPLEMENT: check input for stuff like --help, then pass through highlight shit automatically!
 set -l cmdline (commandline)
 set -l linenum (commandline --line)
 if not commandline --paging-mode

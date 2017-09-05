@@ -52,6 +52,6 @@ case 't*' 'T*' 'toggle' #get status from openhab i guess?...
 end
 fish -c "for i in (seq 1 3)
            hs '$bridge:zone$thing($zone$val)' ^&- >&- & 
-           sleep 0.085 #25 #was actually acting a bitch at 0.1 ugh
+           sleep 0.085 #was actually acting a bitch at 0.1 ugh
          end" &
 end

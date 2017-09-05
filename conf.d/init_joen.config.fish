@@ -25,7 +25,7 @@ setorset -Ux XDG_CACHE_HOME  	"$HOME/.cache"
 #more xdg stuff...
 # setorset -Ux CARGO_HOME				"$XDG_DATA_HOME"/cargo
 # setorset -Ux ATOM_HOME				"$XDG_DATA_HOME"/atom
-setorset -Ux WGETRC						"$XDG_CONFIG_HOME/wgetrc"
+# setorset -Ux WGETRC						"$XDG_CONFIG_HOME/wgetrc"
 setorset -Ux GNUPGHOME 				"$XDG_CONFIG_HOME/gnupg"
 # set -q VIRTUALFISH_HOME; 		or set -Ux $VIRTUALFISH_HOME ~/.config/
 setorset -Ux LESSHISTFILE 		"$XDG_CACHE_HOME/less/history"
@@ -70,8 +70,7 @@ setorset -U  nfssettings 			"nolocks,locallocks,intr,soft,wsize=32768,rsize=3276
 setorset -U  rsyncopts  			--human-readable --info=progress2 --recursive --times --perms --copy-links
 setorset -U  tolmenu_actions 	'auto_desc' 'debug_on' 'debug_off' 'debug_token' 'debug_notoken' #argh lost old ones. needs to be name:action
 
-# setorset -U  grc_wrap_commands cvs df diff dig gcc g++ ifconfig make mount mtr netstat ping ps tail traceroute wdiff  #skip ls for tols, and cat for ccat/vimcat et al
-setorset -U  grc_wrap_commands cvs df diff dig gcc g++ ifconfig make mount mtr netstat ping ps tail traceroute wdiff blkid du dnf docker docker-machine env id ip iostat last lsattr lsblk lspci lsmod lsof getfacl getsebool ulimit uptime nmap fdisk findmnt free semanage sar ss sysctl systemctl stat showmount tune2fs tcpdump tune2fs vmstat w who
+setorset -U  grc_wrap_commands cvs df diff dig gcc g++ ifconfig make mount mtr netstat ping ps tail traceroute wdiff blkid du dnf docker docker-machine env id ip iostat last lsattr lsblk lspci lsmod lsof getfacl getsebool ulimit uptime nmap fdisk findmnt free semanage sar ss sysctl systemctl stat showmount tune2fs tcpdump tune2fs vmstat w who  #skip ls for tols, and cat for ccat/vimcat et al
 function _grc_wrap --argument cmd
 	if set -q grc_wrap_commands
 		not builtin contains -- "$cmd" $grc_wrap_commands; and return
@@ -80,26 +79,26 @@ function _grc_wrap --argument cmd
 		set -l options "grc_wrap_options_$cmd"
 		command grc -es --colour=auto "$cmd" $$options $argv
 	end
-end; 		for cmd in $grc_wrap_commands; _grc_wrap $cmd; end
+end; 	for cmd in $grc_wrap_commands; _grc_wrap $cmd; end
 
 switch (hostname)
 	case 'absurd*' 'NU*'
 		set -g stderred_path 			~/.local/lib/libstderred.dylib 	#no check, so dont get outdated hanging aroudn if change
 		setorset -Ux STDERRED_BLACKLIST "fzf|lnav|htop|tmux|zsh|brew|go|mosh|ssh|elinks|tldr|elinks"
-		__stderred startup
+        test -r $stderred_path; and __stderred startup
 end
 if status is-interactive 	#can I wrap all these?
 	type -q autojump; and test -f (dirname (which autojump))/../share/autojump/autojump.fish; and source (dirname (which autojump))/../share/autojump/autojump.fish
-	test -z (which env_parallel.fish);  or source (which env_parallel.fish)  #GNU parallel shell support
+	test -z (which env_parallel.fish);  or source (which env_parallel.fish)  #GNU parallel shell support. load on first invocation instead?
 	source (rbenv init - | psub) 		#ruby rbenv
 	eval (python -m virtualfish)		#python envs
 	# eval (docker-machine env default ^&-) #)^ /dev/null) 	#docker envs
- 	test -n "$DESK_ENV"; and source "$DESK_ENV"; or true		# Hook for desk activation
-	# type -q thefuck; and status is-interactive; and eval (thefuck --alias | tr '\n' ';') #fucking startup performance a fuckton god damnit why. interactive check should help at least
+ 	# test -n "$DESK_ENV"; and source "$DESK_ENV"; or true		# Hook for desk activation
+    if not type -q fuck; and status is-interactive; eval (thefuck --alias)\n; funcsave fuck; end  #fucks shell startup by like 250ms when sourced on the fly, so save instead....
 end
 
 # XXX regular keybind recycling the f/t functionality from vim bindings! +prob vim-seek 2-char thing for good measure
- 
+
 # echo "setup colors..."
 function __tol_setup_fish_colors -d "set all ze colors, bruvbox mode liek."
 	set -U __tol_setup_fish_colors	 		 #only needs to be run once. unset to force changes

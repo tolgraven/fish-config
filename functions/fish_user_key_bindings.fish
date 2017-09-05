@@ -71,4 +71,6 @@ bind \e\? __fish_man_page
 bind \ew forward-word 
 bind \ea\ej 'autojump_fzf cd'
 bind \er\er ranger
+bind \eg\eg 'autojump_fzf insert'
+bind \eg\es __tol_git_status
 end
