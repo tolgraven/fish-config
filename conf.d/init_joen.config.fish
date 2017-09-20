@@ -16,8 +16,6 @@ set -g theme_title_display_tty 			'yes' 		#tol custom
 
 setorset -Ux TERM_ITALICS 				'true'
 
-setorset -U tol_fish_abbr_file 	~/.config/fish/functions/../abbr.fish_defs
-test (count (abbr -l)) -eq (count (command cat $tol_fish_abbr_file)); or source $tol_fish_abbr_file
 
 setorset -Ux XDG_CONFIG_HOME 	"$HOME/.config"
 setorset -Ux XDG_DATA_HOME   	"$HOME/.local/share"
@@ -60,7 +58,7 @@ setorset -Ux FZF_DEFAULT_OPTS "--ansi --select-1 --exit-0 --inline-info --multi 
 setorset -Ux FZF_CTRL_T_OPTS 	"--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 setorset -Ux FZF_DEFAULT_COMMAND 'ag --hidden -g ""'
 
-set 		 -eu OSTYPE; 			and set -Ux OSTYPE 	(uname) 	#stupid fisher plugs fucking eachother
+# set 		 -eU OSTYPE; 			and set -Ux OSTYPE 	(uname) 	#stupid fisher plugs fucking eachother
 setorset -Ux LNAV_EXP  				"mouse"
 setorset -Ux GOOGLER_COLORS 	"MEnhxI" #bBblue i, bblue titles, brpurple links, white text etc
 # set -q RANGER_LOAD_DEFAULT_RC; or begin; test -f "$XDG_CONFIG_HOME/ranger/rc.conf"; and set -Ux RANGER_LOAD_DEFAULT_RC FALSE; end 	#down with this bc better get defaults loaded and thin down mine, so hectic otherwise
@@ -79,7 +77,8 @@ function _grc_wrap --argument cmd
 		set -l options "grc_wrap_options_$cmd"
 		command grc -es --colour=auto "$cmd" $$options $argv
 	end
-end; 	for cmd in $grc_wrap_commands; _grc_wrap $cmd; end
+end
+status is-interactive; and for cmd in $grc_wrap_commands; _grc_wrap $cmd; end
 
 switch (hostname)
 	case 'absurd*' 'NU*'
@@ -87,14 +86,19 @@ switch (hostname)
 		setorset -Ux STDERRED_BLACKLIST "fzf|lnav|htop|tmux|zsh|brew|go|mosh|ssh|elinks|tldr|elinks"
         test -r $stderred_path; and __stderred startup
 end
+
+setorset -U tol_fish_abbr_file 	~/.config/fish/functions/../abbr.fish_defs
 if status is-interactive 	#can I wrap all these?
+    # below (even just the check...) taking loads of time to run each startup?... like 150ms. do manual update instead in big teamocil thing?
+    test (count (abbr -l)) -eq (count (command cat $tol_fish_abbr_file)); or source $tol_fish_abbr_file
+
 	type -q autojump; and test -f (dirname (which autojump))/../share/autojump/autojump.fish; and source (dirname (which autojump))/../share/autojump/autojump.fish
 	test -z (which env_parallel.fish);  or source (which env_parallel.fish)  #GNU parallel shell support. load on first invocation instead?
 	source (rbenv init - | psub) 		#ruby rbenv
-	eval (python -m virtualfish)		#python envs
+	# eval (python -m virtualfish)		#python envs
 	# eval (docker-machine env default ^&-) #)^ /dev/null) 	#docker envs
  	# test -n "$DESK_ENV"; and source "$DESK_ENV"; or true		# Hook for desk activation
-    if not type -q fuck; and status is-interactive; eval (thefuck --alias)\n; funcsave fuck; end  #fucks shell startup by like 250ms when sourced on the fly, so save instead....
+    # if not type -q fuck; and status is-interactive; eval (thefuck --alias)\n; funcsave fuck; end  #fucks shell startup by like 250ms when sourced on the fly, so save instead....
 end
 
 # XXX regular keybind recycling the f/t functionality from vim bindings! +prob vim-seek 2-char thing for good measure
@@ -148,6 +152,15 @@ function __tol_setup_fish_emojis -d "set all ze emojis"
 	set -U e_util \U0001f5d1 \U0001f4be \U0001f4bd \U0001f50d \U0001f50e \U0001f526 \U0001f6a8 \U0001f3c1 \u2699 \U0001f4a1 \U0001f4e6                                                                                                                                                                                                                                                                                                                                                                     
 	set -U e_weather \u2744\ufe0f \U0001f328 \U0001f4a8 \U0001f32a \U0001f32b\u2600\ufe0f \U0001f324 \u26c5\ufe0f \U0001f325 \U0001f326 \u2601\ufe0f \U0001f327 \u26c8 \U0001f329 \u26a1\ufe0f\U0001f4a7 \U0001f4a6                                                                                                                                                                                                                                                                            
 	set -U emojis_nonshitty \U0001f4be \U0001f4bd \U0001f3b9 \U0001f6a8 \U0001f3c1 \U0001f680 \u231a \U0001f4bb \U0001f5b1 \U0001f5a5 \u2328 \U0001f4f1 \U0001f5d1 \U0001f50d \U0001f50e \U0001f3f4 \U0001f526 \u2714 \U0001f503 \u2795 \u2796 \u2797 \U0001f4b2 \U0001f553 \U0001f513 \U0001f512 \u2755 \u2753 \U0001f6ab \u274c \u2b55\ufe0f \u23f3 \u231b\ufe0f \U0001f507 \U0001f50a \U0001f509 \U0001f508 \U0001f578 
+
+    set -U  __tols_folder_Blue			 \U0001f4d8
+    set -U  __tols_folder_Gray			 \U0001f4d3
+    set -U  __tols_folder_Green			 \U0001f4d7
+    set -U  __tols_folder_None			 \U0001f4c1
+    set -U  __tols_folder_Orange		 \U0001f4d9
+    set -U  __tols_folder_Purple		 \U0001f47e
+    set -U  __tols_folder_Red			 \U0001f4d5
+    set -U  __tols_folder_Yellow		 \U0001f4d4
 end
 function __tol_setup_fish_stuff
 	set -q __tol_setup_fish_colors; or __tol_setup_fish_colors
@@ -162,14 +175,6 @@ function tol_reload_fish_stuff -d "run after changing colors and stuff like that
    set -e __tol_setup_fish_dirs 	
    set -e __tol_setup_fish_emojis 
 end
-setorset -U  __tols_folder_Blue				 \U0001f4d8
-setorset -U  __tols_folder_Gray				 \U0001f4d3
-setorset -U  __tols_folder_Green			 \U0001f4d7
-setorset -U  __tols_folder_None				 \U0001f4c1
-setorset -U  __tols_folder_Orange			 \U0001f4d9
-setorset -U  __tols_folder_Purple			 \U0001f47e
-setorset -U  __tols_folder_Red				 \U0001f4d5
-setorset -U  __tols_folder_Yellow			 \U0001f4d4
 
 
 
