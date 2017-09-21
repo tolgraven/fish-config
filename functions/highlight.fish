@@ -15,7 +15,7 @@ set params $common $params
 end
 
 debug "argv: %s  params: %s  %s" -- $argv $params (count $params)
-test -z "$output"
+not test -z "$output"
 and echo -ns $output\n | command highlight $params
 or command highlight $params
 end

@@ -17,44 +17,44 @@ and source {$HOME}/.iterm2_shell_integration.fish ^&-
 function __fish_command_not_found_handler --on-event fish_command_not_found  #must be this name or we'd also have to delete the internal function
 	if not isatty 1; or not status is-interactive;  __fish_default_command_not_found_handler $argv
 	else
-		tput cuu1; commandline $artolabsgv #latest cmdline contents passed in argv so works
+		tput cuu1; commandline $argv #latest cmdline contents passed in argv so works
 	    #check if can get and restore cursor pos... 
 	end # ; history delete --exact --case-sensitive $cmdline #goes nuts for some reason
 end
 
 #all handlers must be actively sourced at startup i guess...
-function tol_sigint_handler --on-signal SIGINT -d "hella reset stuff on ctrl-c" #argv is just "SIGINT"..
-	status is-interactive; or return
+# function tol_sigint_handler --on-signal SIGINT -d "hella reset stuff on ctrl-c" #argv is just "SIGINT"..
+# 	status is-interactive; or return
+#
+# 	get_line | read rowpos
+#     commandline --line | read cursorpos
+#     test "$rowpos" -eq "$LINES"; and set -l lastrow
+#
+#     tput civis  											#to avoid flicker
+#     commandline_save sigint; commandline ""
+#     #was gonna source config files as well but causes error for some reason?
+#     tol_reload_key_bindings 								#restore key bindings
+#     while set -l index (contains -i %self $__tol_func_pid) 	#unset is-editing funcs
+#         set -Ue __tol_func_editing[$index]; set -Ue __tol_func_pid[$index]
+#     end
+#     profile reset 											#restore iterm profile
+#     echo -n (tput rmcup) (tput vpa $rowpos)  				#reset smcup if any+line number in case not
+#     set -q lastrow; or tput cuu1 							#up 1, except if were at bottom row
+#
+#     echo -n "Everything reset, UR CLEAN."
+#     sleep 0.10; tput cnorm
+#     commandline_restore sigint;     clear_below_cursor
+# end
 
-	get_line | read rowpos
-    commandline --line | read cursorpos
-    test "$rowpos" -eq "$LINES"; and set -l lastrow
-
-    tput civis  											#to avoid flicker
-    commandline_save sigint; commandline ""
-    #was gonna source config files as well but causes error for some reason?
-    tol_reload_key_bindings 								#restore key bindings
-    while set -l index (contains -i %self $__tol_func_pid) 	#unset is-editing funcs
-        set -Ue __tol_func_editing[$index]; set -Ue __tol_func_pid[$index]
-    end
-    profile reset 											#restore iterm profile
-    echo -n (tput rmcup) (tput vpa $rowpos)  				#reset smcup if any+line number in case not
-    set -q lastrow; or tput cuu1 							#up 1, except if were at bottom row
-
-    echo -n "Everything reset, UR CLEAN."
-    sleep 0.10; tput cnorm
-    commandline_restore sigint;     clear_below_cursor
-end
-
-function __tol_fish_sigwinch --on-signal SIGWINCH  # temp fix to resize woes: just fukn kill right-side prompt, let it come back next line...
-	if test (count (functions fish_right_prompt)) -gt 3 # 3 bc extra line at top now with functions call    # functions -e fish_right_prompt causes bugs, seems cant just nuke
-        set -g __tol_right_prompt_output (fish_right_prompt)  #freeze output for later
-		functions -e fish_right_prompt_backup;  functions -c fish_right_prompt fish_right_prompt_backup
-		function fish_right_prompt
-		end
-		commandline -f repaint
-	end
-end
+# function __tol_fish_sigwinch --on-signal SIGWINCH  # temp fix to resize woes: just fukn kill right-side prompt, let it come back next line...
+# 	if test (count (functions fish_right_prompt)) -gt 3 # 3 bc extra line at top now with functions call    # functions -e fish_right_prompt causes bugs, seems cant just nuke
+#         set -g __tol_right_prompt_output (fish_right_prompt)  #freeze output for later
+# 		functions -e fish_right_prompt_backup;  functions -c fish_right_prompt fish_right_prompt_backup
+# 		function fish_right_prompt
+# 		end
+# 		commandline -f repaint
+# 	end
+# end
 
 function __tol_fish_preexec --on-event fish_preexec
 	if test (count (functions fish_right_prompt)) -eq 3; and functions -q fish_right_prompt_backup

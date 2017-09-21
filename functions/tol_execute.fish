@@ -8,8 +8,8 @@ end
 
 set -l highlighter 'highlight'
 test "$linenum" -eq 1
-and if string match -r -q -- ' --help| -h | --detailed-help| --version' $cmdline
-commandline --append " | $highlighter"
-end
+#    and if string match -r -q -- ' --help| -h | --detailed-help| --version' $cmdline
+#        commandline --append " | $highlighter"
+#    end
 commandline -f execute
 end

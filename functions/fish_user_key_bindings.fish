@@ -73,4 +73,8 @@ bind \ea\ej 'autojump_fzf cd'
 bind \er\er ranger
 bind \eg\eg 'autojump_fzf insert'
 bind \eg\es __tol_git_status
+
+
+bind \ep\ee 'test (commandline -C) -eq 0; and pathed' 
+bind \es\ew 'kill -28 %self' #send sigwinch
 end

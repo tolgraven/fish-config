@@ -54,7 +54,7 @@ function $fisher_cmd_name -d "fish plugin manager"
             end
     end
 
-    set -g fisher_version "2.13.1"
+    set -g fisher_version "2.13.2"
     set -g fisher_spinners ⠋ ⠙ ⠹ ⠸ ⠼ ⠴ ⠦ ⠧ ⠇ ⠏
 
     if [ -e /dev/stdout ]
@@ -2175,7 +2175,7 @@ function __fisher_self_uninstall -a yn
                 $fish_config/functions/$fisher_cmd_name.fish
                 $fish_config/completions/$fisher_cmd_name.fish
 
-            " &2
+            " >&2
 
             echo -sn "Continue? [Y/n] " >&2
 

@@ -6,13 +6,13 @@ set profile (profile)
 #debug "already vim profile %s, argv %s" $profile $argv
 #            case '*'
 if status is-interactive
-and not status is-command-substitution
+#and not status is-command-substitution
 #                    if not test "$TMUX"
 source ~/.config/fish/conf.d/imgcat.fish
 echo
-#            imgcat ~/.vim/neovim-logo.png 20 #custom imgcat with height spec
 imgcat ~/.vim/neovim-logo.png
 sleep 0.15
+kill -28 %self #sigwinch
 #                    end
 #                    set session_index (contains -i -- -S $argv)
 #                    and set -gx LISTEN_ADDR /tmp/$argv[$session_index]_nvim_sock

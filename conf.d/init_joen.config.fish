@@ -1,7 +1,7 @@
 function setorset -a flags var values
-	test (count $argv) -ge 3;  		or return 1
+	# test (count $argv) -ge 3;  		or return 1
 	if not set -q $var;  set $flags $var $argv[3..-1];  end
-end
+end         #welp, would appear the check actually takes same amount of time as just setting globals each time in the first place
 
 setorset -U fish_escape_delay_ms 		200
 setorset -U fish_prompt_pwd_length 	4

@@ -2,11 +2,12 @@ function tol_up-or-search --description 'up-or-search with auto completion popup
 if commandline --search-mode # If we are already in search mode, continue
 commandline -f history-search-backward
 test $TMUX
-clear_below_cursor
+and clear_below_cursor
 and return #temp fix for weirdness...
-set preview_count (math "$LINES - $__search_line_nr - 2") #dynamic count, size - pos - padding
-test $preview_count -lt 7
-and set preview_count 7
+#set preview_count (math "$LINES - $__search_line_nr - 2") #dynamic count, size - pos - padding
+set preview_count 5
+test $preview_count -lt 5
+and set preview_count 5
 test $preview_count -gt 15
 and set preview_count 15
 
@@ -37,7 +38,7 @@ tput cuu (math "$preview_count + 1")
 else if commandline --paging-mode
 commandline -f up-line # If we are navigating the pager, then up always navigates
 else if test (commandline -L) -eq 1 #$lineno -eq 1 # Not already in search mode. Start search mode or move up
-get_line | read -g __search_line_nr #only need to grab line nr once, first invocation. or not?
+#get_line | read -g __search_line_nr #only need to grab line nr once, first invocation. or not?
 commandline -f history-search-backward
 set -g __tol_up_or_search_hist $history[1..100] #cache it for if paging continues
 
